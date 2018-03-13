@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4956FB0E205608550004896C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956FB0D205608550004896C /* AppDelegate.swift */; };
+		4956FB10205608550004896C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956FB0F205608550004896C /* ViewController.swift */; };
+		4956FB13205608550004896C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4956FB11205608550004896C /* Main.storyboard */; };
+		4956FB15205608550004896C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4956FB14205608550004896C /* Assets.xcassets */; };
+		4956FB18205608550004896C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4956FB16205608550004896C /* LaunchScreen.storyboard */; };
+		4956FB23205608550004896C /* FWSegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956FB22205608550004896C /* FWSegmentedControlTests.swift */; };
+		4956FB2E205608550004896C /* FWSegmentedControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956FB2D205608550004896C /* FWSegmentedControlUITests.swift */; };
+		4956FB3C205608700004896C /* FWSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956FB3B205608700004896C /* FWSegmentedControl.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4956FB1F205608550004896C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4956FB02205608550004896C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4956FB09205608550004896C;
+			remoteInfo = FWSegmentedControl;
+		};
+		4956FB2A205608550004896C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4956FB02205608550004896C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4956FB09205608550004896C;
+			remoteInfo = FWSegmentedControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4956FB0A205608550004896C /* FWSegmentedControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWSegmentedControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4956FB0D205608550004896C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4956FB0F205608550004896C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4956FB12205608550004896C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4956FB14205608550004896C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4956FB17205608550004896C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4956FB19205608550004896C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4956FB1E205608550004896C /* FWSegmentedControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWSegmentedControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4956FB22205608550004896C /* FWSegmentedControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWSegmentedControlTests.swift; sourceTree = "<group>"; };
+		4956FB24205608550004896C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4956FB29205608550004896C /* FWSegmentedControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWSegmentedControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4956FB2D205608550004896C /* FWSegmentedControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWSegmentedControlUITests.swift; sourceTree = "<group>"; };
+		4956FB2F205608550004896C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4956FB3B205608700004896C /* FWSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWSegmentedControl.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4956FB07205608550004896C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4956FB1B205608550004896C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4956FB26205608550004896C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4956FB01205608550004896C = {
+			isa = PBXGroup;
+			children = (
+				4956FB0C205608550004896C /* FWSegmentedControl */,
+				4956FB21205608550004896C /* FWSegmentedControlTests */,
+				4956FB2C205608550004896C /* FWSegmentedControlUITests */,
+				4956FB0B205608550004896C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4956FB0B205608550004896C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4956FB0A205608550004896C /* FWSegmentedControl.app */,
+				4956FB1E205608550004896C /* FWSegmentedControlTests.xctest */,
+				4956FB29205608550004896C /* FWSegmentedControlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4956FB0C205608550004896C /* FWSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				4956FB0D205608550004896C /* AppDelegate.swift */,
+				4956FB0F205608550004896C /* ViewController.swift */,
+				4956FB3B205608700004896C /* FWSegmentedControl.swift */,
+				4956FB11205608550004896C /* Main.storyboard */,
+				4956FB14205608550004896C /* Assets.xcassets */,
+				4956FB16205608550004896C /* LaunchScreen.storyboard */,
+				4956FB19205608550004896C /* Info.plist */,
+			);
+			path = FWSegmentedControl;
+			sourceTree = "<group>";
+		};
+		4956FB21205608550004896C /* FWSegmentedControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				4956FB22205608550004896C /* FWSegmentedControlTests.swift */,
+				4956FB24205608550004896C /* Info.plist */,
+			);
+			path = FWSegmentedControlTests;
+			sourceTree = "<group>";
+		};
+		4956FB2C205608550004896C /* FWSegmentedControlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4956FB2D205608550004896C /* FWSegmentedControlUITests.swift */,
+				4956FB2F205608550004896C /* Info.plist */,
+			);
+			path = FWSegmentedControlUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4956FB09205608550004896C /* FWSegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4956FB32205608550004896C /* Build configuration list for PBXNativeTarget "FWSegmentedControl" */;
+			buildPhases = (
+				4956FB06205608550004896C /* Sources */,
+				4956FB07205608550004896C /* Frameworks */,
+				4956FB08205608550004896C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FWSegmentedControl;
+			productName = FWSegmentedControl;
+			productReference = 4956FB0A205608550004896C /* FWSegmentedControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4956FB1D205608550004896C /* FWSegmentedControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4956FB35205608550004896C /* Build configuration list for PBXNativeTarget "FWSegmentedControlTests" */;
+			buildPhases = (
+				4956FB1A205608550004896C /* Sources */,
+				4956FB1B205608550004896C /* Frameworks */,
+				4956FB1C205608550004896C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4956FB20205608550004896C /* PBXTargetDependency */,
+			);
+			name = FWSegmentedControlTests;
+			productName = FWSegmentedControlTests;
+			productReference = 4956FB1E205608550004896C /* FWSegmentedControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4956FB28205608550004896C /* FWSegmentedControlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4956FB38205608550004896C /* Build configuration list for PBXNativeTarget "FWSegmentedControlUITests" */;
+			buildPhases = (
+				4956FB25205608550004896C /* Sources */,
+				4956FB26205608550004896C /* Frameworks */,
+				4956FB27205608550004896C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4956FB2B205608550004896C /* PBXTargetDependency */,
+			);
+			name = FWSegmentedControlUITests;
+			productName = FWSegmentedControlUITests;
+			productReference = 4956FB29205608550004896C /* FWSegmentedControlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4956FB02205608550004896C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = xfg;
+				TargetAttributes = {
+					4956FB09205608550004896C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					4956FB1D205608550004896C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4956FB09205608550004896C;
+					};
+					4956FB28205608550004896C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4956FB09205608550004896C;
+					};
+				};
+			};
+			buildConfigurationList = 4956FB05205608550004896C /* Build configuration list for PBXProject "FWSegmentedControl" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4956FB01205608550004896C;
+			productRefGroup = 4956FB0B205608550004896C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4956FB09205608550004896C /* FWSegmentedControl */,
+				4956FB1D205608550004896C /* FWSegmentedControlTests */,
+				4956FB28205608550004896C /* FWSegmentedControlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4956FB08205608550004896C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4956FB18205608550004896C /* LaunchScreen.storyboard in Resources */,
+				4956FB15205608550004896C /* Assets.xcassets in Resources */,
+				4956FB13205608550004896C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4956FB1C205608550004896C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4956FB27205608550004896C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4956FB06205608550004896C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4956FB10205608550004896C /* ViewController.swift in Sources */,
+				4956FB3C205608700004896C /* FWSegmentedControl.swift in Sources */,
+				4956FB0E205608550004896C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4956FB1A205608550004896C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4956FB23205608550004896C /* FWSegmentedControlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4956FB25205608550004896C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4956FB2E205608550004896C /* FWSegmentedControlUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4956FB20205608550004896C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4956FB09205608550004896C /* FWSegmentedControl */;
+			targetProxy = 4956FB1F205608550004896C /* PBXContainerItemProxy */;
+		};
+		4956FB2B205608550004896C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4956FB09205608550004896C /* FWSegmentedControl */;
+			targetProxy = 4956FB2A205608550004896C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4956FB11205608550004896C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4956FB12205608550004896C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4956FB16205608550004896C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4956FB17205608550004896C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4956FB30205608550004896C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4956FB31205608550004896C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4956FB33205608550004896C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4Y22J2KN7;
+				INFOPLIST_FILE = FWSegmentedControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4956FB34205608550004896C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4Y22J2KN7;
+				INFOPLIST_FILE = FWSegmentedControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4956FB36205608550004896C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FWSegmentedControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FWSegmentedControl.app/FWSegmentedControl";
+			};
+			name = Debug;
+		};
+		4956FB37205608550004896C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FWSegmentedControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FWSegmentedControl.app/FWSegmentedControl";
+			};
+			name = Release;
+		};
+		4956FB39205608550004896C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FWSegmentedControlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FWSegmentedControl;
+			};
+			name = Debug;
+		};
+		4956FB3A205608550004896C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FWSegmentedControlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FWSegmentedControl;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4956FB05205608550004896C /* Build configuration list for PBXProject "FWSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4956FB30205608550004896C /* Debug */,
+				4956FB31205608550004896C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4956FB32205608550004896C /* Build configuration list for PBXNativeTarget "FWSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4956FB33205608550004896C /* Debug */,
+				4956FB34205608550004896C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4956FB35205608550004896C /* Build configuration list for PBXNativeTarget "FWSegmentedControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4956FB36205608550004896C /* Debug */,
+				4956FB37205608550004896C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4956FB38205608550004896C /* Build configuration list for PBXNativeTarget "FWSegmentedControlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4956FB39205608550004896C /* Debug */,
+				4956FB3A205608550004896C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4956FB02205608550004896C /* Project object */;
+}
