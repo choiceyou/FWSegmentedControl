@@ -1,10 +1,26 @@
-//
-//  FWSegmentedControl.swift
-//  FanweApps
-//
-//  Created by xfg on 2018/3/8.
-//  Copyright © 2018年 xfg. All rights reserved.
-//
+/**
+ MIT License
+ 
+ Copyright (c) [2018年] [xfg]
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ */
 
 import Foundation
 import UIKit
@@ -206,25 +222,25 @@ class FWSegmentedControl: UIControl {
     public var textImageSpacing: CGFloat = 4.0
     
     /// 选中标识符 横线
-    private var selectionIndicatorStripLayer = CALayer()
+    fileprivate var selectionIndicatorStripLayer = CALayer()
     /// 选中标识符 矩形背景
-    private var selectionIndicatorBoxLayer = CALayer()
+    fileprivate var selectionIndicatorBoxLayer = CALayer()
     /// 选中标识符 上、下箭头
-    private var selectionIndicatorArrowLayer = CALayer()
+    fileprivate var selectionIndicatorArrowLayer = CALayer()
     
     /// 选中项的下标
-    private var selectedSegmentIndex = 0 {
+    fileprivate var selectedSegmentIndex = 0 {
         didSet {
             self.setSelectedSegmentIndex(index: oldValue, animated: self.shouldAnimateUserSelection, notify: true)
         }
     }
     /// segment宽度
-    private var segmentWidth: CGFloat = 0
+    fileprivate var segmentWidth: CGFloat = 0
     /// segment的宽度数组
-    private var segmentWidthsArray: [NSNumber]?
+    fileprivate var segmentWidthsArray: [NSNumber]?
     
     /// SC数量
-    private var sectionCount: Int {
+    fileprivate var sectionCount: Int {
         get {
             if self.scType == .text {
                 return (self.sectionTitleArray?.count)!
@@ -237,7 +253,7 @@ class FWSegmentedControl: UIControl {
         }
     }
     
-    private var scrollView: FWScrollView = {
+    fileprivate var scrollView: FWScrollView = {
        
         let scrollView = FWScrollView()
         scrollView.scrollsToTop = false
@@ -316,7 +332,7 @@ extension FWSegmentedControl {
 extension FWSegmentedControl {
     
     /// 计算SC中各个segment的宽度
-    private func updateSegmentsRects() {
+    fileprivate func updateSegmentsRects() {
         
         self.scrollView.frame = self.bounds
         
@@ -391,7 +407,7 @@ extension FWSegmentedControl {
     ///   - index: segment所在下标
     ///   - object: segment标题或者图片
     /// - Returns: 宽度
-    private func configSegmentsWidth(index: Int, object: AnyObject, isNeedEdgeInset: Bool) -> CGFloat {
+    fileprivate func configSegmentsWidth(index: Int, object: AnyObject, isNeedEdgeInset: Bool) -> CGFloat {
         
         var contentWidth: CGFloat = 0.0
         if self.scType == .text {
@@ -418,7 +434,7 @@ extension FWSegmentedControl {
     /// 真正绘制组件
     ///
     /// - Parameter rect: rect
-    private func drawSegments(_ rect: CGRect) {
+    fileprivate func drawSegments(_ rect: CGRect) {
         
         self.backgroundColor?.setFill()
         UIRectFill(self.bounds)
@@ -618,7 +634,7 @@ extension FWSegmentedControl {
         }
     }
     
-    private func addBackgroundAndBorderLayerWithRect(fullRect: CGRect) {
+    fileprivate func addBackgroundAndBorderLayerWithRect(fullRect: CGRect) {
         
         let backgroundLayer = CALayer()
         backgroundLayer.frame = fullRect
@@ -649,7 +665,7 @@ extension FWSegmentedControl {
 // MARK: - 滑动或者选中操作
 extension FWSegmentedControl {
     
-    private func setSelectedSegmentIndex(index: Int, animated: Bool, notify: Bool) {
+    fileprivate func setSelectedSegmentIndex(index: Int, animated: Bool, notify: Bool) {
         
         self.setNeedsDisplay()
         
@@ -712,7 +728,7 @@ extension FWSegmentedControl {
         }
     }
     
-    private func notifyForSegmentChangeToIndex(index: Int) {
+    fileprivate func notifyForSegmentChangeToIndex(index: Int) {
         
         if self.superview != nil {
             self.sendActions(for: .valueChanged)
@@ -753,7 +769,7 @@ extension FWSegmentedControl {
         }
     }
     
-    private func scrollToSelectedSegmentIndex(animated: Bool) {
+    fileprivate func scrollToSelectedSegmentIndex(animated: Bool) {
         
         var rectForSelectedIndex = CGRect(x: 0, y: 0, width: 0, height: 0)
         var selectedSegmentOffset:CGFloat = 0.0
@@ -784,7 +800,7 @@ extension FWSegmentedControl {
 // MARK: - 设置选中标识符的Frame
 extension FWSegmentedControl {
     
-    private func setArrowFrame() {
+    fileprivate func setArrowFrame() {
         
         self.selectionIndicatorArrowLayer.frame = self.frameForSelectionIndicator()
         self.selectionIndicatorArrowLayer.mask = nil
@@ -816,7 +832,7 @@ extension FWSegmentedControl {
         self.selectionIndicatorArrowLayer.mask = maskLayer
     }
     
-    private func frameForSelectionIndicator() -> CGRect {
+    fileprivate func frameForSelectionIndicator() -> CGRect {
         
         var indicatorYOffset: CGFloat = 0.0
         if self.scSelectionIndicatorLocation == .down {
@@ -909,7 +925,7 @@ extension FWSegmentedControl {
         }
     }
     
-    private func frameForFillerSelectionIndicator() -> CGRect {
+    fileprivate func frameForFillerSelectionIndicator() -> CGRect {
         
         if self.scWidthStyle == .dynamic || self.scWidthStyle == .dynamicFixedSuper {
             var selectedSegmentOffset: CGFloat = 0.0
@@ -936,7 +952,7 @@ extension FWSegmentedControl {
     ///
     /// - Parameter index: segment的下标
     /// - Returns: CGSize
-    private func measureTitleAtIndex(index: Int) -> CGSize {
+    fileprivate func measureTitleAtIndex(index: Int) -> CGSize {
         
         if self.sectionTitleArray == nil || index >= self.sectionTitleArray!.count {
             return CGSize(width: 0, height: 0)
@@ -958,7 +974,7 @@ extension FWSegmentedControl {
     /// 计算所有segment的总宽度
     ///
     /// - Returns: CGFloat
-    private func totalSegmentedControlWidth() -> CGFloat {
+    fileprivate func totalSegmentedControlWidth() -> CGFloat {
         
         if self.scWidthStyle == .fixed {
             return CGFloat(self.sectionCount) * self.segmentWidth
@@ -975,7 +991,7 @@ extension FWSegmentedControl {
     /// 选中segment的文字属性
     ///
     /// - Returns: 文字属性
-    private func resultingSelectedTitleTextAttributes() -> [NSAttributedStringKey: Any] {
+    fileprivate func resultingSelectedTitleTextAttributes() -> [NSAttributedStringKey: Any] {
         
         var resultingAttrs = self.resultingTitleTextAttributes()
         if self.selectedTitleTextAttributes != nil {
@@ -987,7 +1003,7 @@ extension FWSegmentedControl {
     /// 未选中segment的文字属性
     ///
     /// - Returns: 文字属性
-    private func resultingTitleTextAttributes() -> [NSAttributedStringKey: Any] {
+    fileprivate func resultingTitleTextAttributes() -> [NSAttributedStringKey: Any] {
        
         var defaults = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(16.0))]
         if self.titleTextAttributes != nil {
@@ -996,7 +1012,7 @@ extension FWSegmentedControl {
         return defaults
     }
     
-    private func attributedTitleAtIndex(index: Int) -> NSAttributedString {
+    fileprivate func attributedTitleAtIndex(index: Int) -> NSAttributedString {
         
         let title = self.sectionTitleArray![index]
         let selected = (index == self.selectedSegmentIndex)
