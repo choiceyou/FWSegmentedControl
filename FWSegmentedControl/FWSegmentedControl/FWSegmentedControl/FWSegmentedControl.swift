@@ -221,6 +221,13 @@ open class FWSegmentedControl: UIControl {
     /// self.scType == .textImages 时，文字、图片的间隔
     @objc public var textImageSpacing: CGFloat = 4.0
     
+    /// 选中项的下标
+    @objc public var selectedSegmentIndex = 0 {
+        didSet {
+            self.setSelectedSegmentIndex(index: oldValue, animated: self.shouldAnimateUserSelection, notify: true)
+        }
+    }
+    
     /// 选中标识符 横线
     fileprivate var selectionIndicatorStripLayer = CALayer()
     /// 选中标识符 矩形背景
@@ -228,12 +235,6 @@ open class FWSegmentedControl: UIControl {
     /// 选中标识符 上、下箭头
     fileprivate var selectionIndicatorArrowLayer = CALayer()
     
-    /// 选中项的下标
-    fileprivate var selectedSegmentIndex = 0 {
-        didSet {
-            self.setSelectedSegmentIndex(index: oldValue, animated: self.shouldAnimateUserSelection, notify: true)
-        }
-    }
     /// segment宽度
     fileprivate var segmentWidth: CGFloat = 0
     /// segment的宽度数组
