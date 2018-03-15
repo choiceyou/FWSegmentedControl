@@ -35,7 +35,7 @@ import UIKit
 /// - text: 纯文字
 /// - images: 纯图片
 /// - textImages: 文字、图片混合
-@objc enum SCType: Int {
+@objc public enum SCType: Int {
     case text
     case images
     case textImages
@@ -46,7 +46,7 @@ import UIKit
 /// - fixed: 1、当控件总宽度小于等于父视图宽度时，segment宽度等于均等分父视图宽度；2、当控件总宽度大于父视图宽度时，取其中最大宽度的segment的宽度值，来作为segment的宽度
 /// - dynamic: 控件的宽度等于文字或者图片的最大宽度
 /// - dynamicFixedSuper: 1、当控件总宽度小于等于父视图宽度时，segment宽度等于均等分父视图宽度；2、当控件总宽度大于父视图宽度时，控件的宽度等于文字或者图片的最大宽度。
-@objc enum SCWidthStyle: Int {
+@objc public enum SCWidthStyle: Int {
     case fixed
     case dynamic
     case dynamicFixedSuper
@@ -59,7 +59,7 @@ import UIKit
 /// - leftOfText: 图片在文字的左边
 /// - belowOfText: 图片在文字的下边
 /// - rightOfText: 图片在文字的右边
-@objc enum SCImagePosition: Int {
+@objc public enum SCImagePosition: Int {
     case behindText
     case aboveText
     case leftOfText
@@ -75,7 +75,7 @@ import UIKit
 /// - box: 选中标识符带矩形背景
 /// - arrowUp: 选中标识符为箭头，箭头向上
 /// - arrowDown: 选中标识符为箭头，箭头向下
-@objc enum SCSelectionIndicatorStyle: Int {
+@objc public enum SCSelectionIndicatorStyle: Int {
     case none
     case contentWidthStripe
     case fullWidthStripe
@@ -88,7 +88,7 @@ import UIKit
 ///
 /// - up: 当前控件上面
 /// - down: 当前控件下面
-@objc enum SCSelectionIndicatorLocation: Int {
+@objc public enum SCSelectionIndicatorLocation: Int {
     case up
     case down
 }
@@ -100,7 +100,7 @@ import UIKit
 /// - left: 左边有边框
 /// - bottom: 下面有边框
 /// - right: 右边有边框
-@objc enum SCBorderType: Int {
+@objc public enum SCBorderType: Int {
     case none
     case top
     case left
@@ -109,12 +109,12 @@ import UIKit
 }
 
 /// 滑动或者选中回调
-typealias SCIndexChangeBlock = (_ index: Int) -> Void
+public typealias SCIndexChangeBlock = (_ index: Int) -> Void
 /// 标题NSAttributedString回调
-typealias SCTitleFormatterBlock = (_ segmentedControl: FWSegmentedControl, _ title: String, _ index: Int, _ selected: Bool) -> NSAttributedString
+public typealias SCTitleFormatterBlock = (_ segmentedControl: FWSegmentedControl, _ title: String, _ index: Int, _ selected: Bool) -> NSAttributedString
 
 
-class FWSegmentedControl: UIControl {
+open class FWSegmentedControl: UIControl {
     
     /// 标题
     @objc public var sectionTitleArray: [String]? {
@@ -262,14 +262,14 @@ class FWSegmentedControl: UIControl {
         return scrollView
     }()
     
-    override var frame: CGRect {
+    override open var frame: CGRect {
         didSet {
             self.updateSegmentsRects()
             super.frame = frame
         }
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         
         if newSuperview == nil {
@@ -279,13 +279,13 @@ class FWSegmentedControl: UIControl {
         self.updateSegmentsRects()
     }
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         
         self.updateSegmentsRects()
     }
     
-    override func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         super.draw(rect)
         
         self.drawSegments(rect)
@@ -739,7 +739,7 @@ extension FWSegmentedControl {
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touch :UITouch in touches {
             let touchLocation = touch.location(in: self)

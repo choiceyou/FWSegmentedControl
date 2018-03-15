@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FWSegmentedControl"
-  s.version      = "2.0.1"
+  s.version      = "2.0.2"
   s.summary      = "滑动分段控制，多样式、灵活、便利是其最大的优势"
 
   # This description is used to generate tags and improve search results.
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-FWSegmentedControl借鉴了前辈项目：HMSegmentedControl，在此非常感谢前辈的分享
+FWSegmentedControl兼容OC，借鉴了前辈项目：HMSegmentedControl，在此非常感谢前辈的分享
                    DESC
 
   s.homepage     = "https://github.com/choiceyou/FWSegmentedControl"
@@ -40,7 +40,7 @@ FWSegmentedControl借鉴了前辈项目：HMSegmentedControl，在此非常感�
   #
 
   s.license      = "MIT"
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  #  s.license      = { :type => "MIT", :file => "LICENSE" }
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -64,7 +64,7 @@ FWSegmentedControl借鉴了前辈项目：HMSegmentedControl，在此非常感�
   #
 
   s.platform     = :ios
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "8.0"
 
 
   #  Specify the location from where the source should be retrieved.
