@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         let sectionTitles = ["关注", "游戏", "附近", "体育", "女神范", "运动啦啦", "歌舞", "吃鸡", "户外", "脱口秀"]
         
-        let segmentedControl = FWSegmentedControl.initWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: nil, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: nil, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50))
         
         segmentedControl.sectionTitleArray = sectionTitles
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         let sectionTitles = ["关注", "游戏", "附近", "体育", "女神范", "运动啦啦", "歌舞", "吃鸡", "户外", "脱口秀"]
         
-        let segmentedControl = FWSegmentedControl.initWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 100, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 100, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
         segmentedControl.autoresizingMask = .flexibleRightMargin
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         
         let sectionTitles = ["女神", "运动啦啦", "歌舞"]
         
-        let segmentedControl = FWSegmentedControl.initWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 150, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 150, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
                                UIImage(named: "6-selected"),
                                UIImage(named: "7-selected")]
         
-        let segmentedControl = FWSegmentedControl.initWith(scType: SCType.images, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: nil, sectionImageArray: images as? [UIImage], sectionSelectedImageArray: selectedImages as? [UIImage], frame: CGRect(x: 0, y: 200, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.images, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: nil, sectionImageArray: images as? [UIImage], sectionSelectedImageArray: selectedImages as? [UIImage], frame: CGRect(x: 0, y: 200, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .up
@@ -120,7 +120,7 @@ class ViewController: UIViewController {
                               UIImage(named: "b-selected"),
                               UIImage(named: "c-selected")]
         
-        let segmentedControl = FWSegmentedControl.initWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles, sectionImageArray: images as? [UIImage], sectionSelectedImageArray: selectedImages as? [UIImage], frame: CGRect(x: 0, y: 250, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles, sectionImageArray: images as? [UIImage], sectionSelectedImageArray: selectedImages as? [UIImage], frame: CGRect(x: 0, y: 250, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
@@ -156,7 +156,7 @@ class ViewController: UIViewController {
                               UIImage(named: "b-selected"),
                               UIImage(named: "c-selected")]
         
-        let segmentedControl = FWSegmentedControl.initWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles, sectionImageArray: images as? [UIImage], sectionSelectedImageArray: selectedImages as? [UIImage], frame: CGRect(x: 0, y: 300, width: Int(UIScreen.main.bounds.width), height: 50))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles, sectionImageArray: images as? [UIImage], sectionSelectedImageArray: selectedImages as? [UIImage], frame: CGRect(x: 0, y: 300, width: Int(UIScreen.main.bounds.width), height: 50))
         
         segmentedControl.scSelectionIndicatorStyle = .arrowDown
         segmentedControl.scSelectionIndicatorLocation = .down
