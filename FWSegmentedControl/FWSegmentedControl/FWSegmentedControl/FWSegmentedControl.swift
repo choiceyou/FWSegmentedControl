@@ -307,7 +307,7 @@ extension FWSegmentedControl {
         self.contentMode = .redraw
     }
     
-    /// 初始化方法
+    /// 类初始化方法
     ///
     /// - Parameters:
     ///   - scType: segment类型
@@ -315,7 +315,7 @@ extension FWSegmentedControl {
     ///   - sectionImageArray: 图片，可传nil，后续再设置
     ///   - sectionSelectedImageArray: 选中图片，可传nil，后续再设置
     ///   - frame: frame
-    @objc class func initWith(scType: SCType, scWidthStyle: SCWidthStyle, sectionTitleArray: [String]?, sectionImageArray: [UIImage]?, sectionSelectedImageArray: [UIImage]?, frame: CGRect) -> FWSegmentedControl {
+    @objc open class func segmentedWith(scType: SCType, scWidthStyle: SCWidthStyle, sectionTitleArray: [String]?, sectionImageArray: [UIImage]?, sectionSelectedImageArray: [UIImage]?, frame: CGRect) -> FWSegmentedControl {
         let segmentedControl = FWSegmentedControl()
         segmentedControl.scType = scType
         segmentedControl.scWidthStyle = scWidthStyle
