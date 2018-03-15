@@ -19,8 +19,9 @@ class ViewController: UIViewController {
         
         let sectionTitles = ["关注", "游戏", "附近", "体育", "女神范", "运动啦啦", "歌舞", "吃鸡", "户外", "脱口秀"]
         
-        let segmentedControl = FWSegmentedControl.initWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50))
+        let segmentedControl = FWSegmentedControl.initWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: nil, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50))
         
+        segmentedControl.sectionTitleArray = sectionTitles
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
         
         return segmentedControl
@@ -33,8 +34,6 @@ class ViewController: UIViewController {
         let segmentedControl = FWSegmentedControl.initWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 100, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
-        segmentedControl.scSelectionIndicatorLocation = .down
-        segmentedControl.scImagePosition = .leftOfText
         segmentedControl.autoresizingMask = .flexibleRightMargin
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
         
@@ -56,7 +55,6 @@ class ViewController: UIViewController {
         
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
-        segmentedControl.scImagePosition = .leftOfText
         segmentedControl.autoresizingMask = .flexibleRightMargin
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
         
@@ -96,7 +94,6 @@ class ViewController: UIViewController {
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .up
-        segmentedControl.scImagePosition = .leftOfText
         segmentedControl.autoresizingMask = .flexibleRightMargin
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
         
@@ -108,15 +105,12 @@ class ViewController: UIViewController {
         segmentedControl.verticalDividerColor = UIColor.lightGray
         segmentedControl.verticalDividerWidth = 1.0
         
-        segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
-        segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.backgroundColor: UIColor.clear, NSAttributedStringKey.font: UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
-        
         return segmentedControl
     }()
     
     private lazy var segmentedControl5: FWSegmentedControl = {
         
-        let imageTitles = ["1111", "2222", "3333"]
+        let imageTitles = ["叶子", "椰子", "叶紫"]
         
         let images = [UIImage(named: "a"),
                       UIImage(named: "b"),

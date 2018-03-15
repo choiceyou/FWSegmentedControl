@@ -35,7 +35,7 @@ import UIKit
 /// - text: 纯文字
 /// - images: 纯图片
 /// - textImages: 文字、图片混合
-enum SCType: Int {
+@objc enum SCType: Int {
     case text
     case images
     case textImages
@@ -46,7 +46,7 @@ enum SCType: Int {
 /// - fixed: 1、当控件总宽度小于等于父视图宽度时，segment宽度等于均等分父视图宽度；2、当控件总宽度大于父视图宽度时，取其中最大宽度的segment的宽度值，来作为segment的宽度
 /// - dynamic: 控件的宽度等于文字或者图片的最大宽度
 /// - dynamicFixedSuper: 1、当控件总宽度小于等于父视图宽度时，segment宽度等于均等分父视图宽度；2、当控件总宽度大于父视图宽度时，控件的宽度等于文字或者图片的最大宽度。
-enum SCWidthStyle {
+@objc enum SCWidthStyle: Int {
     case fixed
     case dynamic
     case dynamicFixedSuper
@@ -59,7 +59,7 @@ enum SCWidthStyle {
 /// - leftOfText: 图片在文字的左边
 /// - belowOfText: 图片在文字的下边
 /// - rightOfText: 图片在文字的右边
-enum SCImagePosition {
+@objc enum SCImagePosition: Int {
     case behindText
     case aboveText
     case leftOfText
@@ -75,7 +75,7 @@ enum SCImagePosition {
 /// - box: 选中标识符带矩形背景
 /// - arrowUp: 选中标识符为箭头，箭头向上
 /// - arrowDown: 选中标识符为箭头，箭头向下
-enum SCSelectionIndicatorStyle {
+@objc enum SCSelectionIndicatorStyle: Int {
     case none
     case contentWidthStripe
     case fullWidthStripe
@@ -88,7 +88,7 @@ enum SCSelectionIndicatorStyle {
 ///
 /// - up: 当前控件上面
 /// - down: 当前控件下面
-enum SCSelectionIndicatorLocation {
+@objc enum SCSelectionIndicatorLocation: Int {
     case up
     case down
 }
@@ -100,7 +100,7 @@ enum SCSelectionIndicatorLocation {
 /// - left: 左边有边框
 /// - bottom: 下面有边框
 /// - right: 右边有边框
-enum SCBorderType: Int {
+@objc enum SCBorderType: Int {
     case none
     case top
     case left
@@ -117,21 +117,21 @@ typealias SCTitleFormatterBlock = (_ segmentedControl: FWSegmentedControl, _ tit
 class FWSegmentedControl: UIControl {
     
     /// 标题
-    public var sectionTitleArray: [String]? {
+    @objc public var sectionTitleArray: [String]? {
         didSet {
             self.setNeedsLayout()
             self.setNeedsDisplay()
         }
     }
     /// 图片
-    public var sectionImageArray: [UIImage]? {
+    @objc public var sectionImageArray: [UIImage]? {
         didSet {
             self.setNeedsLayout()
             self.setNeedsDisplay()
         }
     }
     /// 选中图片
-    public var sectionSelectedImageArray: [UIImage]? {
+    @objc public var sectionSelectedImageArray: [UIImage]? {
         didSet {
             self.setNeedsLayout()
             self.setNeedsDisplay()
@@ -139,16 +139,16 @@ class FWSegmentedControl: UIControl {
     }
     
     /// segment类型
-    public var scType = SCType.text
+    @objc public var scType = SCType.text
     
     /// segment宽度
-    public var scWidthStyle = SCWidthStyle.fixed
+    @objc public var scWidthStyle = SCWidthStyle.fixed
     
     /// 图片相对于文字的位置
-    public var scImagePosition: SCImagePosition = .leftOfText
+    @objc public var scImagePosition: SCImagePosition = .leftOfText
     
     /// 选中标识符类型
-    public var scSelectionIndicatorStyle = SCSelectionIndicatorStyle.contentWidthStripe {
+    @objc public var scSelectionIndicatorStyle = SCSelectionIndicatorStyle.contentWidthStripe {
         didSet {
             if oldValue == .none {
                 self.selectionIndicatorHeight = 0.0
@@ -156,70 +156,70 @@ class FWSegmentedControl: UIControl {
         }
     }
     /// 选中标识符位置
-    public var scSelectionIndicatorLocation = SCSelectionIndicatorLocation.down
+    @objc public var scSelectionIndicatorLocation = SCSelectionIndicatorLocation.down
     /// 选中标识符高度，注意：self.scSelectionIndicatorStyle == .box || self.scSelectionIndicatorStyle == .none 时无效
-    public var selectionIndicatorHeight: CGFloat = 3.0
+    @objc public var selectionIndicatorHeight: CGFloat = 3.0
     /// 选中标识符，当 SCSelectionIndicatorLocation == up 时，底部edge无效；反之，顶部edge无效；
-    public var selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+    @objc public var selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
     /// 选中标识符颜色
-    public var selectionIndicatorColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
-    public var selectionIndicatorBoxColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
+    @objc public var selectionIndicatorColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
+    @objc public var selectionIndicatorBoxColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
     
     /// 边框类型
-    public var scBorderType: SCBorderType? {
+    @objc public var scBorderType: SCBorderType = .none {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
     /// 滑动或者选中回调
-    public var indexChangeBlock: SCIndexChangeBlock?
+    @objc public var indexChangeBlock: SCIndexChangeBlock?
     /// 标题NSAttributedString回调
-    public var titleFormatterBlock: SCTitleFormatterBlock?
+    @objc public var titleFormatterBlock: SCTitleFormatterBlock?
     /// 控件Inset属性
-    public var segmentEdgeInset = UIEdgeInsetsMake(0, 5, 0, 5)
-    public var enlargeEdgeInset = UIEdgeInsetsMake(0, 0, 0, 0)
+    @objc public var segmentEdgeInset = UIEdgeInsetsMake(0, 5, 0, 5)
+    @objc public var enlargeEdgeInset = UIEdgeInsetsMake(0, 0, 0, 0)
     
     /// 未选中的标题属性
-    public var titleTextAttributes: [NSAttributedStringKey: Any]?
+    @objc public var titleTextAttributes: [NSAttributedStringKey: Any]?
     /// 选中的标题属性
-    public var selectedTitleTextAttributes: [NSAttributedStringKey: Any]?
+    @objc public var selectedTitleTextAttributes: [NSAttributedStringKey: Any]?
     
     /// 是否可以拖动
-    public var userDraggable = true
+    @objc public var userDraggable = true
     /// 是否可以点击
-    public var touchEnabled = true
+    @objc public var touchEnabled = true
     
     /// 边框颜色
-    public var borderColor = UIColor.black
+    @objc public var borderColor = UIColor.black
     /// 边框大小
-    public var borderWidth: CGFloat = 1.0
+    @objc public var borderWidth: CGFloat = 1.0
     
     /// 选中或者滑动时是否需要动画
-    public var shouldAnimateUserSelection = true
+    @objc public var shouldAnimateUserSelection = true
     
     /// 选中标识符为箭头的宽度
-    public var arrowWidth: CGFloat?
+    @objc public var arrowWidth: CGFloat = 6.0
     
     /// 选中表示符为box时的opacity值
-    public var selectionIndicatorBoxOpacity: CGFloat = 0.2 {
+    @objc public var selectionIndicatorBoxOpacity: CGFloat = 0.2 {
         didSet {
             selectionIndicatorBoxLayer.opacity = Float(oldValue)
         }
     }
     
     /// segment之间的间隔竖线的宽度
-    public var verticalDividerWidth: CGFloat = 1.0
+    @objc public var verticalDividerWidth: CGFloat = 1.0
     /// 是否需要segment之间的间隔竖线
-    public var verticalDividerEnabled = false
+    @objc public var verticalDividerEnabled = false
     /// segment之间的间隔竖线的颜色
-    public var verticalDividerColor = UIColor.black
+    @objc public var verticalDividerColor = UIColor.black
     
     /// 选中标识符滑动的时间
-    public var indicatorAnimatedTimes: CFTimeInterval = 0.15
+    @objc public var indicatorAnimatedTimes: CFTimeInterval = 0.15
     
     /// self.scType == .textImages 时，文字、图片的间隔
-    public var textImageSpacing: CGFloat = 4.0
+    @objc public var textImageSpacing: CGFloat = 4.0
     
     /// 选中标识符 横线
     fileprivate var selectionIndicatorStripLayer = CALayer()
@@ -254,7 +254,7 @@ class FWSegmentedControl: UIControl {
     }
     
     fileprivate var scrollView: FWScrollView = {
-       
+        
         let scrollView = FWScrollView()
         scrollView.scrollsToTop = false
         scrollView.showsVerticalScrollIndicator = false
@@ -315,7 +315,7 @@ extension FWSegmentedControl {
     ///   - sectionImageArray: 图片，可传nil，后续再设置
     ///   - sectionSelectedImageArray: 选中图片，可传nil，后续再设置
     ///   - frame: frame
-    class func initWith(scType: SCType, scWidthStyle: SCWidthStyle, sectionTitleArray: [String]?, sectionImageArray: [UIImage]?, sectionSelectedImageArray: [UIImage]?, frame: CGRect) -> FWSegmentedControl {
+    @objc class func initWith(scType: SCType, scWidthStyle: SCWidthStyle, sectionTitleArray: [String]?, sectionImageArray: [UIImage]?, sectionSelectedImageArray: [UIImage]?, frame: CGRect) -> FWSegmentedControl {
         let segmentedControl = FWSegmentedControl()
         segmentedControl.scType = scType
         segmentedControl.scWidthStyle = scWidthStyle
@@ -640,7 +640,7 @@ extension FWSegmentedControl {
         backgroundLayer.frame = fullRect
         self.layer.insertSublayer(backgroundLayer, at: 0)
         
-        if self.scBorderType == nil {
+        if self.scBorderType == .none {
             return
         }
         
@@ -879,7 +879,7 @@ extension FWSegmentedControl {
                 }
                 
                 let currentSegmentWidth = self.segmentWidthsArray![self.selectedSegmentIndex].floatValue
-                let tmpArrowWidth = (self.arrowWidth != nil) ? self.arrowWidth! : self.selectionIndicatorHeight * 2
+                let tmpArrowWidth = (self.arrowWidth != 0) ? self.arrowWidth : self.selectionIndicatorHeight * 2
                 
                 return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left + (CGFloat(currentSegmentWidth) - tmpArrowWidth) / 2, y: indicatorYOffset, width:tmpArrowWidth  - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
             }
@@ -1004,7 +1004,7 @@ extension FWSegmentedControl {
     ///
     /// - Returns: 文字属性
     fileprivate func resultingTitleTextAttributes() -> [NSAttributedStringKey: Any] {
-       
+        
         var defaults = [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(16.0))]
         if self.titleTextAttributes != nil {
             defaults = self.titleTextAttributes! as! [NSAttributedStringKey : NSObject]
@@ -1060,3 +1060,4 @@ class FWScrollView: UIScrollView {
         }
     }
 }
+
