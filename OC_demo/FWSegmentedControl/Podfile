@@ -1,0 +1,8 @@
+target 'FWSegmentedControl' do
+    use_frameworks!
+    
+    pod 'FWSegmentedControl'
+
+#    pod 'ReachabilitySwift'
+
+end

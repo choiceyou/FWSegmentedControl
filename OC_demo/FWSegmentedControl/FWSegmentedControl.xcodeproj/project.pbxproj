@@ -1,0 +1,658 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		496899C8205B7173009F43E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899C7205B7173009F43E5 /* AppDelegate.m */; };
+		496899CB205B7173009F43E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899CA205B7173009F43E5 /* ViewController.m */; };
+		496899CE205B7173009F43E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496899CC205B7173009F43E5 /* Main.storyboard */; };
+		496899D0205B7173009F43E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496899CF205B7173009F43E5 /* Assets.xcassets */; };
+		496899D3205B7173009F43E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496899D1205B7173009F43E5 /* LaunchScreen.storyboard */; };
+		496899D6205B7173009F43E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899D5205B7173009F43E5 /* main.m */; };
+		496899E0205B7173009F43E5 /* FWSegmentedControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899DF205B7173009F43E5 /* FWSegmentedControlTests.m */; };
+		496899EB205B7173009F43E5 /* FWSegmentedControlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899EA205B7173009F43E5 /* FWSegmentedControlUITests.m */; };
+		496899FA205B7357009F43E5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496899F9205B7357009F43E5 /* Test.swift */; };
+		6B75BFD783AC7FD80602F695 /* Pods_FWSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5163608BCB324445941146D /* Pods_FWSegmentedControl.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		496899DC205B7173009F43E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 496899BB205B7173009F43E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 496899C2205B7173009F43E5;
+			remoteInfo = FWSegmentedControl;
+		};
+		496899E7205B7173009F43E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 496899BB205B7173009F43E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 496899C2205B7173009F43E5;
+			remoteInfo = FWSegmentedControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		496899C3205B7173009F43E5 /* FWSegmentedControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWSegmentedControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		496899C6205B7173009F43E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		496899C7205B7173009F43E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		496899C9205B7173009F43E5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		496899CA205B7173009F43E5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		496899CD205B7173009F43E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		496899CF205B7173009F43E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		496899D2205B7173009F43E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		496899D4205B7173009F43E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496899D5205B7173009F43E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		496899DB205B7173009F43E5 /* FWSegmentedControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWSegmentedControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		496899DF205B7173009F43E5 /* FWSegmentedControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWSegmentedControlTests.m; sourceTree = "<group>"; };
+		496899E1205B7173009F43E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496899E6205B7173009F43E5 /* FWSegmentedControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWSegmentedControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		496899EA205B7173009F43E5 /* FWSegmentedControlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWSegmentedControlUITests.m; sourceTree = "<group>"; };
+		496899EC205B7173009F43E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496899F8205B7357009F43E5 /* FWSegmentedControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWSegmentedControl-Bridging-Header.h"; sourceTree = "<group>"; };
+		496899F9205B7357009F43E5 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		B5163608BCB324445941146D /* Pods_FWSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A244374F294BDD8AC55E06 /* Pods-FWSegmentedControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWSegmentedControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl.release.xcconfig"; sourceTree = "<group>"; };
+		D6E3805D95433DFFD7448166 /* Pods-FWSegmentedControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWSegmentedControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		496899C0205B7173009F43E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B75BFD783AC7FD80602F695 /* Pods_FWSegmentedControl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496899D8205B7173009F43E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496899E3205B7173009F43E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		496899BA205B7173009F43E5 = {
+			isa = PBXGroup;
+			children = (
+				496899F9205B7357009F43E5 /* Test.swift */,
+				496899F8205B7357009F43E5 /* FWSegmentedControl-Bridging-Header.h */,
+				496899C5205B7173009F43E5 /* FWSegmentedControl */,
+				496899DE205B7173009F43E5 /* FWSegmentedControlTests */,
+				496899E9205B7173009F43E5 /* FWSegmentedControlUITests */,
+				496899C4205B7173009F43E5 /* Products */,
+				A19320F54D52A5AB811A6464 /* Pods */,
+				F2B7107DC7A66421E8D75017 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		496899C4205B7173009F43E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				496899C3205B7173009F43E5 /* FWSegmentedControl.app */,
+				496899DB205B7173009F43E5 /* FWSegmentedControlTests.xctest */,
+				496899E6205B7173009F43E5 /* FWSegmentedControlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		496899C5205B7173009F43E5 /* FWSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				496899C6205B7173009F43E5 /* AppDelegate.h */,
+				496899C7205B7173009F43E5 /* AppDelegate.m */,
+				496899C9205B7173009F43E5 /* ViewController.h */,
+				496899CA205B7173009F43E5 /* ViewController.m */,
+				496899CC205B7173009F43E5 /* Main.storyboard */,
+				496899CF205B7173009F43E5 /* Assets.xcassets */,
+				496899D1205B7173009F43E5 /* LaunchScreen.storyboard */,
+				496899D4205B7173009F43E5 /* Info.plist */,
+				496899D5205B7173009F43E5 /* main.m */,
+			);
+			path = FWSegmentedControl;
+			sourceTree = "<group>";
+		};
+		496899DE205B7173009F43E5 /* FWSegmentedControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				496899DF205B7173009F43E5 /* FWSegmentedControlTests.m */,
+				496899E1205B7173009F43E5 /* Info.plist */,
+			);
+			path = FWSegmentedControlTests;
+			sourceTree = "<group>";
+		};
+		496899E9205B7173009F43E5 /* FWSegmentedControlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				496899EA205B7173009F43E5 /* FWSegmentedControlUITests.m */,
+				496899EC205B7173009F43E5 /* Info.plist */,
+			);
+			path = FWSegmentedControlUITests;
+			sourceTree = "<group>";
+		};
+		A19320F54D52A5AB811A6464 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6E3805D95433DFFD7448166 /* Pods-FWSegmentedControl.debug.xcconfig */,
+				C0A244374F294BDD8AC55E06 /* Pods-FWSegmentedControl.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2B7107DC7A66421E8D75017 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5163608BCB324445941146D /* Pods_FWSegmentedControl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		496899C2205B7173009F43E5 /* FWSegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496899EF205B7173009F43E5 /* Build configuration list for PBXNativeTarget "FWSegmentedControl" */;
+			buildPhases = (
+				F764062C250A806592F50B4D /* [CP] Check Pods Manifest.lock */,
+				496899BF205B7173009F43E5 /* Sources */,
+				496899C0205B7173009F43E5 /* Frameworks */,
+				496899C1205B7173009F43E5 /* Resources */,
+				493C3A8FD6B2F9FD1CD78444 /* [CP] Embed Pods Frameworks */,
+				04A61E67F29BECEB4D662957 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FWSegmentedControl;
+			productName = FWSegmentedControl;
+			productReference = 496899C3205B7173009F43E5 /* FWSegmentedControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		496899DA205B7173009F43E5 /* FWSegmentedControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496899F2205B7173009F43E5 /* Build configuration list for PBXNativeTarget "FWSegmentedControlTests" */;
+			buildPhases = (
+				496899D7205B7173009F43E5 /* Sources */,
+				496899D8205B7173009F43E5 /* Frameworks */,
+				496899D9205B7173009F43E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				496899DD205B7173009F43E5 /* PBXTargetDependency */,
+			);
+			name = FWSegmentedControlTests;
+			productName = FWSegmentedControlTests;
+			productReference = 496899DB205B7173009F43E5 /* FWSegmentedControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		496899E5205B7173009F43E5 /* FWSegmentedControlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496899F5205B7173009F43E5 /* Build configuration list for PBXNativeTarget "FWSegmentedControlUITests" */;
+			buildPhases = (
+				496899E2205B7173009F43E5 /* Sources */,
+				496899E3205B7173009F43E5 /* Frameworks */,
+				496899E4205B7173009F43E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				496899E8205B7173009F43E5 /* PBXTargetDependency */,
+			);
+			name = FWSegmentedControlUITests;
+			productName = FWSegmentedControlUITests;
+			productReference = 496899E6205B7173009F43E5 /* FWSegmentedControlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		496899BB205B7173009F43E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = xfg;
+				TargetAttributes = {
+					496899C2205B7173009F43E5 = {
+						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+					};
+					496899DA205B7173009F43E5 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 496899C2205B7173009F43E5;
+					};
+					496899E5205B7173009F43E5 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 496899C2205B7173009F43E5;
+					};
+				};
+			};
+			buildConfigurationList = 496899BE205B7173009F43E5 /* Build configuration list for PBXProject "FWSegmentedControl" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 496899BA205B7173009F43E5;
+			productRefGroup = 496899C4205B7173009F43E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				496899C2205B7173009F43E5 /* FWSegmentedControl */,
+				496899DA205B7173009F43E5 /* FWSegmentedControlTests */,
+				496899E5205B7173009F43E5 /* FWSegmentedControlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		496899C1205B7173009F43E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496899D3205B7173009F43E5 /* LaunchScreen.storyboard in Resources */,
+				496899D0205B7173009F43E5 /* Assets.xcassets in Resources */,
+				496899CE205B7173009F43E5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496899D9205B7173009F43E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496899E4205B7173009F43E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04A61E67F29BECEB4D662957 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		493C3A8FD6B2F9FD1CD78444 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FWSegmentedControl/FWSegmentedControl.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FWSegmentedControl.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F764062C250A806592F50B4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FWSegmentedControl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		496899BF205B7173009F43E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496899CB205B7173009F43E5 /* ViewController.m in Sources */,
+				496899FA205B7357009F43E5 /* Test.swift in Sources */,
+				496899D6205B7173009F43E5 /* main.m in Sources */,
+				496899C8205B7173009F43E5 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496899D7205B7173009F43E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496899E0205B7173009F43E5 /* FWSegmentedControlTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496899E2205B7173009F43E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496899EB205B7173009F43E5 /* FWSegmentedControlUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		496899DD205B7173009F43E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 496899C2205B7173009F43E5 /* FWSegmentedControl */;
+			targetProxy = 496899DC205B7173009F43E5 /* PBXContainerItemProxy */;
+		};
+		496899E8205B7173009F43E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 496899C2205B7173009F43E5 /* FWSegmentedControl */;
+			targetProxy = 496899E7205B7173009F43E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		496899CC205B7173009F43E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				496899CD205B7173009F43E5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		496899D1205B7173009F43E5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				496899D2205B7173009F43E5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		496899ED205B7173009F43E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		496899EE205B7173009F43E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		496899F0205B7173009F43E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6E3805D95433DFFD7448166 /* Pods-FWSegmentedControl.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K4Y22J2KN7;
+				INFOPLIST_FILE = FWSegmentedControl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FWSegmentedControl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		496899F1205B7173009F43E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A244374F294BDD8AC55E06 /* Pods-FWSegmentedControl.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K4Y22J2KN7;
+				INFOPLIST_FILE = FWSegmentedControl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FWSegmentedControl-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		496899F3205B7173009F43E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FWSegmentedControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FWSegmentedControl.app/FWSegmentedControl";
+			};
+			name = Debug;
+		};
+		496899F4205B7173009F43E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FWSegmentedControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FWSegmentedControl.app/FWSegmentedControl";
+			};
+			name = Release;
+		};
+		496899F6205B7173009F43E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FWSegmentedControlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FWSegmentedControl;
+			};
+			name = Debug;
+		};
+		496899F7205B7173009F43E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FWSegmentedControlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FWSegmentedControl;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		496899BE205B7173009F43E5 /* Build configuration list for PBXProject "FWSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496899ED205B7173009F43E5 /* Debug */,
+				496899EE205B7173009F43E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		496899EF205B7173009F43E5 /* Build configuration list for PBXNativeTarget "FWSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496899F0205B7173009F43E5 /* Debug */,
+				496899F1205B7173009F43E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		496899F2205B7173009F43E5 /* Build configuration list for PBXNativeTarget "FWSegmentedControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496899F3205B7173009F43E5 /* Debug */,
+				496899F4205B7173009F43E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		496899F5205B7173009F43E5 /* Build configuration list for PBXNativeTarget "FWSegmentedControlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496899F6205B7173009F43E5 /* Debug */,
+				496899F7205B7173009F43E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 496899BB205B7173009F43E5 /* Project object */;
+}

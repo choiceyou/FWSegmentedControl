@@ -1,0 +1,6 @@
+framework module FWSegmentedControl {
+  umbrella header "FWSegmentedControl-umbrella.h"
+
+  export *
+  module * { export * }
+}
