@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FWSegmentedControl"
-  s.version      = "2.0.8"
+  s.version      = "2.0.9"
   s.summary      = "滑动分段控制，多样式、灵活、便利是其最大的优势"
 
   # This description is used to generate tags and improve search results.
