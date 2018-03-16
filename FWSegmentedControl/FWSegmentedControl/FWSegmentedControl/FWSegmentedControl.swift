@@ -662,7 +662,7 @@ extension FWSegmentedControl {
 // MARK: - 滑动或者选中操作
 extension FWSegmentedControl {
     
-    open func setSelectedSegmentIndex(index: Int, animated: Bool) {
+    @objc open func setSelectedSegmentIndex(index: Int, animated: Bool) {
         self.setSelectedSegmentIndex(index: index, animated: animated, notify: false)
     }
     
