@@ -222,11 +222,7 @@ open class FWSegmentedControl: UIControl {
     @objc public var textImageSpacing: CGFloat = 4.0
     
     /// 选中项的下标
-    @objc public var selectedSegmentIndex = 0 {
-        didSet {
-            self.setSelectedSegmentIndex(index: oldValue, animated: self.shouldAnimateUserSelection, notify: true)
-        }
-    }
+    @objc public var selectedSegmentIndex: Int = 0
     
     /// 选中标识符 横线
     fileprivate var selectionIndicatorStripLayer = CALayer()
@@ -666,7 +662,13 @@ extension FWSegmentedControl {
 // MARK: - 滑动或者选中操作
 extension FWSegmentedControl {
     
+    public func setSelectedSegmentIndex(index: Int, animated: Bool) {
+        self.setSelectedSegmentIndex(index: index, animated: animated, notify: false)
+    }
+    
     fileprivate func setSelectedSegmentIndex(index: Int, animated: Bool, notify: Bool) {
+        
+        self.selectedSegmentIndex = index
         
         self.setNeedsDisplay()
         
@@ -681,7 +683,7 @@ extension FWSegmentedControl {
                 if self.scSelectionIndicatorStyle == .arrowUp || self.scSelectionIndicatorStyle == .arrowDown {
                     if self.selectionIndicatorArrowLayer.superlayer == nil {
                         self.scrollView.layer.addSublayer(self.selectionIndicatorArrowLayer)
-                        self.selectedSegmentIndex = index
+                        self.setSelectedSegmentIndex(index: index, animated: false, notify: true)
                         return
                     }
                 } else {
@@ -690,7 +692,7 @@ extension FWSegmentedControl {
                         if self.scSelectionIndicatorStyle == .box && self.selectionIndicatorBoxLayer.superlayer == nil {
                             self.scrollView.layer.insertSublayer(self.selectionIndicatorBoxLayer, at: 0)
                         }
-                        self.selectedSegmentIndex = index
+                        self.setSelectedSegmentIndex(index: index, animated: false, notify: true)
                         return
                     }
                 }
@@ -763,7 +765,7 @@ extension FWSegmentedControl {
                 
                 if segment != self.selectedSegmentIndex && segment < self.sectionCount {
                     if self.touchEnabled {
-                        self.selectedSegmentIndex = segment
+                        self.setSelectedSegmentIndex(index: Int(segment), animated: self.shouldAnimateUserSelection, notify: true)
                     }
                 }
             }
