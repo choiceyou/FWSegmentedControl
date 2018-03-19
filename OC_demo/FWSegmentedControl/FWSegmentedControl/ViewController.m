@@ -51,7 +51,6 @@
 
     segmentedControl2.selectionIndicatorColor = UIColor.redColor;
     segmentedControl2.selectionIndicatorHeight = 3;
-    segmentedControl2.selectionIndicatorBoxColor = UIColor.clearColor;
 
     segmentedControl2.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.grayColor, NSFontAttributeName: [UIFont systemFontOfSize:13.0]};
     segmentedControl2.selectedTitleTextAttributes = @{NSForegroundColorAttributeName: UIColor.redColor, NSFontAttributeName: [UIFont systemFontOfSize:13.0]};
@@ -65,13 +64,15 @@
 
     FWSegmentedControl *segmentedControl3 = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:sectionTitles2 sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, 150, self.view.frame.size.width, 40)];
 
-    segmentedControl3.scSelectionIndicatorStyle = SCSelectionIndicatorStyleFullWidthStripe;
+    segmentedControl3.scSelectionIndicatorStyle = SCSelectionIndicatorStyleBox;
     segmentedControl3.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
     segmentedControl3.segmentEdgeInset = UIEdgeInsetsMake(0, 10, 0, 10);
 
     segmentedControl3.selectionIndicatorColor = UIColor.redColor;
     segmentedControl3.selectionIndicatorHeight = 3;
-    segmentedControl3.selectionIndicatorBoxColor = UIColor.clearColor;
+    
+    segmentedControl3.selectionIndicatorBoxColor = UIColor.greenColor;
+    segmentedControl3.selectionIndicatorBoxOpacity = 0.4;
 
     segmentedControl3.verticalDividerEnabled = YES;
     segmentedControl3.verticalDividerColor = UIColor.lightGrayColor;
@@ -97,7 +98,6 @@
 
     segmentedControl4.selectionIndicatorColor = UIColor.redColor;
     segmentedControl4.selectionIndicatorHeight = 5;
-    segmentedControl4.selectionIndicatorBoxColor = UIColor.clearColor;
 
     segmentedControl4.verticalDividerEnabled = YES;
     segmentedControl4.verticalDividerColor = UIColor.lightGrayColor;
@@ -109,7 +109,7 @@
 
 
     // 例五
-    self.sectionTitles3 = @[@"叶子", @"椰子", @"叶紫"];
+    self.sectionTitles3 = @[@"叶子", @"椰子啦", @"叶紫"];
     NSArray *images2 = @[[UIImage imageNamed:@"a"], [UIImage imageNamed:@"b"], [UIImage imageNamed:@"c"]];
 
     NSArray *selectedImages2 = @[[UIImage imageNamed:@"a-selected"], [UIImage imageNamed:@"b-selected"], [UIImage imageNamed:@"c-selected"]];
@@ -123,7 +123,6 @@
 
     segmentedControl5.selectionIndicatorColor = UIColor.redColor;
     segmentedControl5.selectionIndicatorHeight = 3;
-    segmentedControl5.selectionIndicatorBoxColor = UIColor.clearColor;
 
     segmentedControl5.verticalDividerEnabled = YES;
     segmentedControl5.verticalDividerColor = UIColor.lightGrayColor;
@@ -139,7 +138,7 @@
 
 
     // 例六
-    FWSegmentedControl *segmentedControl6 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, 300, self.view.frame.size.width, 50)];
+    FWSegmentedControl *segmentedControl6 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleFixed sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, 300, self.view.frame.size.width, 50)];
 
     segmentedControl6.scSelectionIndicatorStyle = SCSelectionIndicatorStyleArrowDown;
     segmentedControl6.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
@@ -148,7 +147,6 @@
 
     segmentedControl6.selectionIndicatorColor = UIColor.redColor;
     segmentedControl6.selectionIndicatorHeight = 5;
-    segmentedControl6.selectionIndicatorBoxColor = UIColor.clearColor;
     segmentedControl6.arrowWidth = 15.0;
 
     segmentedControl6.verticalDividerEnabled = YES;
@@ -173,7 +171,6 @@
     
     self.segmentedControl7.selectionIndicatorColor = UIColor.redColor;
     self.segmentedControl7.selectionIndicatorHeight = 3;
-    self.segmentedControl7.selectionIndicatorBoxColor = UIColor.clearColor;
     
     self.segmentedControl7.verticalDividerEnabled = YES;
     self.segmentedControl7.verticalDividerColor = UIColor.lightGrayColor;
