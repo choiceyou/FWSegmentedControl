@@ -32,6 +32,4 @@ let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scW
 
 结尾语：
 -----------------------------------
-使用过程中有任何问题可以issues我哦，或者有其他问题都可以加群哦，谢谢！
-
-欢迎有问题的小伙伴入群讨论：670698309
+使用过程中有任何问题或者新的需求都可以issues我哦，谢谢！
