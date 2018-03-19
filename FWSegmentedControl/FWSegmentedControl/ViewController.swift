@@ -40,7 +40,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                           UIImage(named: "6-selected"),
                           UIImage(named: "7-selected")]
     
-    let imageTitles3 = ["叶子", "椰子", "叶紫"]
+    let imageTitles3 = ["叶子", "椰子啦", "叶紫"]
     
     let images2 = [UIImage(named: "a"),
                   UIImage(named: "b"),
@@ -67,38 +67,43 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         segmentedControl.selectedSegmentIndex = 1
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
-        segmentedControl.autoresizingMask = .flexibleRightMargin
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
         
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 3
-        segmentedControl.selectionIndicatorBoxColor = UIColor.clear
         
         segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
         segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.backgroundColor: UIColor.clear, NSAttributedStringKey.font: UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
+        
+        segmentedControl.autoresizingMask = [.flexibleRightMargin, .flexibleLeftMargin]
         
         return segmentedControl
     }()
     
     private lazy var segmentedControl3: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles2, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 150, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: sectionTitles2, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 150, width: Int(UIScreen.main.bounds.width), height: 40))
         
-        segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
+        segmentedControl.scSelectionIndicatorStyle = .box
         segmentedControl.scSelectionIndicatorLocation = .down
-        segmentedControl.autoresizingMask = .flexibleRightMargin
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
+        
+        segmentedControl.selectionIndicatorBoxColor = UIColor.green
+        segmentedControl.selectionIndicatorBoxOpacity = 0.4
         
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 3
-        segmentedControl.selectionIndicatorBoxColor = UIColor.clear
         
-        segmentedControl.verticalDividerEnabled = true
-        segmentedControl.verticalDividerColor = UIColor.lightGray
-        segmentedControl.verticalDividerWidth = 1.0
+        segmentedControl.scBorderType = [.left, .bottom, .top]
+        segmentedControl.segmentBorderColor = UIColor.red
+        segmentedControl.segmentBorderWidth = 2.0
+        
+        segmentedControl.selectionIndicatorHeight = 0
         
         segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
         segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.backgroundColor: UIColor.clear, NSAttributedStringKey.font: UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
+        
+        segmentedControl.autoresizingMask = .flexibleRightMargin
         
         return segmentedControl
     }()
@@ -109,16 +114,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .up
-        segmentedControl.autoresizingMask = .flexibleRightMargin
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
         
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 5
-        segmentedControl.selectionIndicatorBoxColor = UIColor.clear
         
         segmentedControl.verticalDividerEnabled = true
         segmentedControl.verticalDividerColor = UIColor.lightGray
         segmentedControl.verticalDividerWidth = 1.0
+        
+        segmentedControl.autoresizingMask = .flexibleRightMargin
         
         return segmentedControl
     }()
@@ -130,12 +135,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
         segmentedControl.scImagePosition = .leftOfText
-        segmentedControl.autoresizingMask = .flexibleRightMargin
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
         
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 3
-        segmentedControl.selectionIndicatorBoxColor = UIColor.clear
         
         segmentedControl.verticalDividerEnabled = true
         segmentedControl.verticalDividerColor = UIColor.lightGray
@@ -146,23 +149,22 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
         segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.backgroundColor: UIColor.clear, NSAttributedStringKey.font: UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
         
+        segmentedControl.autoresizingMask = .flexibleRightMargin
+        
         return segmentedControl
     }()
     
     private lazy var segmentedControl6: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles3, sectionImageArray: images2 as? [UIImage], sectionSelectedImageArray: selectedImages2 as? [UIImage], frame: CGRect(x: 0, y: 300, width: Int(UIScreen.main.bounds.width), height: 50))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: imageTitles3, sectionImageArray: images2 as? [UIImage], sectionSelectedImageArray: selectedImages2 as? [UIImage], frame: CGRect(x: 0, y: 300, width: Int(UIScreen.main.bounds.width), height: 50))
         
         segmentedControl.scSelectionIndicatorStyle = .arrowDown
         segmentedControl.scSelectionIndicatorLocation = .down
         segmentedControl.scImagePosition = .aboveText
-        segmentedControl.autoresizingMask = .flexibleRightMargin
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
         
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 5
-        segmentedControl.selectionIndicatorBoxColor = UIColor.clear
-        segmentedControl.arrowWidth = 15
         
         segmentedControl.verticalDividerEnabled = true
         segmentedControl.verticalDividerColor = UIColor.lightGray
@@ -170,8 +172,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         segmentedControl.textImageSpacing = 2.0
         
+        segmentedControl.arrowWidth = 15
+        
         segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
         segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.backgroundColor: UIColor.clear, NSAttributedStringKey.font: UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
+        
+        segmentedControl.autoresizingMask = .flexibleRightMargin
         
         return segmentedControl
     }()
@@ -183,12 +189,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
         segmentedControl.scImagePosition = .rightOfText
-        segmentedControl.autoresizingMask = .flexibleRightMargin
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
         
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 3
-        segmentedControl.selectionIndicatorBoxColor = UIColor.clear
         
         segmentedControl.verticalDividerEnabled = true
         segmentedControl.verticalDividerColor = UIColor.lightGray
@@ -198,6 +202,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
         segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.backgroundColor: UIColor.clear, NSAttributedStringKey.font: UIFont.systemFont(ofSize: CGFloat(kSegmentTitleFont))]
+        
+        segmentedControl.autoresizingMask = .flexibleRightMargin
         
         return segmentedControl
     }()
@@ -227,12 +233,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.view.addSubview(self.segmentedControl6)
         self.view.addSubview(self.segmentedControl7)
         self.view.addSubview(self.scrollView)
-        
+
         self.segmentedControl7.indexChangeBlock = { [weak self] index in
             self?.isClickedSegmented = true
             self?.scrollView.scrollRectToVisible(CGRect(x: (self?.view.bounds.width)! * CGFloat(index), y: 0, width: (self?.view.bounds.width)!, height: (self?.scrollView.frame.height)!), animated: true)
         }
-        
+
         self.scrollView.addSubview(self.setupUIView(index: 0))
         self.scrollView.addSubview(self.setupUIView(index: 1))
         self.scrollView.addSubview(self.setupUIView(index: 2))

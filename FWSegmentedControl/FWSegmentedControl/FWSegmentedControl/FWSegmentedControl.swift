@@ -93,19 +93,24 @@ import UIKit
     case down
 }
 
-/// 边框类型
-///
-/// - none: 无边框
-/// - top: 上面有边框
-/// - left: 左边有边框
-/// - bottom: 下面有边框
-/// - right: 右边有边框
-@objc public enum SCBorderType: Int {
-    case none
-    case top
-    case left
-    case bottom
-    case right
+/// SC边框，注意：OC代码调用时暂时不支持
+public struct SCBorderType : OptionSet {
+    
+    public var rawValue:Int
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+    
+    /// 无边框
+    static var none = SCBorderType(rawValue: 1 << 0)
+    /// 上面有边框
+    static var top = SCBorderType(rawValue: 1 << 1)
+    /// 左边有边框
+    static var left = SCBorderType(rawValue: 1 << 2)
+    /// 下面有边框
+    static var bottom = SCBorderType(rawValue: 1 << 3)
+    /// 右边有边框
+    static var right = SCBorderType(rawValue: 1 << 4)
 }
 
 /// 滑动或者选中回调
@@ -115,7 +120,7 @@ public typealias SCTitleFormatterBlock = (_ segmentedControl: FWSegmentedControl
 
 
 open class FWSegmentedControl: UIControl {
-    
+
     /// 标题
     @objc public var sectionTitleArray: [String]? {
         didSet {
@@ -140,23 +145,27 @@ open class FWSegmentedControl: UIControl {
     
     /// segment类型
     @objc public var scType = SCType.text
-    
     /// segment宽度
     @objc public var scWidthStyle = SCWidthStyle.fixed
-    
     /// 图片相对于文字的位置
     @objc public var scImagePosition: SCImagePosition = .leftOfText
-    
     /// 选中标识符类型
     @objc public var scSelectionIndicatorStyle = SCSelectionIndicatorStyle.contentWidthStripe {
-        didSet {
-            if oldValue == .none {
+        willSet {
+            if newValue == .none {
                 self.selectionIndicatorHeight = 0.0
             }
         }
     }
     /// 选中标识符位置
     @objc public var scSelectionIndicatorLocation = SCSelectionIndicatorLocation.down
+    /// 边框类型
+    public var scBorderType: SCBorderType = .none {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
     /// 选中标识符高度，注意：self.scSelectionIndicatorStyle == .box || self.scSelectionIndicatorStyle == .none 时无效
     @objc public var selectionIndicatorHeight: CGFloat = 3.0
     /// 选中标识符，当 SCSelectionIndicatorLocation == up 时，底部edge无效；反之，顶部edge无效；
@@ -165,18 +174,11 @@ open class FWSegmentedControl: UIControl {
     @objc public var selectionIndicatorColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
     @objc public var selectionIndicatorBoxColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
     
-    /// 边框类型
-    @objc public var scBorderType: SCBorderType = .none {
-        didSet {
-            self.setNeedsDisplay()
-        }
-    }
-    
     /// 滑动或者选中回调
     @objc public var indexChangeBlock: SCIndexChangeBlock?
     /// 标题NSAttributedString回调
     @objc public var titleFormatterBlock: SCTitleFormatterBlock?
-    /// 控件Inset属性
+    /// segment的Inset属性
     @objc public var segmentEdgeInset = UIEdgeInsetsMake(0, 5, 0, 5)
     @objc public var enlargeEdgeInset = UIEdgeInsetsMake(0, 0, 0, 0)
     
@@ -190,10 +192,10 @@ open class FWSegmentedControl: UIControl {
     /// 是否可以点击
     @objc public var touchEnabled = true
     
-    /// 边框颜色
-    @objc public var borderColor = UIColor.black
-    /// 边框大小
-    @objc public var borderWidth: CGFloat = 1.0
+    /// segment的边框颜色
+    @objc public var segmentBorderColor = UIColor.black
+    /// segment的边框大小
+    @objc public var segmentBorderWidth: CGFloat = 1.0
     
     /// 选中或者滑动时是否需要动画
     @objc public var shouldAnimateUserSelection = true
@@ -203,8 +205,8 @@ open class FWSegmentedControl: UIControl {
     
     /// 选中表示符为box时的opacity值
     @objc public var selectionIndicatorBoxOpacity: CGFloat = 0.2 {
-        didSet {
-            selectionIndicatorBoxLayer.opacity = Float(oldValue)
+        willSet {
+            selectionIndicatorBoxLayer.opacity = Float(newValue)
         }
     }
     
@@ -223,6 +225,7 @@ open class FWSegmentedControl: UIControl {
     
     /// 选中项的下标
     @objc public var selectedSegmentIndex: Int = 0
+    
     
     /// 选中标识符 横线
     fileprivate var selectionIndicatorStripLayer = CALayer()
@@ -289,6 +292,7 @@ open class FWSegmentedControl: UIControl {
     }
 }
 
+// MARK: - 初始化
 extension FWSegmentedControl {
     
     /// 初始化UI
@@ -298,8 +302,8 @@ extension FWSegmentedControl {
         self.isOpaque = false
         self.backgroundColor = UIColor.white
         
-        self.selectionIndicatorBoxOpacity = 0.2
         self.selectionIndicatorBoxLayer.borderWidth = 1.0
+        self.selectionIndicatorBoxLayer.borderColor = UIColor.red.cgColor
         
         self.contentMode = .redraw
     }
@@ -508,8 +512,8 @@ extension FWSegmentedControl {
                 }
                 let widthForIndex = CGFloat(self.segmentWidthsArray![index].floatValue)
                 tmpRect = CGRect(x: xOffset + (widthForIndex - contentWidth) / 2, y: CGFloat(y), width: contentWidth, height: contentHeight)
-                fullRect = CGRect(x: self.segmentWidth * CGFloat(index), y: 0, width: widthForIndex, height: oldRect.height)
                 rectDiv = CGRect(x: xOffset - (self.verticalDividerWidth / 2), y: self.selectionIndicatorHeight * 2, width: self.verticalDividerWidth, height: self.frame.height - (self.selectionIndicatorHeight * 4))
+                fullRect = CGRect(x: xOffset, y: 0, width: widthForIndex, height: oldRect.height)
             }
             
             tmpRect = CGRect(x: CGFloat(ceilf(Float(tmpRect.origin.x))), y: CGFloat(ceilf(Float(tmpRect.origin.y))), width: CGFloat(ceilf(Float(tmpRect.width))), height: CGFloat(ceilf(Float(tmpRect.height))))
@@ -608,7 +612,7 @@ extension FWSegmentedControl {
                 verticalDividerLayer.backgroundColor = self.verticalDividerColor.cgColor
                 self.scrollView.layer.addSublayer(verticalDividerLayer)
             }
-            self.addBackgroundAndBorderLayerWithRect(fullRect: fullRect)
+            self.addBackgroundAndBorderLayerWithRect(rect: fullRect, index: index)
         }
         
         if self.scSelectionIndicatorStyle != .none {
@@ -631,31 +635,54 @@ extension FWSegmentedControl {
         }
     }
     
-    fileprivate func addBackgroundAndBorderLayerWithRect(fullRect: CGRect) {
+    fileprivate func addBackgroundAndBorderLayerWithRect(rect: CGRect, index: Int) {
         
         let backgroundLayer = CALayer()
-        backgroundLayer.frame = fullRect
+        backgroundLayer.frame = rect
         self.layer.insertSublayer(backgroundLayer, at: 0)
         
         if self.scBorderType == .none {
             return
         }
         
-        let borderLayer = CALayer()
-        borderLayer.backgroundColor = self.borderColor.cgColor
-        if self.scBorderType == SCBorderType.top {
-            borderLayer.frame = CGRect(x: 0, y: 0, width: fullRect.width, height: self.borderWidth)
+        if self.scBorderType.contains(SCBorderType.top) {
+            let borderLayer = CALayer()
+            borderLayer.backgroundColor = self.segmentBorderColor.cgColor
+            borderLayer.frame = CGRect(x: 0, y: 0, width: rect.width, height: self.segmentBorderWidth)
+            backgroundLayer.addSublayer(borderLayer)
         }
-        else if self.scBorderType == SCBorderType.left {
-            borderLayer.frame = CGRect(x: 0, y: 0, width: self.borderWidth, height: fullRect.height)
+        if self.scBorderType.contains(SCBorderType.left){
+            let borderLayer = CALayer()
+            borderLayer.backgroundColor = self.segmentBorderColor.cgColor
+            borderLayer.frame = CGRect(x: 0, y: 0, width: self.segmentBorderWidth, height: rect.height)
+            backgroundLayer.addSublayer(borderLayer)
         }
-        else if self.scBorderType == SCBorderType.bottom {
-            borderLayer.frame = CGRect(x: 0, y: fullRect.height - self.borderWidth, width: fullRect.width, height: self.borderWidth)
+        if self.scBorderType.contains(SCBorderType.bottom) {
+            let borderLayer = CALayer()
+            borderLayer.backgroundColor = self.segmentBorderColor.cgColor
+            borderLayer.frame = CGRect(x: 0, y: rect.height - self.segmentBorderWidth, width: rect.width, height: self.segmentBorderWidth)
+            backgroundLayer.addSublayer(borderLayer)
         }
-        else if self.scBorderType == SCBorderType.right {
-            borderLayer.frame = CGRect(x: fullRect.width - self.borderWidth, y: 0, width: self.borderWidth, height: fullRect.height)
+        if self.scBorderType.contains(SCBorderType.right) {
+            let borderLayer = CALayer()
+            borderLayer.backgroundColor = self.segmentBorderColor.cgColor
+            borderLayer.frame = CGRect(x: rect.width - self.segmentBorderWidth, y: 0, width: self.segmentBorderWidth, height: rect.height)
+            backgroundLayer.addSublayer(borderLayer)
         }
-        backgroundLayer.addSublayer(borderLayer)
+        
+        if self.scBorderType.contains(SCBorderType.left) && !self.scBorderType.contains(SCBorderType.right) && index == self.sectionCount - 1 {
+            let borderLayer = CALayer()
+            borderLayer.backgroundColor = self.segmentBorderColor.cgColor
+            borderLayer.frame = CGRect(x: rect.width - self.segmentBorderWidth, y: 0, width: self.segmentBorderWidth, height: rect.height)
+            backgroundLayer.addSublayer(borderLayer)
+        }
+        
+        if !self.scBorderType.contains(SCBorderType.left) && self.scBorderType.contains(SCBorderType.right) && index == 0 {
+            let borderLayer = CALayer()
+            borderLayer.backgroundColor = self.segmentBorderColor.cgColor
+            borderLayer.frame = CGRect(x: 0, y: 0, width: self.segmentBorderWidth, height: rect.height)
+            backgroundLayer.addSublayer(borderLayer)
+        }
     }
 }
 
@@ -919,7 +946,7 @@ extension FWSegmentedControl {
                         }
                         return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left + (CGFloat(currentSegmentWidth) - contentWidth) / 2, y: indicatorYOffset, width: contentWidth - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
                     }
-                    else if self.scSelectionIndicatorStyle == .fullWidthStripe {
+                    else if self.scSelectionIndicatorStyle == .fullWidthStripe || self.scSelectionIndicatorStyle == .box {
                         return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left, y: indicatorYOffset, width: CGFloat(self.segmentWidthsArray![self.selectedSegmentIndex].floatValue) - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
                     }
                 }
