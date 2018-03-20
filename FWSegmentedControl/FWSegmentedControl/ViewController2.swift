@@ -15,7 +15,7 @@ let segmentedControl2Height: CGFloat = 40.0
 
 class ViewController2: UIViewController, UIScrollViewDelegate {
     
-    let sectionTitles = ["女神", "歌舞"]
+    let sectionTitles = ["yezi", "开发语言"]
     let sectionTitles2 = ["叶子", "椰子啦", "叶紫", "叶梓"]
     let sectionTitles3 = ["Swift", "OC", "Android", "RN"]
     
@@ -109,12 +109,11 @@ extension ViewController2 {
         segmentedControl2.autoresizingMask = .flexibleRightMargin
         
         let scrollView2 = self.setupScrollView(index: index, sectionTitleArray: sectionTitleArray)
+        self.scrollView.addSubview(scrollView2)
         
         segmentedControl2.indexChangeBlock = { [weak self] index in
-            scrollView2.scrollRectToVisible(CGRect(x: (self?.view.bounds.width)! * CGFloat(index), y: 0, width: (self?.view.bounds.width)!, height: (self?.scrollView.frame.height)!), animated: true)
+            scrollView2.scrollRectToVisible(CGRect(x: (self?.view.bounds.width)! * CGFloat(index), y: 0, width: (self?.view.bounds.width)!, height: scrollView2.frame.height), animated: true)
         }
-        
-        self.scrollView.addSubview(scrollView2)
         
         return segmentedControl2
     }
@@ -178,3 +177,4 @@ extension ViewController2 {
         }
     }
 }
+

@@ -9,6 +9,15 @@
 #import "ViewController.h"
 #import "FWSegmentedControl-Swift.h"
 #import <FWSegmentedControl/FWSegmentedControl-Swift.h>
+#import "ViewController2.h"
+
+// 状态栏高度
+#define kStatusBarHeight UIApplication.sharedApplication.statusBarFrame.size.height
+// 导航栏高度
+#define kNavBarHeight 44.0
+// 状态栏+导航栏的高度
+#define kStatusAndNavBarHeight (kStatusBarHeight + kNavBarHeight)
+
 
 @interface ViewController () <UIScrollViewDelegate>
 
@@ -28,10 +37,11 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = UIColor.lightGrayColor;
+    self.navigationItem.title = @"FWSegmentedControl";
     
     // 例一
     NSArray *sectionTitles = @[@"关注", @"游戏", @"附近", @"体育", @"女神范", @"运动啦啦", @"歌舞", @"吃鸡", @"户外", @"脱口秀"];
-    FWSegmentedControl *segmentedControl = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:nil sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, 40, self.view.frame.size.width, 50)];
+    FWSegmentedControl *segmentedControl = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:nil sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, kStatusAndNavBarHeight, self.view.frame.size.width, 50)];
 
     segmentedControl.sectionTitleArray = sectionTitles;
     segmentedControl.scSelectionIndicatorStyle = SCSelectionIndicatorStyleFullWidthStripe;
@@ -41,7 +51,7 @@
 
 
     // 例二
-    FWSegmentedControl *segmentedControl2 = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:sectionTitles sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, 100, self.view.frame.size.width, 40)];
+    FWSegmentedControl *segmentedControl2 = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:sectionTitles sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, CGRectGetMaxY(segmentedControl.frame) + 10, self.view.frame.size.width, 40)];
 
     segmentedControl2.selectedSegmentIndex = 1;
     
@@ -62,7 +72,7 @@
     // 例三
     NSArray *sectionTitles2 = @[@"女神", @"运动啦啦", @"歌舞"];
 
-    FWSegmentedControl *segmentedControl3 = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:sectionTitles2 sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, 150, self.view.frame.size.width, 40)];
+    FWSegmentedControl *segmentedControl3 = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:sectionTitles2 sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, CGRectGetMaxY(segmentedControl2.frame) + 10, self.view.frame.size.width, 40)];
 
     segmentedControl3.scSelectionIndicatorStyle = SCSelectionIndicatorStyleBox;
     segmentedControl3.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
@@ -90,7 +100,7 @@
 
     NSArray *selectedImages = @[[UIImage imageNamed:@"1-selected"], [UIImage imageNamed:@"2-selected"], [UIImage imageNamed:@"3-selected"], [UIImage imageNamed:@"4-selected"], [UIImage imageNamed:@"5-selected"], [UIImage imageNamed:@"6-selected"], [UIImage imageNamed:@"7-selected"]];
 
-    FWSegmentedControl *segmentedControl4 = [FWSegmentedControl segmentedWithScType:SCTypeImages scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:nil sectionImageArray:images sectionSelectedImageArray:selectedImages frame:CGRectMake(0, 200, self.view.frame.size.width, 40)];
+    FWSegmentedControl *segmentedControl4 = [FWSegmentedControl segmentedWithScType:SCTypeImages scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:nil sectionImageArray:images sectionSelectedImageArray:selectedImages frame:CGRectMake(0, CGRectGetMaxY(segmentedControl3.frame) + 10, self.view.frame.size.width, 40)];
 
     segmentedControl4.scSelectionIndicatorStyle = SCSelectionIndicatorStyleContentWidthStripe;
     segmentedControl4.scSelectionIndicatorLocation = SCSelectionIndicatorLocationUp;
@@ -114,7 +124,7 @@
 
     NSArray *selectedImages2 = @[[UIImage imageNamed:@"a-selected"], [UIImage imageNamed:@"b-selected"], [UIImage imageNamed:@"c-selected"]];
 
-    FWSegmentedControl *segmentedControl5 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, 250, self.view.frame.size.width, 40)];
+    FWSegmentedControl *segmentedControl5 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, CGRectGetMaxY(segmentedControl4.frame) + 10, self.view.frame.size.width, 40)];
 
     segmentedControl5.scSelectionIndicatorStyle = SCSelectionIndicatorStyleContentWidthStripe;
     segmentedControl5.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
@@ -138,7 +148,7 @@
 
 
     // 例六
-    FWSegmentedControl *segmentedControl6 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleFixed sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, 300, self.view.frame.size.width, 50)];
+    FWSegmentedControl *segmentedControl6 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleFixed sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, CGRectGetMaxY(segmentedControl5.frame) + 10, self.view.frame.size.width, 50)];
 
     segmentedControl6.scSelectionIndicatorStyle = SCSelectionIndicatorStyleArrowDown;
     segmentedControl6.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
@@ -162,7 +172,7 @@
     
     
     // 例七
-    self.segmentedControl7 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, 360, self.view.frame.size.width, 40)];
+    self.segmentedControl7 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, CGRectGetMaxY(segmentedControl6.frame) + 10, self.view.frame.size.width, 40)];
     
     self.segmentedControl7.scSelectionIndicatorStyle = SCSelectionIndicatorStyleFullWidthStripe;
     self.segmentedControl7.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
@@ -204,6 +214,8 @@
     [self.scrollView addSubview:[self setupUIView:0]];
     [self.scrollView addSubview:[self setupUIView:1]];
     [self.scrollView addSubview:[self setupUIView:2]];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"多级联动>" style:UIBarButtonItemStylePlain target:self action:@selector(goNextVC)];
 }
 
 - (UILabel *)setupUIView:(int)index
@@ -241,6 +253,11 @@
     self.isClickedSegmented = NO;
     
     [self.segmentedControl7 setSelectedSegmentIndexWithIndex:page animated:YES];
+}
+
+- (void)goNextVC
+{
+    [self.navigationController pushViewController:[[ViewController2 alloc] init] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

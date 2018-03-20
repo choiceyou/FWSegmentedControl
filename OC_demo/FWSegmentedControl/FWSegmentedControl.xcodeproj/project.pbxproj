@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		496899C8205B7173009F43E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899C7205B7173009F43E5 /* AppDelegate.m */; };
 		496899CB205B7173009F43E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899CA205B7173009F43E5 /* ViewController.m */; };
-		496899CE205B7173009F43E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496899CC205B7173009F43E5 /* Main.storyboard */; };
 		496899D0205B7173009F43E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496899CF205B7173009F43E5 /* Assets.xcassets */; };
 		496899D3205B7173009F43E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496899D1205B7173009F43E5 /* LaunchScreen.storyboard */; };
 		496899D6205B7173009F43E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899D5205B7173009F43E5 /* main.m */; };
@@ -17,6 +16,7 @@
 		496899EB205B7173009F43E5 /* FWSegmentedControlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899EA205B7173009F43E5 /* FWSegmentedControlUITests.m */; };
 		496899FA205B7357009F43E5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496899F9205B7357009F43E5 /* Test.swift */; };
 		6B75BFD783AC7FD80602F695 /* Pods_FWSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5163608BCB324445941146D /* Pods_FWSegmentedControl.framework */; };
+		AFE1AD39206143D200849335 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE1AD38206143D200849335 /* ViewController2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 		496899C7205B7173009F43E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		496899C9205B7173009F43E5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		496899CA205B7173009F43E5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		496899CD205B7173009F43E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		496899CF205B7173009F43E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		496899D2205B7173009F43E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		496899D4205B7173009F43E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +54,8 @@
 		496899EC205B7173009F43E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		496899F8205B7357009F43E5 /* FWSegmentedControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWSegmentedControl-Bridging-Header.h"; sourceTree = "<group>"; };
 		496899F9205B7357009F43E5 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		AFE1AD37206143D200849335 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		AFE1AD38206143D200849335 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		B5163608BCB324445941146D /* Pods_FWSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A244374F294BDD8AC55E06 /* Pods-FWSegmentedControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWSegmentedControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl.release.xcconfig"; sourceTree = "<group>"; };
 		D6E3805D95433DFFD7448166 /* Pods-FWSegmentedControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWSegmentedControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,7 +118,8 @@
 				496899C7205B7173009F43E5 /* AppDelegate.m */,
 				496899C9205B7173009F43E5 /* ViewController.h */,
 				496899CA205B7173009F43E5 /* ViewController.m */,
-				496899CC205B7173009F43E5 /* Main.storyboard */,
+				AFE1AD37206143D200849335 /* ViewController2.h */,
+				AFE1AD38206143D200849335 /* ViewController2.m */,
 				496899CF205B7173009F43E5 /* Assets.xcassets */,
 				496899D1205B7173009F43E5 /* LaunchScreen.storyboard */,
 				496899D4205B7173009F43E5 /* Info.plist */,
@@ -273,7 +275,6 @@
 			files = (
 				496899D3205B7173009F43E5 /* LaunchScreen.storyboard in Resources */,
 				496899D0205B7173009F43E5 /* Assets.xcassets in Resources */,
-				496899CE205B7173009F43E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +355,7 @@
 			files = (
 				496899CB205B7173009F43E5 /* ViewController.m in Sources */,
 				496899FA205B7357009F43E5 /* Test.swift in Sources */,
+				AFE1AD39206143D200849335 /* ViewController2.m in Sources */,
 				496899D6205B7173009F43E5 /* main.m in Sources */,
 				496899C8205B7173009F43E5 /* AppDelegate.m in Sources */,
 			);
@@ -391,14 +393,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		496899CC205B7173009F43E5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				496899CD205B7173009F43E5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		496899D1205B7173009F43E5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -530,7 +524,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FWSegmentedControl-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -550,7 +544,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xfg.FWSegmentedControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FWSegmentedControl-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
