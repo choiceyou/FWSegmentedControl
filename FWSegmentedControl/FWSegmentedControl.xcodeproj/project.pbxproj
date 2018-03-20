@@ -10,7 +10,6 @@
 		494FCF5A2058BD3C00C0478F /* FWSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494FCF592058BD3C00C0478F /* FWSegmentedControl.swift */; };
 		494FCF632059022100C0478F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494FCF622059021B00C0478F /* Foundation.framework */; };
 		494FCF652059022D00C0478F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494FCF642059022800C0478F /* UIKit.framework */; };
-		494FCF70205913DC00C0478F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 494FCF6F205913DB00C0478F /* LICENSE */; };
 		4956FB0E205608550004896C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956FB0D205608550004896C /* AppDelegate.swift */; };
 		4956FB10205608550004896C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956FB0F205608550004896C /* ViewController.swift */; };
 		4956FB15205608550004896C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4956FB14205608550004896C /* Assets.xcassets */; };
@@ -41,7 +40,6 @@
 		494FCF592058BD3C00C0478F /* FWSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWSegmentedControl.swift; sourceTree = "<group>"; };
 		494FCF622059021B00C0478F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		494FCF642059022800C0478F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		494FCF6F205913DB00C0478F /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = "../../../../../Downloads/Alamofire-master/LICENSE"; sourceTree = "<group>"; };
 		4956FB0A205608550004896C /* FWSegmentedControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWSegmentedControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4956FB0D205608550004896C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4956FB0F205608550004896C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 		4956FB01205608550004896C = {
 			isa = PBXGroup;
 			children = (
-				494FCF6F205913DB00C0478F /* LICENSE */,
 				4956FB0C205608550004896C /* FWSegmentedControl */,
 				4956FB21205608550004896C /* FWSegmentedControlTests */,
 				4956FB2C205608550004896C /* FWSegmentedControlUITests */,
@@ -264,7 +261,6 @@
 			files = (
 				4956FB18205608550004896C /* LaunchScreen.storyboard in Resources */,
 				4956FB15205608550004896C /* Assets.xcassets in Resources */,
-				494FCF70205913DC00C0478F /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
