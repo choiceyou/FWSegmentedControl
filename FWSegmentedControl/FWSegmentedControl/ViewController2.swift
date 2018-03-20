@@ -149,20 +149,20 @@ extension ViewController2 {
         return label
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let pageWidth = scrollView.frame.width
-        let tmpPage = scrollView.contentOffset.x / pageWidth
-        let tmpPage2 = scrollView.contentOffset.x / pageWidth
-        let page = tmpPage2-tmpPage>=0.5 ? tmpPage+1 : tmpPage
-        
-        if scrollView.tag == 0 {
-            self.segmentedControl.setSelectedSegmentIndex(index: Int(page), animated: true)
-        } else {
-            let segmentedControl = segmentedControlArray[scrollView.tag-1]
-            segmentedControl.setSelectedSegmentIndex(index: Int(page), animated: true)
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//
+//        let pageWidth = scrollView.frame.width
+//        let tmpPage = scrollView.contentOffset.x / pageWidth
+//        let tmpPage2 = scrollView.contentOffset.x / pageWidth
+//        let page = tmpPage2-tmpPage>=0.5 ? tmpPage+1 : tmpPage
+//
+//        if scrollView.tag == 0 {
+//            self.segmentedControl.setSelectedSegmentIndex(index: Int(page), animated: true)
+//        } else {
+//            let segmentedControl = segmentedControlArray[scrollView.tag-1]
+//            segmentedControl.setSelectedSegmentIndex(index: Int(page), animated: true)
+//        }
+//    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
