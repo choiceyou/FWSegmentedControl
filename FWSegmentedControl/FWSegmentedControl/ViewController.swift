@@ -8,10 +8,17 @@
 
 import UIKit
 
+/// 状态栏高度
+public let kStatusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+/// 导航栏高度
+public let kNavBarHeight: CGFloat = 44.0
+/// 状态栏+导航栏的高度
+public let kStatusAndNavBarHeight = kStatusBarHeight + kNavBarHeight
+
 /// segmentedControl字体大小
-fileprivate let kSegmentTitleFont = 13.0
+let kSegmentTitleFont = 13.0
 /// segmentedControl左边边距
-fileprivate let kSegmentLeftEdge = 10
+let kSegmentLeftEdge = 10
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
@@ -52,7 +59,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: nil, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: nil, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: Int(kStatusAndNavBarHeight), width: Int(UIScreen.main.bounds.width), height: 50))
         
         segmentedControl.sectionTitleArray = sectionTitles
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
@@ -62,7 +69,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl2: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 100, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: Int(self.segmentedControl.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.selectedSegmentIndex = 1
         
@@ -82,7 +89,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl3: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: sectionTitles2, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 150, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: sectionTitles2, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: Int(self.segmentedControl2.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .box
         segmentedControl.scSelectionIndicatorLocation = .down
@@ -110,7 +117,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl4: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.images, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: nil, sectionImageArray: images as? [UIImage], sectionSelectedImageArray: selectedImages as? [UIImage], frame: CGRect(x: 0, y: 200, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.images, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: nil, sectionImageArray: images as? [UIImage], sectionSelectedImageArray: selectedImages as? [UIImage], frame: CGRect(x: 0, y: Int(self.segmentedControl3.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .up
@@ -130,7 +137,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl5: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles3, sectionImageArray: images2 as? [UIImage], sectionSelectedImageArray: selectedImages2 as? [UIImage], frame: CGRect(x: 0, y: 250, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles3, sectionImageArray: images2 as? [UIImage], sectionSelectedImageArray: selectedImages2 as? [UIImage], frame: CGRect(x: 0, y: Int(self.segmentedControl4.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
@@ -156,7 +163,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl6: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: imageTitles3, sectionImageArray: images2 as? [UIImage], sectionSelectedImageArray: selectedImages2 as? [UIImage], frame: CGRect(x: 0, y: 300, width: Int(UIScreen.main.bounds.width), height: 50))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: imageTitles3, sectionImageArray: images2 as? [UIImage], sectionSelectedImageArray: selectedImages2 as? [UIImage], frame: CGRect(x: 0, y: Int(self.segmentedControl5.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 50))
         
         segmentedControl.scSelectionIndicatorStyle = .arrowDown
         segmentedControl.scSelectionIndicatorLocation = .down
@@ -184,7 +191,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl7: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles3, sectionImageArray: images2 as? [UIImage], sectionSelectedImageArray: selectedImages2 as? [UIImage], frame: CGRect(x: 0, y: 360, width: Int(UIScreen.main.bounds.width), height: 40))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles3, sectionImageArray: images2 as? [UIImage], sectionSelectedImageArray: selectedImages2 as? [UIImage], frame: CGRect(x: 0, y: Int(self.segmentedControl6.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
@@ -224,6 +231,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGray
+        self.navigationItem.title = "FWSegmentedControl"
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "多级联动>", style: .plain, target: self, action: #selector(goNextVC))
+        
         
         self.view.addSubview(self.segmentedControl)
         self.view.addSubview(self.segmentedControl2)
@@ -276,6 +287,11 @@ extension ViewController {
         let page = scrollView.contentOffset.x / pageWidth
         self.isClickedSegmented = false
         self.segmentedControl7.setSelectedSegmentIndex(index: Int(page), animated: true)
+    }
+    
+    @objc func goNextVC() {
+        
+        self.navigationController?.pushViewController(ViewController2(), animated: true)
     }
 }
 
