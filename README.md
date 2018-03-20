@@ -27,8 +27,8 @@ let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scW
 
 效果：
 -----------------------------------
-![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E7%A4%BA%E4%BE%8B.gif)
-
+![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E7%A4%BA%E4%BE%8B1.gif)
+![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E7%A4%BA%E4%BE%8B2.gif)
 
 结尾语：
 -----------------------------------
