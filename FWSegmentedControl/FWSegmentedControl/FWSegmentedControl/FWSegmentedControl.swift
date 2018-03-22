@@ -522,7 +522,7 @@ extension FWSegmentedControl {
                 let titleLayer = CATextLayer()
                 titleLayer.frame = tmpRect
                 titleLayer.alignmentMode = kCAAlignmentCenter
-                if Double(UIDevice.current.systemVersion)! < 10.0 {
+                if (UIDevice.current.systemVersion as NSString).doubleValue < 10.0 {
                     titleLayer.truncationMode = kCATruncationEnd
                 }
                 titleLayer.string = self.attributedTitleAtIndex(index: index)
@@ -567,7 +567,7 @@ extension FWSegmentedControl {
                 }
                 titleLayer.frame = titleRect
                 titleLayer.alignmentMode = kCAAlignmentCenter
-                if Double(UIDevice.current.systemVersion)! < 10.0 {
+                if (UIDevice.current.systemVersion as NSString).doubleValue < 10.0 {
                     titleLayer.truncationMode = kCATruncationEnd
                 }
                 titleLayer.string = self.attributedTitleAtIndex(index: index)
