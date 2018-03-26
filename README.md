@@ -4,6 +4,7 @@ IOS之分段控制器 -- OC/Swift通用
 支持pod导入：
 -----------------------------------
 pod 'FWSegmentedControl'<br>
+注意：如出现 Unable to find a specification for `FWSegmentedControl` 错误，可执行 pod repo update 命令。
 
 简单使用：  
 -----------------------------------  
@@ -24,11 +25,15 @@ FWSegmentedControl *segmentedControl = [FWSegmentedControl segmentedWithScType:S
 ### Swift: <br>
 let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: ["关注", "游戏", "附近"], sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50))<br>
 
-
 效果：
 -----------------------------------
 ![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E7%A4%BA%E4%BE%8B1.gif)
 ![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E7%A4%BA%E4%BE%8B2.gif)
+
+注意点：
+-----------------------------------
+本UI库是用Swift4.0编写的，所以安装或者拖入文件后需要把对应的Swift设置为4.0版本：
+（1）pod安装方式：
 
 结尾语：
 -----------------------------------
