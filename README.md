@@ -32,8 +32,9 @@ let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scW
 
 注意点：
 -----------------------------------
-本UI库是用Swift4.0编写的，所以安装或者拖入文件后需要把对应的Swift设置为4.0版本：
-（1）pod安装方式：
+本UI库是用Swift4.0编写的，所以安装或者拖入文件后需要把对应的Swift设置为4.0版本： <br>
+（1）pod安装方式：![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E8%AE%BE%E7%BD%AE1.jpg)
+（2）文件拖入方式：Targets --> Build Setting 做相同的设置
 
 结尾语：
 -----------------------------------
