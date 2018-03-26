@@ -4,7 +4,7 @@ IOS之分段控制器 -- OC/Swift4.0
 支持pod导入：
 -----------------------------------
 pod 'FWSegmentedControl'<br>
-注意：如出现 Unable to find a specification for `FWSegmentedControl` 错误，可执行 pod repo update 命令。
+注意：如出现 Unable to find a specification for 'FWSegmentedControl' 错误，可执行 pod repo update 命令。
 
 简单使用：  
 -----------------------------------  
