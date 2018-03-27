@@ -8,7 +8,7 @@ pod 'FWSegmentedControl'<br>
 
 简单使用：  
 -----------------------------------  
-
+```python
 /// 类初始化方法<br>
 ///<br>
 /// - Parameters:<br>
@@ -17,13 +17,33 @@ pod 'FWSegmentedControl'<br>
 ///   - sectionImageArray: 图片，可传nil，后续再设置<br>
 ///   - sectionSelectedImageArray: 选中图片，可传nil，后续再设置<br>
 ///   - frame: frame<br>
-@objc open class func segmentedWith(scType: SCType, scWidthStyle: SCWidthStyle, sectionTitleArray: [String]?, sectionImageArray: [UIImage]?, sectionSelectedImageArray: [UIImage]?, frame: CGRect) -> FWSegmentedControl<br>
+@objc open class func segmentedWith(scType: SCType,
+                                        scWidthStyle: SCWidthStyle,
+                                        sectionTitleArray: [String]?,
+                                        sectionImageArray: [UIImage]?,
+                                        sectionSelectedImageArray: [UIImage]?,
+                                        frame: CGRect) -> FWSegmentedControl
+```
 
-### OC：<br>
-FWSegmentedControl *segmentedControl = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:@[@"关注", @"游戏", @"附近"] sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, 40, self.view.frame.size.width, 50)];
+### OC：
+```python
+FWSegmentedControl *segmentedControl = [FWSegmentedControl segmentedWithScType:SCTypeText
+                                                                      scWidthStyle:SCWidthStyleDynamicFixedSuper
+                                                                 sectionTitleArray:@[@"关注", @"游戏", @"附近"]
+                                                                 sectionImageArray:nil sectionSelectedImageArray:nil
+                                                                             frame:CGRectMake(0, 40, self.view.frame.size.width, 50)];
+```
+
 
 ### Swift: <br>
-let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: ["关注", "游戏", "附近"], sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50))<br>
+```python
+let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text,
+                                                                scWidthStyle: SCWidthStyle.fixed,
+                                                                sectionTitleArray: ["关注", "游戏", "附近"],
+                                                                sectionImageArray: nil,
+                                                                sectionSelectedImageArray: nil,
+                                                                frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50))                                                             
+```
 
 效果：
 -----------------------------------
