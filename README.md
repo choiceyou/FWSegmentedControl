@@ -58,5 +58,5 @@ let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text,
 
 结尾语：
 -----------------------------------
-> 使用过程中有任何问题或者新的需求都可以issues我哦，谢谢！ <i class="icon-file"></i> **新文稿** 或者使用快捷键 `Ctrl+Alt+N`。
+> 使用过程中有任何问题或者新的需求都可以issues我哦，谢谢！
 
