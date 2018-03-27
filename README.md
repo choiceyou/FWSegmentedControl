@@ -68,5 +68,6 @@ let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text,
 
 ### 结尾语：
 
-> 使用过程中有任何问题或者新的需求都可以issues我哦，谢谢！
+> * 使用过程中有任何问题或者新的需求都可以issues我哦；
+> * 欢迎关注本人更多的UI库，谢谢；
 
