@@ -9,14 +9,14 @@ pod 'FWSegmentedControl'<br>
 简单使用：  
 -----------------------------------  
 ```python
-/// 类初始化方法<br>
-///<br>
-/// - Parameters:<br>
-///   - scType: segment类型<br>
-///   - sectionTitleArray: 标题，可传nil，后续再设置<br>
-///   - sectionImageArray: 图片，可传nil，后续再设置<br>
-///   - sectionSelectedImageArray: 选中图片，可传nil，后续再设置<br>
-///   - frame: frame<br>
+/// 类初始化方法
+///
+/// - Parameters:
+///   - scType: segment类型
+///   - sectionTitleArray: 标题，可传nil，后续再设置
+///   - sectionImageArray: 图片，可传nil，后续再设置
+///   - sectionSelectedImageArray: 选中图片，可传nil，后续再设置
+///   - frame: frame
 @objc open class func segmentedWith(scType: SCType,
                                         scWidthStyle: SCWidthStyle,
                                         sectionTitleArray: [String]?,
