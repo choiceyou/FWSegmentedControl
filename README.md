@@ -61,7 +61,7 @@ let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text,
 > * 本UI库是用Swift4.0编写的，所以安装或者拖入文件后需要把对应的Swift设置为4.0版本： <br>
 （1）pod安装方式：![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E8%AE%BE%E7%BD%AE1.jpg)
 （2）文件拖入方式：Targets --> Build Setting 做相同的设置
-> * 关于OC、Swift混编等相关问题，网上有很多相关解答，我这边就不在重复了
+> * 关于OC、Swift混编等相关问题，网上有很多相关解答，我这边就不再重复了
 
 -----------------------------------
 
