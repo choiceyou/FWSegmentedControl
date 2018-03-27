@@ -8,7 +8,7 @@ pod 'FWSegmentedControl'<br>
 
 -----------------------------------
 
-### 简单使用：  
+### 简单使用（注：可下载demo具体查看，分别有OC、Swift的demo）：  
 
 ```python
 /// 类初始化方法
