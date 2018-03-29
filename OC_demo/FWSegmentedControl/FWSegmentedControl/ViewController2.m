@@ -12,13 +12,6 @@
 #define segmentedControlHeight 40
 #define segmentedControl2Height 40
 
-// 状态栏高度
-#define kStatusBarHeight UIApplication.sharedApplication.statusBarFrame.size.height
-// 导航栏高度
-#define kNavBarHeight 44.0
-// 状态栏+导航栏的高度
-#define kStatusAndNavBarHeight (kStatusBarHeight + kNavBarHeight)
-
 @interface ViewController2 () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) FWSegmentedControl    *segmentedControl;
@@ -46,7 +39,7 @@
     self.segmentedControlArray = [NSMutableArray array];
     
     
-    self.segmentedControl = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:self.sectionTitles sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, kStatusAndNavBarHeight, self.view.frame.size.width, segmentedControlHeight)];
+    self.segmentedControl = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:self.sectionTitles sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, 0, self.view.frame.size.width, segmentedControlHeight)];
     
     self.segmentedControl.scSelectionIndicatorStyle = SCSelectionIndicatorStyleFullWidthStripe;
     self.segmentedControl.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;

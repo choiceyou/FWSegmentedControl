@@ -11,14 +11,6 @@
 #import <FWSegmentedControl/FWSegmentedControl-Swift.h>
 #import "ViewController2.h"
 
-// 状态栏高度
-#define kStatusBarHeight UIApplication.sharedApplication.statusBarFrame.size.height
-// 导航栏高度
-#define kNavBarHeight 44.0
-// 状态栏+导航栏的高度
-#define kStatusAndNavBarHeight (kStatusBarHeight + kNavBarHeight)
-
-
 @interface ViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView          *scrollView;                // ScrollView
@@ -41,7 +33,7 @@
     
     // 例一
     NSArray *sectionTitles = @[@"关注", @"游戏", @"附近", @"体育", @"女神范", @"运动啦啦", @"歌舞", @"吃鸡", @"户外", @"脱口秀"];
-    FWSegmentedControl *segmentedControl = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:nil sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, kStatusAndNavBarHeight, self.view.frame.size.width, 50)];
+    FWSegmentedControl *segmentedControl = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:nil sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
 
     segmentedControl.sectionTitleArray = sectionTitles;
     segmentedControl.scSelectionIndicatorStyle = SCSelectionIndicatorStyleFullWidthStripe;

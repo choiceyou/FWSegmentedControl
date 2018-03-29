@@ -15,6 +15,7 @@
 		496899E0205B7173009F43E5 /* FWSegmentedControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899DF205B7173009F43E5 /* FWSegmentedControlTests.m */; };
 		496899EB205B7173009F43E5 /* FWSegmentedControlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 496899EA205B7173009F43E5 /* FWSegmentedControlUITests.m */; };
 		496899FA205B7357009F43E5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496899F9205B7357009F43E5 /* Test.swift */; };
+		4973B2DC206CF8B10028D78D /* FWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4973B2DB206CF8B10028D78D /* FWNavigationController.m */; };
 		6B75BFD783AC7FD80602F695 /* Pods_FWSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5163608BCB324445941146D /* Pods_FWSegmentedControl.framework */; };
 		AFE1AD39206143D200849335 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE1AD38206143D200849335 /* ViewController2.m */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,8 @@
 		496899EC205B7173009F43E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		496899F8205B7357009F43E5 /* FWSegmentedControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWSegmentedControl-Bridging-Header.h"; sourceTree = "<group>"; };
 		496899F9205B7357009F43E5 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		4973B2DA206CF8B10028D78D /* FWNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWNavigationController.h; sourceTree = "<group>"; };
+		4973B2DB206CF8B10028D78D /* FWNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWNavigationController.m; sourceTree = "<group>"; };
 		AFE1AD37206143D200849335 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		AFE1AD38206143D200849335 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		B5163608BCB324445941146D /* Pods_FWSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +123,8 @@
 				496899CA205B7173009F43E5 /* ViewController.m */,
 				AFE1AD37206143D200849335 /* ViewController2.h */,
 				AFE1AD38206143D200849335 /* ViewController2.m */,
+				4973B2DA206CF8B10028D78D /* FWNavigationController.h */,
+				4973B2DB206CF8B10028D78D /* FWNavigationController.m */,
 				496899CF205B7173009F43E5 /* Assets.xcassets */,
 				496899D1205B7173009F43E5 /* LaunchScreen.storyboard */,
 				496899D4205B7173009F43E5 /* Info.plist */,
@@ -357,6 +362,7 @@
 				496899FA205B7357009F43E5 /* Test.swift in Sources */,
 				AFE1AD39206143D200849335 /* ViewController2.m in Sources */,
 				496899D6205B7173009F43E5 /* main.m in Sources */,
+				4973B2DC206CF8B10028D78D /* FWNavigationController.m in Sources */,
 				496899C8205B7173009F43E5 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

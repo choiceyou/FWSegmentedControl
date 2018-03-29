@@ -16,6 +16,7 @@
 		4956FB18205608550004896C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4956FB16205608550004896C /* LaunchScreen.storyboard */; };
 		4956FB23205608550004896C /* FWSegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956FB22205608550004896C /* FWSegmentedControlTests.swift */; };
 		4956FB2E205608550004896C /* FWSegmentedControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956FB2D205608550004896C /* FWSegmentedControlUITests.swift */; };
+		4973B2D7206CF53D0028D78D /* FWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973B2D6206CF53D0028D78D /* FWNavigationController.swift */; };
 		49BB211120610F8400E0DE6E /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB211020610F8400E0DE6E /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		4956FB29205608550004896C /* FWSegmentedControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FWSegmentedControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4956FB2D205608550004896C /* FWSegmentedControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWSegmentedControlUITests.swift; sourceTree = "<group>"; };
 		4956FB2F205608550004896C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4973B2D6206CF53D0028D78D /* FWNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWNavigationController.swift; sourceTree = "<group>"; };
 		49BB211020610F8400E0DE6E /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 			children = (
 				494FCF582058BD3C00C0478F /* FWSegmentedControl */,
 				4956FB0D205608550004896C /* AppDelegate.swift */,
+				4973B2D6206CF53D0028D78D /* FWNavigationController.swift */,
 				4956FB0F205608550004896C /* ViewController.swift */,
 				49BB211020610F8400E0DE6E /* ViewController2.swift */,
 				4956FB14205608550004896C /* Assets.xcassets */,
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4956FB10205608550004896C /* ViewController.swift in Sources */,
+				4973B2D7206CF53D0028D78D /* FWNavigationController.swift in Sources */,
 				49BB211120610F8400E0DE6E /* ViewController2.swift in Sources */,
 				494FCF5A2058BD3C00C0478F /* FWSegmentedControl.swift in Sources */,
 				4956FB0E205608550004896C /* AppDelegate.swift in Sources */,

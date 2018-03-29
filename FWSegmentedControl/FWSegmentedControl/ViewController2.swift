@@ -24,7 +24,7 @@ class ViewController2: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: Int(kStatusAndNavBarHeight), width: Int(UIScreen.main.bounds.width), height: Int(segmentedControlHeight)))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: sectionTitles, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.width), height: Int(segmentedControlHeight)))
         
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down

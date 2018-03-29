@@ -8,13 +8,6 @@
 
 import UIKit
 
-/// 状态栏高度
-public let kStatusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
-/// 导航栏高度
-public let kNavBarHeight: CGFloat = 44.0
-/// 状态栏+导航栏的高度
-public let kStatusAndNavBarHeight = kStatusBarHeight + kNavBarHeight
-
 /// segmentedControl字体大小
 let kSegmentTitleFont = 13.0
 /// segmentedControl左边边距
@@ -59,7 +52,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: nil, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: Int(kStatusAndNavBarHeight), width: Int(UIScreen.main.bounds.width), height: 50))
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text, scWidthStyle: SCWidthStyle.fixed, sectionTitleArray: nil, sectionImageArray: nil, sectionSelectedImageArray: nil, frame: CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.width), height: 50))
         
         segmentedControl.sectionTitleArray = sectionTitles
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
@@ -217,13 +210,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     lazy var scrollView: UIScrollView = {
         
-        let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: self.segmentedControl7.frame.maxY, width: self.view.bounds.width, height: self.view.bounds.height-self.segmentedControl7.frame.maxY))
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: self.segmentedControl7.frame.maxY, width: self.view.frame.width, height: self.view.frame.height-self.segmentedControl7.frame.maxY))
         scrollView.backgroundColor = UIColor.clear
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.bounces = false
-        scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(imageTitles3.count), height: self.segmentedControl.frame.height)
+        scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(imageTitles3.count), height: self.view.bounds.height-self.segmentedControl7.frame.maxY)
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: self.view.bounds.width, height: scrollView.frame.height), animated: false)
         return scrollView
     }()
