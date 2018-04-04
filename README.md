@@ -2,6 +2,7 @@
 
 [![Platform](http://img.shields.io/badge/platform-iOS-blue.svg?style=flat)](http://cocoapods.org/?q=FWSegmentedControl)
 [![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/choiceyou/FWSegmentedControl/blob/master/FWSegmentedControl/LICENSE)
+![](https://img.shields.io/badge/language-swift-orange.svg)
 
 
 
