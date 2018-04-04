@@ -9,8 +9,88 @@
 ## 支持pod导入：
 
 ```cocoaPods
-pod 'FWSegmentedControl'<br>
+pod 'FWSegmentedControl'
 注意：如出现 Unable to find a specification for 'FWSegmentedControl' 错误，可执行 pod repo update 命令。
+```
+
+
+# 可设置参数：
+```参数
+/// 标题
+@objc public var sectionTitleArray: [String]?
+/// 图片
+@objc public var sectionImageArray: [UIImage]?
+/// 选中图片
+@objc public var sectionSelectedImageArray: [UIImage]?
+
+/// segment类型
+@objc public var scType = SCType.text
+/// segment宽度
+@objc public var scWidthStyle = SCWidthStyle.fixed
+/// 图片相对于文字的位置
+@objc public var scImagePosition: SCImagePosition = .leftOfText
+/// 选中标识符类型
+@objc public var scSelectionIndicatorStyle = SCSelectionIndicatorStyle.contentWidthStripe
+/// 选中标识符位置
+@objc public var scSelectionIndicatorLocation = SCSelectionIndicatorLocation.down
+/// 边框类型
+public var scBorderType: SCBorderType = .none
+
+/// 选中标识符高度，注意：self.scSelectionIndicatorStyle == .box || self.scSelectionIndicatorStyle == .none 时无效
+@objc public var selectionIndicatorHeight: CGFloat = 3.0
+/// 选中标识符，当 SCSelectionIndicatorLocation == up 时，底部edge无效；反之，顶部edge无效；
+@objc public var selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+/// 选中标识符颜色
+@objc public var selectionIndicatorColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
+@objc public var selectionIndicatorBoxColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
+
+/// 滑动或者选中回调
+@objc public var indexChangeBlock: SCIndexChangeBlock?
+/// 标题NSAttributedString回调
+@objc public var titleFormatterBlock: SCTitleFormatterBlock?
+/// segment的Inset属性
+@objc public var segmentEdgeInset = UIEdgeInsetsMake(0, 5, 0, 5)
+@objc public var enlargeEdgeInset = UIEdgeInsetsMake(0, 0, 0, 0)
+
+/// 未选中的标题属性
+@objc public var titleTextAttributes: [NSAttributedStringKey: Any]?
+/// 选中的标题属性
+@objc public var selectedTitleTextAttributes: [NSAttributedStringKey: Any]?
+
+/// 是否可以拖动
+@objc public var userDraggable = true
+/// 是否可以点击
+@objc public var touchEnabled = true
+
+/// segment的边框颜色
+@objc public var segmentBorderColor = UIColor.black
+/// segment的边框大小
+@objc public var segmentBorderWidth: CGFloat = 1.0
+
+/// 选中或者滑动时是否需要动画
+@objc public var shouldAnimateUserSelection = true
+
+/// 选中标识符为箭头的宽度
+@objc public var arrowWidth: CGFloat = 6.0
+
+/// 选中表示符为box时的opacity值
+@objc public var selectionIndicatorBoxOpacity: CGFloat = 0.2
+
+/// segment之间的间隔竖线的宽度
+@objc public var verticalDividerWidth: CGFloat = 1.0
+/// 是否需要segment之间的间隔竖线
+@objc public var verticalDividerEnabled = false
+/// segment之间的间隔竖线的颜色
+@objc public var verticalDividerColor = UIColor.black
+
+/// 选中标识符滑动的时间
+@objc public var indicatorAnimatedTimes: CFTimeInterval = 0.15
+
+/// self.scType == .textImages 时，文字、图片的间隔
+@objc public var textImageSpacing: CGFloat = 4.0
+
+/// 选中项的下标
+@objc public var selectedSegmentIndex: Int = 0
 ```
 
 
