@@ -4,10 +4,14 @@
 [![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/choiceyou/FWSegmentedControl/blob/master/FWSegmentedControl/LICENSE)
 
 
+
 ## 支持pod导入：
 
+```swift
 pod 'FWSegmentedControl'<br>
 注意：如出现 Unable to find a specification for 'FWSegmentedControl' 错误，可执行 pod repo update 命令。
+```
+
 
 
 ## 简单使用（注：可下载demo具体查看，分别有OC、Swift的demo）：  
@@ -50,10 +54,12 @@ let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text,
 ```
 
 
+
 ## 效果：
 
 ![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E7%A4%BA%E4%BE%8B1.gif)
 ![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E7%A4%BA%E4%BE%8B2.gif)
+
 
 
 ## 注意点：
@@ -63,6 +69,7 @@ let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.text,
 （2）文件拖入方式：Targets --> Build Setting 做相同的设置
 
 二、关于OC、Swift混编等相关问题，网上有很多相关解答，我这边就不再重复了
+
 
 
 ## 结尾语：
