@@ -8,14 +8,14 @@
 
 ## 支持pod导入：
 
-```swift
+```cocoaPods
 pod 'FWSegmentedControl'<br>
 注意：如出现 Unable to find a specification for 'FWSegmentedControl' 错误，可执行 pod repo update 命令。
 ```
 
 
 
-## 简单使用（注：可下载demo具体查看，分别有OC、Swift的demo）：  
+## 简单使用：（注：可下载demo具体查看，分别有OC、Swift的demo）
 
 ```swift
 /// 类初始化方法
