@@ -27,20 +27,21 @@ pod 'FWSegmentedControl'<br>
 ///   - sectionSelectedImageArray: 选中图片，可传nil，后续再设置
 ///   - frame: frame
 @objc open class func segmentedWith(scType: SCType,
-                                        scWidthStyle: SCWidthStyle,
-                                        sectionTitleArray: [String]?,
-                                        sectionImageArray: [UIImage]?,
-                                        sectionSelectedImageArray: [UIImage]?,
-                                        frame: CGRect) -> FWSegmentedControl
+                              scWidthStyle: SCWidthStyle,
+                         sectionTitleArray: [String]?,
+                         sectionImageArray: [UIImage]?,
+                 sectionSelectedImageArray: [UIImage]?,
+                                     frame: CGRect) -> FWSegmentedControl
 ```
 
 ### OC：
 ```oc
-[FWSegmentedControl segmentedWithScType:SCTypeText
-                           scWidthStyle:SCWidthStyleDynamicFixedSuper
-                      sectionTitleArray:@[@"关注", @"游戏", @"附近"]
-                      sectionImageArray:nil sectionSelectedImageArray:nil
-                                  frame:CGRectMake(0, 40, self.view.frame.size.width, 50)];
+[FWSegmentedControl segmentedWithScType: SCTypeText
+                           scWidthStyle: SCWidthStyleDynamicFixedSuper
+                      sectionTitleArray: @[@"关注", @"游戏", @"附近"]
+                      sectionImageArray: nil 
+              sectionSelectedImageArray: nil
+                                  frame: CGRectMake(0, 40, self.view.frame.size.width, 50)];
 ```
 
 
