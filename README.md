@@ -1,6 +1,6 @@
 # IOS之分段控制器 -- OC/Swift4.0  
 
-[![Platform](http://img.shields.io/badge/platform-iOS-blue.svg?style=flat)](http://cocoapods.org/?q=FWSegmentedControl/LICENSE)
+[![Platform](http://img.shields.io/badge/platform-iOS-blue.svg?style=flat)](http://cocoapods.org/?q=FWSegmentedControl)
 [![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/choiceyou/FWSegmentedControl/blob/master/FWSegmentedControl/LICENSE)
 
 
