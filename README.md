@@ -41,8 +41,8 @@ public var scBorderType: SCBorderType = .none
 /// 选中标识符，当 SCSelectionIndicatorLocation == up 时，底部edge无效；反之，顶部edge无效；
 @objc public var selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
 /// 选中标识符颜色
-@objc public var selectionIndicatorColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
-@objc public var selectionIndicatorBoxColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
+@objc public var selectionIndicatorColor = UIColor.red
+@objc public var selectionIndicatorBoxColor = UIColor.gray
 
 /// 滑动或者选中回调
 @objc public var indexChangeBlock: SCIndexChangeBlock?
