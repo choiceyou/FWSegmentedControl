@@ -1,8 +1,8 @@
 # IOS之分段控制器 -- OC/Swift4.0  
 
 [![Platform](http://img.shields.io/badge/platform-iOS-blue.svg?style=flat)](http://cocoapods.org/?q=FWSegmentedControl)&nbsp;
-[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/choiceyou/FWSegmentedControl/blob/master/FWSegmentedControl/LICENSE)&nbsp;
-![Language](https://img.shields.io/badge/language-swift-orange.svg?style=flat)
+![Language](https://img.shields.io/badge/language-swift-orange.svg?style=flat)&nbsp;
+[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/choiceyou/FWSegmentedControl/blob/master/FWSegmentedControl/LICENSE)
 
 
 
@@ -51,7 +51,8 @@ FWSegmentedControl.segmentedWith(scType: SCType.text,
                       sectionTitleArray: ["关注", "游戏", "附近"],
                       sectionImageArray: nil,
               sectionSelectedImageArray: nil,
-                                  frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50))                                                             
+                                  frame: CGRect(x: 0, y: 40, width: Int(UIScreen.main.bounds.width), height: 50)) 
+
 ```
 
 
