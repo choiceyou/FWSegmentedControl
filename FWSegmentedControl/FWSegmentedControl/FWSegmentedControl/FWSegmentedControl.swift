@@ -22,6 +22,14 @@
  SOFTWARE.
  */
 
+/** ************************************************
+ 
+ github地址：https://github.com/choiceyou/FWSegmentedControl
+ bug反馈、交流群：670698309
+ 
+ ***************************************************
+ */
+
 import Foundation
 import UIKit
 

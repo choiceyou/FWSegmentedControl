@@ -66,6 +66,7 @@ class ViewController2: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGray
+        self.edgesForExtendedLayout = []
         
         self.view.addSubview(self.segmentedControl)
         self.view.addSubview(self.scrollView)

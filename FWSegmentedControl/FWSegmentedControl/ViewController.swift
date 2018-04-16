@@ -225,6 +225,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGray
         self.navigationItem.title = "FWSegmentedControl"
+        self.edgesForExtendedLayout = []
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "多级联动>", style: .plain, target: self, action: #selector(goNextVC))
         
