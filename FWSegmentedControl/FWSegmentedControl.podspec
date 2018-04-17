@@ -8,8 +8,6 @@
 
 Pod::Spec.new do |s|
 
-  s.frameworks = "Foundation","UIKit"
-
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  These will help people to find your library, and whilst it
@@ -18,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FWSegmentedControl"
-  s.version      = "2.1.4"
-  s.summary      = "滑动分段控制，多样式、灵活、便利是其最大的优势"
+  s.version      = "2.1.5"
+  s.summary      = "滑动分段控制，多样式、灵活、便利是其最大的优势。"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -27,10 +25,12 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-FWSegmentedControl兼容OC，借鉴了前辈项目：HMSegmentedControl，在此非常感谢前辈的分享
+  FWSegmentedControl兼容OC，借鉴了前辈项目：HMSegmentedControl，在此非常感谢前辈的分享
                    DESC
 
   s.homepage     = "https://github.com/choiceyou/FWSegmentedControl"
+  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -40,7 +40,8 @@ FWSegmentedControl兼容OC，借鉴了前辈项目：HMSegmentedControl，在此
   #
 
   s.license      = "MIT"
-  #  s.license      = { :type => "MIT", :file => "LICENSE" }
+  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -63,10 +64,19 @@ FWSegmentedControl兼容OC，借鉴了前辈项目：HMSegmentedControl，在此
   #  the deployment target. You can optionally include the target after the platform.
   #
 
+  s.swift_version  = "4.0"
   s.platform     = :ios
   s.platform     = :ios, "8.0"
 
+  #  When using multiple platforms
+  # s.ios.deployment_target = "5.0"
+  # s.osx.deployment_target = "10.7"
+  # s.watchos.deployment_target = "2.0"
+  # s.tvos.deployment_target = "9.0"
 
+
+  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
@@ -83,7 +93,8 @@ FWSegmentedControl兼容OC，借鉴了前辈项目：HMSegmentedControl，在此
   #
 
   s.source_files  = "FWSegmentedControl/FWSegmentedControl/FWSegmentedControl/*.swift"
-
+ 
+  # s.exclude_files = "Classes/Exclude"
   # s.public_header_files = "Classes/**/*.h"
 
 
