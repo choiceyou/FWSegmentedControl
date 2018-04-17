@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = UIColor.lightGrayColor;
     
     self.sectionTitles = @[@"yezi", @"开发语言"];

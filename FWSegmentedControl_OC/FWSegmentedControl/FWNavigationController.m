@@ -20,7 +20,7 @@
     
     [self.navigationBar setTranslucent:NO];
     
-    self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars = NO;
 }
 

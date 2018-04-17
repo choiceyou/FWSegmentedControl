@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = UIColor.lightGrayColor;
     self.navigationItem.title = @"FWSegmentedControl";
     
