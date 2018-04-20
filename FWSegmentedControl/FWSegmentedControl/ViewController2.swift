@@ -15,9 +15,9 @@ let segmentedControl2Height: CGFloat = 40.0
 
 class ViewController2: UIViewController, UIScrollViewDelegate {
     
-    let sectionTitles = ["yezi", "开发语言"]
-    let sectionTitles2 = ["叶子", "椰子啦", "叶紫", "叶梓"]
-    let sectionTitles3 = ["Swift", "OC", "Android", "RN"]
+    let sectionTitles = ["新闻", "购物"]
+    let sectionTitles2 = ["精选", "视频", "军事", "要闻"]
+    let sectionTitles3 = ["电器", "数码", "服饰", "家具"]
     
     var segmentedControlArray: [FWSegmentedControl] = []
     
@@ -131,23 +131,31 @@ extension ViewController2 {
         scrollView2.contentSize = CGSize(width: self.view.bounds.width * CGFloat(sectionTitleArray.count), height: self.segmentedControl.frame.height)
         scrollView2.scrollRectToVisible(CGRect(x: 0, y: 0, width: self.view.bounds.width, height: scrollView2.frame.height), animated: false)
         
-        var tmpIndex = -1
+        var tmpIndex = 0
         for title in sectionTitleArray {
+            
+            scrollView2.addSubview(self.setupVC(firstIndex: index, secondIndex: tmpIndex, title: title))
             tmpIndex += 1
-            scrollView2.addSubview(self.setupLabel(index: tmpIndex, title: title))
         }
         
         return scrollView2
     }
     
-    func setupLabel(index: Int, title: String) -> UILabel {
+    func setupVC(firstIndex: Int, secondIndex: Int, title: String) -> UIView {
         
-        let label = UILabel(frame: CGRect(x: self.view.frame.width * CGFloat(index), y: 0, width: self.view.frame.width, height: self.scrollView.frame.height))
-        label.backgroundColor = UIColor(red: CGFloat(arc4random()%256)/255.0, green: CGFloat(arc4random()%256)/255.0, blue: CGFloat(arc4random()%256)/255.0, alpha: 1.0)
-        label.textColor = UIColor.white
-        label.text = title
-        label.textAlignment = .center
-        return label
+        if firstIndex == 0 {
+            let newsVC = NewsViewController()
+            newsVC.view.frame = CGRect(x: self.view.frame.width * CGFloat(secondIndex), y: 0, width: self.view.frame.width, height: self.scrollView.frame.height)
+            newsVC.textLabel.text = title
+            
+            return newsVC.view
+        } else {
+            let shoppingVC = ShoppingViewController()
+            shoppingVC.view.frame = CGRect(x: self.view.frame.width * CGFloat(secondIndex), y: 0, width: self.view.frame.width, height: self.scrollView.frame.height)
+            shoppingVC.textLabel.text = title
+            
+            return shoppingVC.view
+        }
     }
     
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {

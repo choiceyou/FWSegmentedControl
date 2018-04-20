@@ -16,6 +16,8 @@
 		4909B13B208623B400588921 /* FWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909B138208623B400588921 /* FWNavigationController.swift */; };
 		4909B13C208623B400588921 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909B139208623B400588921 /* ViewController.swift */; };
 		4909B13D208623B400588921 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909B13A208623B400588921 /* ViewController2.swift */; };
+		49656A702089752C0096A802 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49656A6F2089752C0096A802 /* NewsViewController.swift */; };
+		49656A722089753F0096A802 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49656A712089753F0096A802 /* ShoppingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		4909B138208623B400588921 /* FWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWNavigationController.swift; sourceTree = "<group>"; };
 		4909B139208623B400588921 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4909B13A208623B400588921 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		49656A6F2089752C0096A802 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		49656A712089753F0096A802 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				4909B138208623B400588921 /* FWNavigationController.swift */,
 				4909B139208623B400588921 /* ViewController.swift */,
 				4909B13A208623B400588921 /* ViewController2.swift */,
+				49656A6F2089752C0096A802 /* NewsViewController.swift */,
+				49656A712089753F0096A802 /* ShoppingViewController.swift */,
 				4909B10E2086231500588921 /* Assets.xcassets */,
 				4909B1102086231500588921 /* LaunchScreen.storyboard */,
 				4909B1132086231500588921 /* Info.plist */,
@@ -274,7 +280,9 @@
 			files = (
 				4909B13D208623B400588921 /* ViewController2.swift in Sources */,
 				4909B1372086237D00588921 /* FWSegmentedControl.swift in Sources */,
+				49656A722089753F0096A802 /* ShoppingViewController.swift in Sources */,
 				4909B13B208623B400588921 /* FWNavigationController.swift in Sources */,
+				49656A702089752C0096A802 /* NewsViewController.swift in Sources */,
 				4909B13C208623B400588921 /* ViewController.swift in Sources */,
 				4909B1082086231500588921 /* AppDelegate.swift in Sources */,
 			);
