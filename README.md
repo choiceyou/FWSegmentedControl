@@ -14,7 +14,7 @@ pod 'FWSegmentedControl'
 ```
 
 
-# 可设置参数：
+## 可设置参数：
 ```参数
 /// 标题
 @objc public var sectionTitleArray: [String]?
