@@ -150,6 +150,13 @@ open class FWSegmentedControl: UIControl {
             self.setNeedsDisplay()
         }
     }
+    /// 选中图片：key为下标 value为FWSectionImageItem
+    @objc public var sectionSelectedImageDict: Dictionary<Int, FWSectionImageItem>? {
+        didSet {
+            self.setNeedsLayout()
+            self.setNeedsDisplay()
+        }
+    }
     
     /// segment类型
     @objc public var scType = SCType.text
@@ -176,6 +183,8 @@ open class FWSegmentedControl: UIControl {
     
     /// 选中标识符高度，注意：self.scSelectionIndicatorStyle == .box || self.scSelectionIndicatorStyle == .none 时无效
     @objc public var selectionIndicatorHeight: CGFloat = 3.0
+    /// 选中标识符圆角半径
+    @objc public var selectionIndicatorCornerRadius: CGFloat = 1.5
     /// 选中标识符，当 SCSelectionIndicatorLocation == up 时，底部edge无效；反之，顶部edge无效；
     @objc public var selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
     /// 选中标识符颜色
@@ -250,9 +259,9 @@ open class FWSegmentedControl: UIControl {
     /// SC数量
     fileprivate var sectionCount: Int {
         get {
-            if self.scType == .text {
+            if self.scType == .text || self.scType == .textImages {
                 return (self.sectionTitleArray?.count)!
-            } else if self.scType == .images || self.scType == .textImages {
+            } else if self.scType == .images {
                 return (self.sectionImageArray?.count)!
             } else {
                 // 后续拓展需要在这边添加...
@@ -316,7 +325,7 @@ extension FWSegmentedControl {
         self.contentMode = .redraw
     }
     
-    /// 类初始化方法
+    /// 类初始化方法1
     ///
     /// - Parameters:
     ///   - scType: segment类型
@@ -331,6 +340,24 @@ extension FWSegmentedControl {
         segmentedControl.sectionTitleArray = sectionTitleArray
         segmentedControl.sectionImageArray = sectionImageArray
         segmentedControl.sectionSelectedImageArray = sectionSelectedImageArray
+        segmentedControl.frame = frame
+        segmentedControl.setupUI()
+        return segmentedControl
+    }
+    
+    /// 类初始化方法2
+    ///
+    /// - Parameters:
+    ///   - scType: segment类型
+    ///   - sectionTitleArray: 标题，可传nil，后续再设置
+    ///   - sectionSelectedImageDict: 图片，可传nil，后续再设置
+    ///   - frame: frame
+    @objc open class func segmentedWith(scType: SCType, scWidthStyle: SCWidthStyle, sectionTitleArray: [String]?, sectionSelectedImageDict: Dictionary<Int, FWSectionImageItem>?, frame: CGRect) -> FWSegmentedControl {
+        let segmentedControl = FWSegmentedControl()
+        segmentedControl.scType = scType
+        segmentedControl.scWidthStyle = scWidthStyle
+        segmentedControl.sectionTitleArray = sectionTitleArray
+        segmentedControl.sectionSelectedImageDict = sectionSelectedImageDict
         segmentedControl.frame = frame
         segmentedControl.setupUI()
         return segmentedControl
@@ -353,9 +380,9 @@ extension FWSegmentedControl {
             return
         } else if self.scType == .images && self.sectionImageArray == nil {
             return
-        } else if self.scType == .textImages && self.sectionImageArray == nil && self.sectionTitleArray != nil {
+        } else if self.scType == .textImages && self.sectionImageArray == nil && self.sectionTitleArray != nil && self.sectionSelectedImageDict == nil {
             self.scType = .text
-        } else if self.scType == .textImages && self.sectionImageArray == nil {
+        } else if self.scType == .textImages && self.sectionImageArray == nil && self.sectionSelectedImageDict == nil {
             return
         }
         
@@ -426,10 +453,21 @@ extension FWSegmentedControl {
             contentWidth = icon.size.width
         } else if self.scType == .textImages {
             let strWidth = self.measureTitleAtIndex(index: index).width
-            let icon = self.sectionImageArray![index]
-            let imageWidth = icon.size.width
+            var imageWidth: CGFloat = 0.0
+            if self.sectionImageArray != nil {
+                let icon = self.sectionImageArray![index]
+                imageWidth = icon.size.width
+            } else if self.sectionSelectedImageDict != nil && self.sectionSelectedImageDict?[index] != nil {
+                let item = self.sectionSelectedImageDict![index]
+                imageWidth = item!.itemImage.size.width
+            }
+            
             if self.scImagePosition == .leftOfText || self.scImagePosition == .rightOfText {
-                contentWidth = strWidth + imageWidth + self.textImageSpacing
+                if strWidth != 0 {
+                    contentWidth = strWidth + imageWidth + self.textImageSpacing
+                } else {
+                    contentWidth = imageWidth
+                }
             } else {
                 contentWidth = max(strWidth, imageWidth)
             }
@@ -451,6 +489,8 @@ extension FWSegmentedControl {
         self.selectionIndicatorArrowLayer.backgroundColor = self.selectionIndicatorColor.cgColor
         
         self.selectionIndicatorStripLayer.backgroundColor = self.selectionIndicatorColor.cgColor
+        self.selectionIndicatorStripLayer.masksToBounds = true
+        self.selectionIndicatorStripLayer.cornerRadius = self.selectionIndicatorCornerRadius
         
         self.selectionIndicatorBoxLayer.backgroundColor = self.selectionIndicatorBoxColor.cgColor
         self.selectionIndicatorBoxLayer.borderColor = self.selectionIndicatorBoxColor.cgColor
@@ -464,8 +504,8 @@ extension FWSegmentedControl {
         var sectionContentArray = [AnyObject]()
         
         /// 当 self.scType == .textImages 时用到
-        var strSize: CGSize = CGSize(width: 0, height: 0)
-        var iconSize: CGSize = CGSize(width: 0, height: 0)
+        var strSize: CGSize = CGSize.zero
+        var iconSize: CGSize = CGSize.zero
         
         if self.scType == .text {
             sectionContentArray = self.sectionTitleArray! as [AnyObject]
@@ -487,23 +527,33 @@ extension FWSegmentedControl {
             }
             else if self.scType == .textImages {
                 strSize = self.measureTitleAtIndex(index: index)
-                iconSize = self.sectionImageArray![index].size
+                if self.sectionImageArray != nil {
+                    iconSize = self.sectionImageArray![index].size
+                } else if self.sectionSelectedImageDict != nil && self.sectionSelectedImageDict?[index] != nil {
+                    let item = self.sectionSelectedImageDict![index]
+                    iconSize = item!.itemImage.size
+                }
+                
                 if self.scImagePosition == .leftOfText || self.scImagePosition == .rightOfText || self.scImagePosition == .behindText {
                     contentHeight = max(iconSize.height, strSize.height)
                 } else {
-                    contentHeight = strSize.height + iconSize.height + self.textImageSpacing
+                    if strSize.height != 0 {
+                        contentHeight = strSize.height + iconSize.height + self.textImageSpacing
+                    } else {
+                        contentHeight = iconSize.height
+                    }
                 }
             }
             contentWidth = self.configSegmentsWidth(index: index, object: object, isNeedEdgeInset: false)
             
-            var rectDiv = CGRect(x: 0, y: 0, width: 0, height: 0)
-            var fullRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+            var rectDiv = CGRect.zero
+            var fullRect = CGRect.zero
             
             let locationUp: CGFloat = (self.scSelectionIndicatorLocation == .up) ? 1.0 : 0.0
             let selectionStyleNotBox: CGFloat = (self.scSelectionIndicatorStyle != .box) ? 1.0 : 0.0
             
             let y = roundf(Float((self.frame.height - selectionStyleNotBox * self.selectionIndicatorHeight) / 2 - contentHeight / 2 + self.selectionIndicatorHeight * locationUp))
-            var tmpRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+            var tmpRect = CGRect.zero
             if self.scWidthStyle == .fixed {
                 tmpRect = CGRect(x: (self.segmentWidth * CGFloat(index)) + (self.segmentWidth - contentWidth) / 2, y: CGFloat(y), width: contentWidth, height: contentHeight)
                 rectDiv = CGRect(x: (self.segmentWidth * CGFloat(index)) - (self.verticalDividerWidth / 2), y: self.selectionIndicatorHeight * 2, width: self.verticalDividerWidth, height: self.frame.height - (self.selectionIndicatorHeight * 4))
@@ -549,69 +599,99 @@ extension FWSegmentedControl {
                     if self.sectionSelectedImageArray != nil {
                         let highlightIcon = self.sectionSelectedImageArray![index]
                         imageLayer.contents = highlightIcon.cgImage
+                    }  else if self.sectionSelectedImageDict != nil && self.sectionSelectedImageDict?[index] != nil {
+                        let item = self.sectionSelectedImageDict![index]
+                        if item?.itemSelectedImage != nil {
+                            imageLayer.contents = item!.itemSelectedImage!.cgImage
+                        } else {
+                            imageLayer.contents = icon.cgImage
+                        }
                     } else {
                         imageLayer.contents = icon.cgImage
                     }
-                } else {
+                }else {
                     imageLayer.contents = icon.cgImage
                 }
                 imageLayer.contentsScale = UIScreen.main.scale
                 self.scrollView.layer.addSublayer(imageLayer)
             }
             else if self.scType == .textImages {
-                /// 绘制title
-                let titleLayer = CATextLayer()
-                var titleRect = CGRect(x: 0, y: 0, width: 0, height: 0)
-                if self.scImagePosition == .behindText {
-                    titleRect = tmpRect
-                } else if self.scImagePosition == .aboveText {
-                    titleRect = CGRect(x: tmpRect.origin.x, y: tmpRect.origin.y + iconSize.height + self.textImageSpacing, width: tmpRect.width, height: strSize.height)
-                } else if self.scImagePosition == .leftOfText {
-                    titleRect = CGRect(x: tmpRect.origin.x + iconSize.width + self.textImageSpacing, y: tmpRect.origin.y + (tmpRect.height - strSize.height) / 2, width: strSize.width, height: strSize.height)
-                } else if self.scImagePosition == .belowOfText {
-                    titleRect = CGRect(x: tmpRect.origin.x, y: tmpRect.origin.y, width: tmpRect.width, height: strSize.height)
-                } else if self.scImagePosition == .rightOfText {
-                    titleRect = CGRect(x: tmpRect.origin.x, y: tmpRect.origin.y + (tmpRect.height - strSize.height) / 2, width: strSize.width, height: strSize.height)
+                let title = self.sectionTitleArray![index]
+                if !title.isEmpty {
+                    /// 绘制title
+                    let titleLayer = CATextLayer()
+                    var titleRect = CGRect.zero
+                    if self.scImagePosition == .behindText {
+                        titleRect = tmpRect
+                    } else if self.scImagePosition == .aboveText {
+                        titleRect = CGRect(x: tmpRect.origin.x, y: tmpRect.origin.y + iconSize.height + self.textImageSpacing, width: tmpRect.width, height: strSize.height)
+                    } else if self.scImagePosition == .leftOfText {
+                        titleRect = CGRect(x: tmpRect.origin.x + iconSize.width + self.textImageSpacing, y: tmpRect.origin.y + (tmpRect.height - strSize.height) / 2, width: strSize.width, height: strSize.height)
+                    } else if self.scImagePosition == .belowOfText {
+                        titleRect = CGRect(x: tmpRect.origin.x, y: tmpRect.origin.y, width: tmpRect.width, height: strSize.height)
+                    } else if self.scImagePosition == .rightOfText {
+                        titleRect = CGRect(x: tmpRect.origin.x, y: tmpRect.origin.y + (tmpRect.height - strSize.height) / 2, width: strSize.width, height: strSize.height)
+                    }
+                    titleLayer.frame = titleRect
+                    titleLayer.alignmentMode = kCAAlignmentCenter
+                    if (UIDevice.current.systemVersion as NSString).doubleValue < 10.0 {
+                        titleLayer.truncationMode = kCATruncationEnd
+                    }
+                    titleLayer.string = self.attributedTitleAtIndex(index: index)
+                    titleLayer.contentsScale = UIScreen.main.scale
+                    
+                    self.scrollView.layer.addSublayer(titleLayer)
                 }
-                titleLayer.frame = titleRect
-                titleLayer.alignmentMode = kCAAlignmentCenter
-                if (UIDevice.current.systemVersion as NSString).doubleValue < 10.0 {
-                    titleLayer.truncationMode = kCATruncationEnd
-                }
-                titleLayer.string = self.attributedTitleAtIndex(index: index)
-                titleLayer.contentsScale = UIScreen.main.scale
-                
-                self.scrollView.layer.addSublayer(titleLayer)
                 
                 /// 绘制图片
-                let icon = self.sectionImageArray![index]
-                var imageRect = CGRect(x: 0, y: 0, width: 0, height: 0)
-                if self.scImagePosition == .behindText {
-                    imageRect = CGRect(x: tmpRect.origin.x + (tmpRect.width - iconSize.width) / 2, y: tmpRect.origin.y + (tmpRect.height - iconSize.height) / 2, width: iconSize.width, height: iconSize.height)
-                } else if self.scImagePosition == .aboveText {
-                    imageRect = CGRect(x: tmpRect.origin.x + (tmpRect.width - iconSize.width) / 2, y: tmpRect.origin.y, width: iconSize.width, height: iconSize.height)
-                } else if self.scImagePosition == .leftOfText {
-                    imageRect = CGRect(x: tmpRect.origin.x, y: tmpRect.origin.y + (tmpRect.height - iconSize.height) / 2, width: iconSize.width, height: iconSize.height)
-                } else if self.scImagePosition == .belowOfText {
-                    imageRect = CGRect(x: tmpRect.origin.x + (tmpRect.width - iconSize.width) / 2, y: tmpRect.origin.y + strSize.height + self.textImageSpacing, width: iconSize.width, height: iconSize.height)
-                } else if self.scImagePosition == .rightOfText {
-                    imageRect = CGRect(x: tmpRect.origin.x + strSize.width + self.textImageSpacing, y: tmpRect.origin.y + (tmpRect.height - iconSize.height) / 2, width: iconSize.width, height: iconSize.height)
+                var icon: UIImage?
+                if self.sectionImageArray != nil {
+                    icon = self.sectionImageArray![index]
+                } else if self.sectionSelectedImageDict != nil && self.sectionSelectedImageDict?[index] != nil {
+                    let item = self.sectionSelectedImageDict![index]
+                    icon = item!.itemImage
                 }
-                let imageLayer = CALayer()
-                imageLayer.frame = imageRect
                 
-                if self.selectedSegmentIndex == index {
-                    if self.sectionSelectedImageArray != nil {
-                        let highlightIcon = self.sectionSelectedImageArray![index]
-                        imageLayer.contents = highlightIcon.cgImage
-                    } else {
-                        imageLayer.contents = icon.cgImage
+                if icon != nil {
+                    var tmpImageSpacing: CGFloat = 0
+                    if !title.isEmpty {
+                        tmpImageSpacing = self.textImageSpacing
                     }
-                } else {
-                    imageLayer.contents = icon.cgImage
+                    var imageRect = CGRect.zero
+                    if self.scImagePosition == .behindText {
+                        imageRect = CGRect(x: tmpRect.origin.x + (tmpRect.width - iconSize.width) / 2, y: tmpRect.origin.y + (tmpRect.height - iconSize.height) / 2, width: iconSize.width, height: iconSize.height)
+                    } else if self.scImagePosition == .aboveText {
+                        imageRect = CGRect(x: tmpRect.origin.x + (tmpRect.width - iconSize.width) / 2, y: tmpRect.origin.y, width: iconSize.width, height: iconSize.height)
+                    } else if self.scImagePosition == .leftOfText {
+                        imageRect = CGRect(x: tmpRect.origin.x, y: tmpRect.origin.y + (tmpRect.height - iconSize.height) / 2, width: iconSize.width, height: iconSize.height)
+                    } else if self.scImagePosition == .belowOfText {
+                        imageRect = CGRect(x: tmpRect.origin.x + (tmpRect.width - iconSize.width) / 2, y: tmpRect.origin.y + strSize.height + tmpImageSpacing, width: iconSize.width, height: iconSize.height)
+                    } else if self.scImagePosition == .rightOfText {
+                        imageRect = CGRect(x: tmpRect.origin.x + strSize.width + tmpImageSpacing, y: tmpRect.origin.y + (tmpRect.height - iconSize.height) / 2, width: iconSize.width, height: iconSize.height)
+                    }
+                    let imageLayer = CALayer()
+                    imageLayer.frame = imageRect
+                    
+                    if self.selectedSegmentIndex == index {
+                        if self.sectionSelectedImageArray != nil {
+                            let highlightIcon = self.sectionSelectedImageArray![index]
+                            imageLayer.contents = highlightIcon.cgImage
+                        }  else if self.sectionSelectedImageDict != nil && self.sectionSelectedImageDict?[index] != nil {
+                            let item = self.sectionSelectedImageDict![index]
+                            if item?.itemSelectedImage != nil {
+                                imageLayer.contents = item!.itemSelectedImage!.cgImage
+                            } else {
+                                imageLayer.contents = icon!.cgImage
+                            }
+                        }  else {
+                            imageLayer.contents = icon!.cgImage
+                        }
+                    } else {
+                        imageLayer.contents = icon!.cgImage
+                    }
+                    imageLayer.contentsScale = UIScreen.main.scale
+                    self.scrollView.layer.addSublayer(imageLayer)
                 }
-                imageLayer.contentsScale = UIScreen.main.scale
-                self.scrollView.layer.addSublayer(imageLayer)
             }
             
             if self.verticalDividerEnabled && index > 0 {
@@ -809,7 +889,7 @@ extension FWSegmentedControl {
     
     fileprivate func scrollToSelectedSegmentIndex(animated: Bool) {
         
-        var rectForSelectedIndex = CGRect(x: 0, y: 0, width: 0, height: 0)
+        var rectForSelectedIndex = CGRect.zero
         var selectedSegmentOffset:CGFloat = 0.0
         if self.scWidthStyle == .fixed {
             rectForSelectedIndex = CGRect(x: self.segmentWidth * CGFloat(self.selectedSegmentIndex), y: 0, width: self.segmentWidth, height: self.frame.height)
@@ -889,10 +969,23 @@ extension FWSegmentedControl {
             sectionWidth = imageWidth
         } else if self.scType == .textImages {
             let stringWidth = self.measureTitleAtIndex(index: self.selectedSegmentIndex).width
-            let sectionImage = self.sectionImageArray![self.selectedSegmentIndex]
-            let imageWidth = sectionImage.size.width
+            var sectionImage: UIImage?
+            var imageWidth: CGFloat = 0.0
+            if self.sectionImageArray != nil {
+                sectionImage = self.sectionImageArray![self.selectedSegmentIndex]
+                imageWidth = sectionImage!.size.width
+            } else if self.sectionSelectedImageDict != nil && self.sectionSelectedImageDict?[self.selectedSegmentIndex] != nil {
+                let item = self.sectionSelectedImageDict![self.selectedSegmentIndex]
+                sectionImage = item!.itemImage
+                imageWidth = sectionImage!.size.width
+            }
+            
             if self.scImagePosition == .leftOfText || self.scImagePosition == .rightOfText {
-                sectionWidth = stringWidth + imageWidth + textImageSpacing
+                if stringWidth != 0 {
+                    sectionWidth = stringWidth + imageWidth + textImageSpacing
+                } else {
+                    sectionWidth = imageWidth
+                }
             } else {
                 sectionWidth = max(stringWidth, imageWidth)
             }
@@ -919,14 +1012,14 @@ extension FWSegmentedControl {
                 let currentSegmentWidth = self.segmentWidthsArray![self.selectedSegmentIndex].floatValue
                 let tmpArrowWidth = (self.arrowWidth != 0) ? self.arrowWidth : self.selectionIndicatorHeight * 2
                 
-                return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left + (CGFloat(currentSegmentWidth) - tmpArrowWidth) / 2, y: indicatorYOffset, width:tmpArrowWidth  - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
+                return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left + (CGFloat(currentSegmentWidth) - tmpArrowWidth) / 2, y: indicatorYOffset, width:tmpArrowWidth - self.selectionIndicatorEdgeInsets.left - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
             }
         } else {
             if self.scSelectionIndicatorStyle == .contentWidthStripe && sectionWidth <= self.segmentWidth && self.scWidthStyle == .fixed {
                 let widthToEndOfSelectedSegment = (self.segmentWidth * CGFloat(self.selectedSegmentIndex)) + self.segmentWidth
                 let widthToStartOfSelectedIndex = self.segmentWidth * CGFloat(self.selectedSegmentIndex)
                 let x = ((widthToEndOfSelectedSegment - widthToStartOfSelectedIndex) / 2) + (widthToStartOfSelectedIndex - sectionWidth / 2)
-                return CGRect(x: x + self.selectionIndicatorEdgeInsets.left, y: indicatorYOffset, width: sectionWidth - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight)
+                return CGRect(x: x + self.selectionIndicatorEdgeInsets.left, y: indicatorYOffset, width: sectionWidth - self.selectionIndicatorEdgeInsets.left - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight)
             } else {
                 if self.scWidthStyle == .dynamic || self.scWidthStyle == .dynamicFixedSuper {
                     var selectedSegmentOffset: CGFloat = 0.0
@@ -950,15 +1043,22 @@ extension FWSegmentedControl {
                             let icon = self.sectionImageArray![self.selectedSegmentIndex]
                             contentWidth = icon.size.width
                         } else if self.scType == .textImages {
-                            contentWidth = self.configSegmentsWidth(index: self.selectedSegmentIndex, object: self.sectionTitleArray![self.selectedSegmentIndex] as AnyObject, isNeedEdgeInset: false)
+                            var icon: UIImage?
+                            if self.sectionImageArray != nil {
+                                icon = self.sectionImageArray![self.selectedSegmentIndex]
+                            } else if self.sectionSelectedImageDict != nil && self.sectionSelectedImageDict?[self.selectedSegmentIndex] != nil {
+                                let item = self.sectionSelectedImageDict![self.selectedSegmentIndex]
+                                icon = item!.itemImage
+                            }
+                            contentWidth = self.configSegmentsWidth(index: self.selectedSegmentIndex, object: icon as AnyObject, isNeedEdgeInset: false)
                         }
-                        return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left + (CGFloat(currentSegmentWidth) - contentWidth) / 2, y: indicatorYOffset, width: contentWidth - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
+                        return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left + (CGFloat(currentSegmentWidth) - contentWidth) / 2, y: indicatorYOffset, width: contentWidth - self.selectionIndicatorEdgeInsets.left - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
                     }
                     else if self.scSelectionIndicatorStyle == .fullWidthStripe || self.scSelectionIndicatorStyle == .box {
-                        return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left, y: indicatorYOffset, width: CGFloat(self.segmentWidthsArray![self.selectedSegmentIndex].floatValue) - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
+                        return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left, y: indicatorYOffset, width: CGFloat(self.segmentWidthsArray![self.selectedSegmentIndex].floatValue) - self.selectionIndicatorEdgeInsets.left - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
                     }
                 }
-                return CGRect(x: (self.segmentWidth + self.selectionIndicatorEdgeInsets.left) * CGFloat(self.selectedSegmentIndex), y: indicatorYOffset, width: self.segmentWidth - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight)
+                return CGRect(x: (self.segmentWidth + self.selectionIndicatorEdgeInsets.left) * CGFloat(self.selectedSegmentIndex), y: indicatorYOffset, width: self.segmentWidth - self.selectionIndicatorEdgeInsets.left - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight)
             }
         }
     }
@@ -993,11 +1093,11 @@ extension FWSegmentedControl {
     fileprivate func measureTitleAtIndex(index: Int) -> CGSize {
         
         if self.sectionTitleArray == nil || index >= self.sectionTitleArray!.count {
-            return CGSize(width: 0, height: 0)
+            return CGSize.zero
         }
         
         let title: String = self.sectionTitleArray![index]
-        var size = CGSize(width: 0, height: 0)
+        var size = CGSize.zero
         let selected = (index == self.selectedSegmentIndex) ? true : false
         if self.titleFormatterBlock == nil {
             let titleAttrs = selected ? self.resultingSelectedTitleTextAttributes() : self.resultingTitleTextAttributes()
@@ -1099,3 +1199,21 @@ class FWScrollView: UIScrollView {
     }
 }
 
+
+open class FWSectionImageItem: NSObject {
+    
+    /// 当前Item的下标
+//    @objc open var itemIndex: Int
+    /// 当前Item的图标
+    @objc open var itemImage: UIImage
+    /// 当前Item的选中图标
+    @objc open var itemSelectedImage: UIImage?
+    
+    @objc public init(itemImage: UIImage, itemSelectedImage: UIImage?) {
+//        self.itemIndex = itemIndex
+        self.itemImage = itemImage
+        self.itemSelectedImage = itemSelectedImage
+        
+        super.init()
+    }
+}

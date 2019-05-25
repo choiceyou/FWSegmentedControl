@@ -130,15 +130,23 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl5: FWSegmentedControl = {
         
-        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles3, sectionImageArray: images2 as? [UIImage], sectionSelectedImageArray: selectedImages2 as? [UIImage], frame: CGRect(x: 0, y: Int(self.segmentedControl4.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 40))
+        let imageTitles5 = ["叶子", "", "叶紫"]
+        
+        let sectionSelectedImageDict = [
+            0 : FWSectionImageItem(itemImage: UIImage(named: "a")!, itemSelectedImage: UIImage(named: "a-selected")),
+            1 : FWSectionImageItem(itemImage: UIImage(named: "b")!, itemSelectedImage: UIImage(named: "b-selected")),
+        ]
+        
+        let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamicFixedSuper, sectionTitleArray: imageTitles5, sectionSelectedImageDict: sectionSelectedImageDict, frame: CGRect(x: 0, y: Int(self.segmentedControl4.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 40))
         
         segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
-        segmentedControl.scImagePosition = .leftOfText
+        segmentedControl.scImagePosition = .rightOfText
         segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(kSegmentLeftEdge), 0, CGFloat(kSegmentLeftEdge))
         
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 3
+        segmentedControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 5);
         
         segmentedControl.verticalDividerEnabled = true
         segmentedControl.verticalDividerColor = UIColor.lightGray
@@ -228,7 +236,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.edgesForExtendedLayout = []
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "多级联动>", style: .plain, target: self, action: #selector(goNextVC))
-        
         
         self.view.addSubview(self.segmentedControl)
         self.view.addSubview(self.segmentedControl2)
