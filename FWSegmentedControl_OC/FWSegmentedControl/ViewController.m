@@ -123,7 +123,7 @@
 
     segmentedControl5.scSelectionIndicatorStyle = SCSelectionIndicatorStyleContentWidthStripe;
     segmentedControl5.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
-    segmentedControl5.scImagePosition = SCImagePositionLeftOfText;
+    segmentedControl5.scImagePosition = SCImagePositionRightOfText;
     segmentedControl5.segmentEdgeInset = UIEdgeInsetsMake(0, 10, 0, 10);
 
     segmentedControl5.selectionIndicatorColor = UIColor.redColor;
@@ -133,6 +133,10 @@
 
     segmentedControl5.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.grayColor, NSFontAttributeName: [UIFont systemFontOfSize:13.0]};
     segmentedControl5.selectedTitleTextAttributes = @{NSForegroundColorAttributeName: UIColor.redColor, NSFontAttributeName: [UIFont systemFontOfSize:13.0]};
+    
+    segmentedControl5.indexSecondClickedBlock = ^(NSInteger index) {
+        NSLog(@"已经选中了某个index后再次点击的回调：%ld", (long)index);
+    };
 
     [self.view addSubview:segmentedControl5];
 
