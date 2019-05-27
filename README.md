@@ -163,6 +163,16 @@ FWSegmentedControl.segmentedWith(scType: SCType.text,
 
 
 
+## 更新记录：
+
+• v2.1.7：
+- [x] 添加：sectionSelectedImageDict，使得在一个FWSegmentedControl中支持图片+文字、图片、文字的混排形式；
+- [x] 新增已经选中了某个index后再次点击的回调：SCIndexSecondClickedBlock；
+- [x] 修复segmentEdgeInset位置右移的问题；
+- [x] 更多细节调整；
+
+
+
 ## 结尾语：
 
 - 使用过程中发现bug请issues或加入FW问题反馈群：670698309（此群只接受FW相关组件问题）；
