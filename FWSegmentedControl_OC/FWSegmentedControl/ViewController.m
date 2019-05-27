@@ -128,6 +128,7 @@
 
     segmentedControl5.selectionIndicatorColor = UIColor.redColor;
     segmentedControl5.selectionIndicatorHeight = 3;
+    segmentedControl5.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 5);
 
     segmentedControl5.textImageSpacing = 4;
 
