@@ -167,6 +167,7 @@ FWSegmentedControl.segmentedWith(scType: SCType.text,
 
 • v2.1.7：
 - [x] 添加：sectionSelectedImageDict，使得在一个FWSegmentedControl中支持图片+文字、图片、文字的混排形式；
+- [x] 选中标识符可设置圆角，默认圆角值为：1.5f；
 - [x] 新增已经选中了某个index后再次点击的回调：SCIndexSecondClickedBlock；
 - [x] 修复segmentEdgeInset位置右移的问题；
 - [x] 更多细节调整；
