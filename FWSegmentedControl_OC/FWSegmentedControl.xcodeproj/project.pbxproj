@@ -179,8 +179,7 @@
 				496899BF205B7173009F43E5 /* Sources */,
 				496899C0205B7173009F43E5 /* Frameworks */,
 				496899C1205B7173009F43E5 /* Resources */,
-				493C3A8FD6B2F9FD1CD78444 /* [CP] Embed Pods Frameworks */,
-				04A61E67F29BECEB4D662957 /* [CP] Copy Pods Resources */,
+				53F4B604327097F8B6F0E970 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,37 +299,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04A61E67F29BECEB4D662957 /* [CP] Copy Pods Resources */ = {
+		53F4B604327097F8B6F0E970 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		493C3A8FD6B2F9FD1CD78444 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FWSegmentedControl/FWSegmentedControl.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FWSegmentedControl.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F764062C250A806592F50B4D /* [CP] Check Pods Manifest.lock */ = {

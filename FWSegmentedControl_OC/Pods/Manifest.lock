@@ -1,12 +1,16 @@
 PODS:
-  - FWSegmentedControl (2.1.5)
+  - FWSegmentedControl (2.1.6)
 
 DEPENDENCIES:
   - FWSegmentedControl
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FWSegmentedControl
+
 SPEC CHECKSUMS:
-  FWSegmentedControl: 481faaeb6f9cad33640a0bd1b45d02a7c563949d
+  FWSegmentedControl: 2f79d4136336f98456c86c70553826fa03bf408a
 
 PODFILE CHECKSUM: 7d0be8d1e87ead237bc4be3f097ff090bed66f6f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.1

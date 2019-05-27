@@ -1,4 +1,4 @@
-# IOS之分段控制器 -- OC/Swift4.0  
+# ![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E6%95%88%E6%9E%9C/FWSegmentedControl.png)
 
 [![Platform](http://img.shields.io/badge/platform-iOS-blue.svg?style=flat)](http://cocoapods.org/?q=FWSegmentedControl)&nbsp;
 ![Language](https://img.shields.io/badge/language-swift-orange.svg?style=flat)&nbsp;
@@ -9,12 +9,20 @@
 ## 支持pod导入：
 
 ```cocoaPods
+use_frameworks!
 pod 'FWSegmentedControl'
-注意：如出现 Unable to find a specification for 'FWSegmentedControl' 错误，可执行 pod repo update 命令。
+注意：
+1、如出现 [!] Unable to find a specification for 'FWSegmentedControl' 错误 或 看不到最新的版本，
+  可执行 pod repo update 命令更新一下本地pod仓库。
+2、use_frameworks! 的使用：
+（1）纯OC项目中，通过cocoapods导入OC库时，一般都不使用use_frameworks!
+（2）纯swift项目中，通过cocoapods导入swift库时，必须使用use_frameworks!
+（3）只要是通过cocoapods导入swift库时，都必须使用use_frameworks!
+（4）使用动态链接库dynamic frameworks时，必须使用use_frameworks!
 ```
 
 
-# 可设置参数：
+## 可设置参数：
 ```参数
 /// 标题
 @objc public var sectionTitleArray: [String]?
@@ -140,23 +148,23 @@ FWSegmentedControl.segmentedWith(scType: SCType.text,
 
 ## 效果：
 
-![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E7%A4%BA%E4%BE%8B1.gif)
-![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E7%A4%BA%E4%BE%8B2.gif)
+![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E6%95%88%E6%9E%9C/%E7%A4%BA%E4%BE%8B1.gif)
+![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E6%95%88%E6%9E%9C/%E7%A4%BA%E4%BE%8B2.gif)
 
 
 
 ## 注意点：
 
 一、本UI库是用Swift4.0编写的，所以安装或者拖入文件后需要把对应的Swift设置为4.0版本： <br>
-（1）pod安装方式：![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E8%AE%BE%E7%BD%AE1.jpg)
+（1）pod安装方式：![](https://github.com/choiceyou/FWSegmentedControl/blob/master/%E6%95%88%E6%9E%9C/%E8%AE%BE%E7%BD%AE1.jpg)
 （2）文件拖入方式：Targets --> Build Setting 做相同的设置
 
-二、关于OC、Swift混编等相关问题，网上有很多相关解答，我这边就不再重复了
+二、如果是文件拖入方式，需要设置OC、Swift混编等，相关问题网上有很多解答，我这边就不再重复了
 
 
 
 ## 结尾语：
 
-> * 使用过程中有任何问题或者新的需求都可以issues我哦；
-> * 欢迎关注本人更多的UI库，谢谢；
+- 使用过程中发现bug请issues或加入FW问题反馈群：670698309（此群只接受FW相关组件问题）；
+- 有新的需求欢迎提出；
 

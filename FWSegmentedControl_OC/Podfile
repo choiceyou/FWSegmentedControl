@@ -3,6 +3,4 @@ target 'FWSegmentedControl' do
     
     pod 'FWSegmentedControl'
 
-#    pod 'ReachabilitySwift'
-
 end

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E09434244F2AC5061B653F1D26EBB5E4"
+               BlueprintIdentifier = "A16572A4D306C8D36FFB5DBD0DCDEFF1"
                BuildableName = "Pods_FWSegmentedControl.framework"
                BlueprintName = "Pods-FWSegmentedControl"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E09434244F2AC5061B653F1D26EBB5E4"
+            BlueprintIdentifier = "A16572A4D306C8D36FFB5DBD0DCDEFF1"
             BuildableName = "Pods_FWSegmentedControl.framework"
             BlueprintName = "Pods-FWSegmentedControl"
             ReferencedContainer = "container:Pods.xcodeproj">

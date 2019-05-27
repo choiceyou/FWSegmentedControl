@@ -32,6 +32,13 @@
     self.view.backgroundColor = UIColor.lightGrayColor;
     self.navigationItem.title = @"FWSegmentedControl";
     
+    NSArray *images2 = @[[UIImage imageNamed:@"a"], [UIImage imageNamed:@"b"], [UIImage imageNamed:@"c"]];
+    
+    NSArray *selectedImages2 = @[[UIImage imageNamed:@"a-selected"], [UIImage imageNamed:@"b-selected"], [UIImage imageNamed:@"c-selected"]];
+    
+    self.sectionTitles3 = @[@"福建", @"直播", @"小视频"];
+    
+    
     // 例一
     NSArray *sectionTitles = @[@"关注", @"游戏", @"附近", @"体育", @"女神范", @"运动啦啦", @"歌舞", @"吃鸡", @"户外", @"脱口秀"];
     FWSegmentedControl *segmentedControl = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:nil sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
@@ -47,7 +54,7 @@
     FWSegmentedControl *segmentedControl2 = [FWSegmentedControl segmentedWithScType:SCTypeText scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:sectionTitles sectionImageArray:nil sectionSelectedImageArray:nil frame:CGRectMake(0, CGRectGetMaxY(segmentedControl.frame) + 10, self.view.frame.size.width, 40)];
 
     segmentedControl2.selectedSegmentIndex = 1;
-    
+
     segmentedControl2.scSelectionIndicatorStyle = SCSelectionIndicatorStyleContentWidthStripe;
     segmentedControl2.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
     segmentedControl2.segmentEdgeInset = UIEdgeInsetsMake(0, 10, 0, 10);
@@ -73,7 +80,7 @@
 
     segmentedControl3.selectionIndicatorColor = UIColor.redColor;
     segmentedControl3.selectionIndicatorHeight = 3;
-    
+
     segmentedControl3.selectionIndicatorBoxColor = UIColor.greenColor;
     segmentedControl3.selectionIndicatorBoxOpacity = 0.4;
 
@@ -109,15 +116,10 @@
     [self.view addSubview:segmentedControl4];
 
 
-
-
     // 例五
-    self.sectionTitles3 = @[@"叶子", @"椰子啦", @"叶紫"];
-    NSArray *images2 = @[[UIImage imageNamed:@"a"], [UIImage imageNamed:@"b"], [UIImage imageNamed:@"c"]];
+    NSDictionary *sectionSelectedImageDict = @{@(0) : [[FWSectionImageItem alloc] initWithItemImage:[UIImage imageNamed:@"hm_hot_city"] itemSelectedImage:[UIImage imageNamed:@"hm_hot_city_selected"]]};
 
-    NSArray *selectedImages2 = @[[UIImage imageNamed:@"a-selected"], [UIImage imageNamed:@"b-selected"], [UIImage imageNamed:@"c-selected"]];
-
-    FWSegmentedControl *segmentedControl5 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, CGRectGetMaxY(segmentedControl4.frame) + 10, self.view.frame.size.width, 40)];
+    FWSegmentedControl *segmentedControl5 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleDynamic sectionTitleArray:self.sectionTitles3 sectionSelectedImageDict:sectionSelectedImageDict frame:CGRectMake(0, CGRectGetMaxY(segmentedControl4.frame) + 10, self.view.frame.size.width, 40)];
 
     segmentedControl5.scSelectionIndicatorStyle = SCSelectionIndicatorStyleContentWidthStripe;
     segmentedControl5.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
@@ -127,17 +129,12 @@
     segmentedControl5.selectionIndicatorColor = UIColor.redColor;
     segmentedControl5.selectionIndicatorHeight = 3;
 
-    segmentedControl5.verticalDividerEnabled = YES;
-    segmentedControl5.verticalDividerColor = UIColor.lightGrayColor;
-    segmentedControl5.verticalDividerWidth = 1.0;
-
     segmentedControl5.textImageSpacing = 4;
 
     segmentedControl5.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.grayColor, NSFontAttributeName: [UIFont systemFontOfSize:13.0]};
     segmentedControl5.selectedTitleTextAttributes = @{NSForegroundColorAttributeName: UIColor.redColor, NSFontAttributeName: [UIFont systemFontOfSize:13.0]};
 
     [self.view addSubview:segmentedControl5];
-
 
 
     // 例六
@@ -166,31 +163,31 @@
     
     // 例七
     self.segmentedControl7 = [FWSegmentedControl segmentedWithScType:SCTypeTextImages scWidthStyle:SCWidthStyleDynamicFixedSuper sectionTitleArray:self.sectionTitles3 sectionImageArray:images2 sectionSelectedImageArray:selectedImages2 frame:CGRectMake(0, CGRectGetMaxY(segmentedControl6.frame) + 10, self.view.frame.size.width, 40)];
-    
+
     self.segmentedControl7.scSelectionIndicatorStyle = SCSelectionIndicatorStyleFullWidthStripe;
     self.segmentedControl7.scSelectionIndicatorLocation = SCSelectionIndicatorLocationDown;
     self.segmentedControl7.scImagePosition = SCImagePositionRightOfText;
     self.segmentedControl7.segmentEdgeInset = UIEdgeInsetsMake(0, 10, 0, 10);
-    
+
     self.segmentedControl7.selectionIndicatorColor = UIColor.redColor;
     self.segmentedControl7.selectionIndicatorHeight = 3;
-    
+
     self.segmentedControl7.verticalDividerEnabled = YES;
     self.segmentedControl7.verticalDividerColor = UIColor.lightGrayColor;
     self.segmentedControl7.verticalDividerWidth = 1.0;
-    
+
     self.segmentedControl7.textImageSpacing = 4;
-    
+
     self.segmentedControl7.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.grayColor, NSFontAttributeName: [UIFont systemFontOfSize:13.0]};
     self.segmentedControl7.selectedTitleTextAttributes = @{NSForegroundColorAttributeName: UIColor.redColor, NSFontAttributeName: [UIFont systemFontOfSize:13.0]};
-    
+
     __weak typeof(self) ws = self;
     self.segmentedControl7.indexChangeBlock = ^(NSInteger index) {
-        
+
         ws.isClickedSegmented = YES;
         [ws.scrollView scrollRectToVisible:CGRectMake(ws.view.frame.size.width * index, 0, ws.view.frame.size.width, CGRectGetHeight(ws.scrollView.frame)) animated:YES];
     };
-    
+
     [self.view addSubview:self.segmentedControl7];
     
     
