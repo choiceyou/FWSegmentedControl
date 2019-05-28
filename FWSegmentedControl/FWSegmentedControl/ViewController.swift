@@ -130,10 +130,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private lazy var segmentedControl5: FWSegmentedControl = {
         
-        let imageTitles5 = ["福建", "直播", "小视频", "附近"]
+        let imageTitles5 = ["福建", "直播", "小视频", "", "附近"]
         
         let sectionSelectedImageDict = [
             0 : FWSectionImageItem(itemImage: UIImage(named: "hm_hot_city")!, itemSelectedImage: UIImage(named: "hm_hot_city_selected")),
+            3 : FWSectionImageItem(itemImage: UIImage(named: "a")!, itemSelectedImage: UIImage(named: "a-selected")),
         ]
         
         let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamic, sectionTitleArray: imageTitles5, sectionSelectedImageDict: sectionSelectedImageDict, frame: CGRect(x: 0, y: Int(self.segmentedControl4.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 40))
@@ -146,6 +147,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 3
         segmentedControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 5);
+        segmentedControl.selectionIndicatorFollowText = true
         
         segmentedControl.textImageSpacing = 4
         
