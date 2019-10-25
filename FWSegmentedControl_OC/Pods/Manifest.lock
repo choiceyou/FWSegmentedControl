@@ -1,5 +1,5 @@
 PODS:
-  - FWSegmentedControl (2.1.7)
+  - FWSegmentedControl (2.1.8)
 
 DEPENDENCIES:
   - FWSegmentedControl
@@ -9,8 +9,8 @@ SPEC REPOS:
     - FWSegmentedControl
 
 SPEC CHECKSUMS:
-  FWSegmentedControl: de2b81af002d5807f1613f2ac3060c03a1fee702
+  FWSegmentedControl: 65041cbf13e877ba95abbb5f82921e205a176abd
 
 PODFILE CHECKSUM: c69c6a5b0c3433f2de84029319950f6b327076e0
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5

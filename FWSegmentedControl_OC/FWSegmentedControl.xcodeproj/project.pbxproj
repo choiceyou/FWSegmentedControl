@@ -179,7 +179,7 @@
 				496899BF205B7173009F43E5 /* Sources */,
 				496899C0205B7173009F43E5 /* Frameworks */,
 				496899C1205B7173009F43E5 /* Resources */,
-				3CF57D783D0D885688790003 /* [CP] Embed Pods Frameworks */,
+				34A2B2E72E3CF6E34BD0F387 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,20 +299,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3CF57D783D0D885688790003 /* [CP] Embed Pods Frameworks */ = {
+		34A2B2E72E3CF6E34BD0F387 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FWSegmentedControl/FWSegmentedControl.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FWSegmentedControl.framework",
 			);

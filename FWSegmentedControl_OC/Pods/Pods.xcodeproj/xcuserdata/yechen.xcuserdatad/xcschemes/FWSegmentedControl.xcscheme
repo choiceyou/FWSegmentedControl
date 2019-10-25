@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39388785341FB29278D03A68CA476474"
+               BlueprintIdentifier = "DF54D41E5BC207D72C31C8709675EC0C"
                BuildableName = "FWSegmentedControl.framework"
                BlueprintName = "FWSegmentedControl"
                ReferencedContainer = "container:Pods.xcodeproj">

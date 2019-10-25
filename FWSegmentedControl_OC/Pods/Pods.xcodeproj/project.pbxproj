@@ -7,62 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16F2CE9AC360EE89B4748EF70EF7F9C8 /* FWSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677EB5E3B660F54FC3762263F2122028 /* FWSegmentedControl.swift */; };
-		61F2BF5CD4110EFA073BD2B15D96FBBF /* Pods-FWSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CFC55D8EEA0EB33506C9393C8816BB44 /* Pods-FWSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A674A08121800F29E463FF5C4D27336F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		DE60CE3E67407D303AF8634CE7BE84AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		E9F5658AA996A3E4CDC82CE1A2336CD9 /* FWSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BF9EAC32BE7ED4C32430115B6C88EBD /* FWSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F6EF177A3725863D9B57E6097FAF9D2B /* Pods-FWSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D759CC16D88E903D9D082D1D1E76EDC /* Pods-FWSegmentedControl-dummy.m */; };
-		F75C799E57E1EF5004D292D4F470345C /* FWSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50960A6BC783509BA2A2303B4DDC9C52 /* FWSegmentedControl-dummy.m */; };
+		55095B8174FD6E8C1F3E84EE8D377818 /* FWSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677EB5E3B660F54FC3762263F2122028 /* FWSegmentedControl.swift */; };
+		936C0D282A7821ED3353185499C82CFC /* Pods-FWSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D0E7834688D6BF9B092CD75AF317C /* Pods-FWSegmentedControl-dummy.m */; };
+		CE2B504B567A7C54D4E9B36DA82A7395 /* Pods-FWSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3712FCA6A0A3A77C5FE3733569FA7BA /* Pods-FWSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1CE9DB377A4B2376B859D548096F872 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D52C97869F082D98F24DAB6D3DDADDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		DB64AAA8331113E2615517ED99754735 /* FWSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 191000C13997F9E50214881BB33D6ADC /* FWSegmentedControl-dummy.m */; };
+		E8DD36998F3DDB69D4C61783E11F0A30 /* FWSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5C7DE7E352BA3B89672626853594F2 /* FWSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C85913EE27B056838EAA3299A8885F42 /* PBXContainerItemProxy */ = {
+		AE450FB60199EE2B6471E0F8B3EFAA85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 39388785341FB29278D03A68CA476474;
+			remoteGlobalIDString = DF54D41E5BC207D72C31C8709675EC0C;
 			remoteInfo = FWSegmentedControl;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09E2B2D655F273F47D44CE1B92041BB1 /* FWSegmentedControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FWSegmentedControl-Info.plist"; sourceTree = "<group>"; };
-		34CFEF1EB6253867011909AADD3A10AA /* Pods-FWSegmentedControl-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FWSegmentedControl-frameworks.sh"; sourceTree = "<group>"; };
-		3679D264051394F77E208F2BBC2DAD2D /* Pods-FWSegmentedControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FWSegmentedControl.debug.xcconfig"; sourceTree = "<group>"; };
-		389DE5C7D0C88FF94842DE5BB83468C8 /* Pods-FWSegmentedControl-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FWSegmentedControl-acknowledgements.plist"; sourceTree = "<group>"; };
-		50960A6BC783509BA2A2303B4DDC9C52 /* FWSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FWSegmentedControl-dummy.m"; sourceTree = "<group>"; };
-		5A5404B07DF74790565FD93785A56A81 /* FWSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FWSegmentedControl.framework; path = FWSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0121C27C74A3C77A5CA3EDAF23DE1988 /* Pods-FWSegmentedControl-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FWSegmentedControl-frameworks.sh"; sourceTree = "<group>"; };
+		0A64360AC5FE4B46F6EDBFF482DCC8D0 /* Pods-FWSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FWSegmentedControl.modulemap"; sourceTree = "<group>"; };
+		0F1EE4022AE0B2A91D487044D8324667 /* Pods-FWSegmentedControl-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FWSegmentedControl-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1564AE215446F9A07CEE75F796710A51 /* Pods-FWSegmentedControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FWSegmentedControl.debug.xcconfig"; sourceTree = "<group>"; };
+		191000C13997F9E50214881BB33D6ADC /* FWSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FWSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		35320A57A9CFA56BFAB8BFFF4C346B77 /* FWSegmentedControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FWSegmentedControl-Info.plist"; sourceTree = "<group>"; };
+		4B5C7DE7E352BA3B89672626853594F2 /* FWSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FWSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
+		572D0E7834688D6BF9B092CD75AF317C /* Pods-FWSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FWSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		58DC069390C76C28EFF15459628DA9A3 /* FWSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FWSegmentedControl.framework; path = FWSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		677EB5E3B660F54FC3762263F2122028 /* FWSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FWSegmentedControl.swift; path = FWSegmentedControl/FWSegmentedControl/FWSegmentedControl/FWSegmentedControl.swift; sourceTree = "<group>"; };
-		6A6460A6A79D59CB320DF03DE0969405 /* Pods-FWSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FWSegmentedControl.modulemap"; sourceTree = "<group>"; };
-		6D6B33347FF8104A53C93092178927C7 /* Pods-FWSegmentedControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FWSegmentedControl-Info.plist"; sourceTree = "<group>"; };
-		79D05D3F8D753DEE6CD5249B53A7F9DC /* Pods-FWSegmentedControl-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FWSegmentedControl-acknowledgements.markdown"; sourceTree = "<group>"; };
-		86277D9F07EABFA2D42F671A3FA49A6F /* Pods-FWSegmentedControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FWSegmentedControl.release.xcconfig"; sourceTree = "<group>"; };
-		8D759CC16D88E903D9D082D1D1E76EDC /* Pods-FWSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FWSegmentedControl-dummy.m"; sourceTree = "<group>"; };
-		9BF9EAC32BE7ED4C32430115B6C88EBD /* FWSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FWSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
-		9CBE54787C10622631C5213347B075F3 /* FWSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FWSegmentedControl.xcconfig; sourceTree = "<group>"; };
+		6FD739ABF65FDE0FF3F2C6726569C199 /* Pods_FWSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FWSegmentedControl.framework; path = "Pods-FWSegmentedControl.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		912028BE99D128E0CBA7AAE46253D116 /* FWSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FWSegmentedControl.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DD1374598A58CE84F5AA6D194A32F45 /* Pods_FWSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FWSegmentedControl.framework; path = "Pods-FWSegmentedControl.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A11D5CB0550D80DEC81E6652E7C07802 /* FWSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FWSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
-		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CFC55D8EEA0EB33506C9393C8816BB44 /* Pods-FWSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FWSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
-		E5A48AF0CB946F1A68754A3DA7F096CE /* FWSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FWSegmentedControl.modulemap; sourceTree = "<group>"; };
+		B3712FCA6A0A3A77C5FE3733569FA7BA /* Pods-FWSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FWSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
+		BE27118DD1BF35F4429576DDB999B5F0 /* Pods-FWSegmentedControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FWSegmentedControl-Info.plist"; sourceTree = "<group>"; };
+		D82FA856EADD2D1D5469699ACF65A3CE /* FWSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FWSegmentedControl.xcconfig; sourceTree = "<group>"; };
+		DDFB9D60AC0B976A3079E6F4BFE4FCC9 /* FWSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FWSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
+		E85AD6DE7F703379E1ADE1EB6A54467E /* Pods-FWSegmentedControl-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FWSegmentedControl-acknowledgements.plist"; sourceTree = "<group>"; };
+		EDA90144FE03BAE10A5B6CDE05A87B55 /* Pods-FWSegmentedControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FWSegmentedControl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2EE0B9F90B646880A13D1A6E0513221F /* Frameworks */ = {
+		99071D7A1BB83A678076AB8B10CCD389 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE60CE3E67407D303AF8634CE7BE84AA /* Foundation.framework in Frameworks */,
+				D52C97869F082D98F24DAB6D3DDADDD0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD6C84C5FBDBF3D85598150EBADAC923 /* Frameworks */ = {
+		FF2BA6B8E39EC4527C7A0C0526E85884 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A674A08121800F29E463FF5C4D27336F /* Foundation.framework in Frameworks */,
+				D1CE9DB377A4B2376B859D548096F872 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,32 +77,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		48BB49B904B7861DB4D6B2F28BCAB40C /* Support Files */ = {
+		49DF181AFFFF7F31E18C6C1A9E38B02B /* Pods-FWSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				E5A48AF0CB946F1A68754A3DA7F096CE /* FWSegmentedControl.modulemap */,
-				9CBE54787C10622631C5213347B075F3 /* FWSegmentedControl.xcconfig */,
-				50960A6BC783509BA2A2303B4DDC9C52 /* FWSegmentedControl-dummy.m */,
-				09E2B2D655F273F47D44CE1B92041BB1 /* FWSegmentedControl-Info.plist */,
-				A11D5CB0550D80DEC81E6652E7C07802 /* FWSegmentedControl-prefix.pch */,
-				9BF9EAC32BE7ED4C32430115B6C88EBD /* FWSegmentedControl-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FWSegmentedControl";
-			sourceTree = "<group>";
-		};
-		62B77E966674B2784CE2181B93AA5F11 /* Pods-FWSegmentedControl */ = {
-			isa = PBXGroup;
-			children = (
-				6A6460A6A79D59CB320DF03DE0969405 /* Pods-FWSegmentedControl.modulemap */,
-				79D05D3F8D753DEE6CD5249B53A7F9DC /* Pods-FWSegmentedControl-acknowledgements.markdown */,
-				389DE5C7D0C88FF94842DE5BB83468C8 /* Pods-FWSegmentedControl-acknowledgements.plist */,
-				8D759CC16D88E903D9D082D1D1E76EDC /* Pods-FWSegmentedControl-dummy.m */,
-				34CFEF1EB6253867011909AADD3A10AA /* Pods-FWSegmentedControl-frameworks.sh */,
-				6D6B33347FF8104A53C93092178927C7 /* Pods-FWSegmentedControl-Info.plist */,
-				CFC55D8EEA0EB33506C9393C8816BB44 /* Pods-FWSegmentedControl-umbrella.h */,
-				3679D264051394F77E208F2BBC2DAD2D /* Pods-FWSegmentedControl.debug.xcconfig */,
-				86277D9F07EABFA2D42F671A3FA49A6F /* Pods-FWSegmentedControl.release.xcconfig */,
+				0A64360AC5FE4B46F6EDBFF482DCC8D0 /* Pods-FWSegmentedControl.modulemap */,
+				0F1EE4022AE0B2A91D487044D8324667 /* Pods-FWSegmentedControl-acknowledgements.markdown */,
+				E85AD6DE7F703379E1ADE1EB6A54467E /* Pods-FWSegmentedControl-acknowledgements.plist */,
+				572D0E7834688D6BF9B092CD75AF317C /* Pods-FWSegmentedControl-dummy.m */,
+				0121C27C74A3C77A5CA3EDAF23DE1988 /* Pods-FWSegmentedControl-frameworks.sh */,
+				BE27118DD1BF35F4429576DDB999B5F0 /* Pods-FWSegmentedControl-Info.plist */,
+				B3712FCA6A0A3A77C5FE3733569FA7BA /* Pods-FWSegmentedControl-umbrella.h */,
+				1564AE215446F9A07CEE75F796710A51 /* Pods-FWSegmentedControl.debug.xcconfig */,
+				EDA90144FE03BAE10A5B6CDE05A87B55 /* Pods-FWSegmentedControl.release.xcconfig */,
 			);
 			name = "Pods-FWSegmentedControl";
 			path = "Target Support Files/Pods-FWSegmentedControl";
@@ -112,27 +98,41 @@
 			isa = PBXGroup;
 			children = (
 				677EB5E3B660F54FC3762263F2122028 /* FWSegmentedControl.swift */,
-				48BB49B904B7861DB4D6B2F28BCAB40C /* Support Files */,
+				8B0D2D090545B650DD6CC157FA14CF67 /* Support Files */,
 			);
 			name = FWSegmentedControl;
 			path = FWSegmentedControl;
 			sourceTree = "<group>";
 		};
-		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+		8B0D2D090545B650DD6CC157FA14CF67 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+				912028BE99D128E0CBA7AAE46253D116 /* FWSegmentedControl.modulemap */,
+				D82FA856EADD2D1D5469699ACF65A3CE /* FWSegmentedControl.xcconfig */,
+				191000C13997F9E50214881BB33D6ADC /* FWSegmentedControl-dummy.m */,
+				35320A57A9CFA56BFAB8BFFF4C346B77 /* FWSegmentedControl-Info.plist */,
+				DDFB9D60AC0B976A3079E6F4BFE4FCC9 /* FWSegmentedControl-prefix.pch */,
+				4B5C7DE7E352BA3B89672626853594F2 /* FWSegmentedControl-umbrella.h */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/FWSegmentedControl";
 			sourceTree = "<group>";
 		};
 		9C46E74153786D32CE1A00BC244CCC9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A5404B07DF74790565FD93785A56A81 /* FWSegmentedControl.framework */,
-				9DD1374598A58CE84F5AA6D194A32F45 /* Pods_FWSegmentedControl.framework */,
+				58DC069390C76C28EFF15459628DA9A3 /* FWSegmentedControl.framework */,
+				6FD739ABF65FDE0FF3F2C6726569C199 /* Pods_FWSegmentedControl.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -149,7 +149,7 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 		F85B1B4184DBA0EF99CB60CB28485346 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				62B77E966674B2784CE2181B93AA5F11 /* Pods-FWSegmentedControl */,
+				49DF181AFFFF7F31E18C6C1A9E38B02B /* Pods-FWSegmentedControl */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -165,33 +165,52 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		E6E1910E6560361AFB52756EFE8405F9 /* Headers */ = {
+		C02582DAD669BB5798A84C1BCFE199FE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F5658AA996A3E4CDC82CE1A2336CD9 /* FWSegmentedControl-umbrella.h in Headers */,
+				CE2B504B567A7C54D4E9B36DA82A7395 /* Pods-FWSegmentedControl-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3190C7138766D69A5684DFD9C006876 /* Headers */ = {
+		C421E21217F78764AF0DD33C4860F09E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61F2BF5CD4110EFA073BD2B15D96FBBF /* Pods-FWSegmentedControl-umbrella.h in Headers */,
+				E8DD36998F3DDB69D4C61783E11F0A30 /* FWSegmentedControl-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		39388785341FB29278D03A68CA476474 /* FWSegmentedControl */ = {
+		BDCB9CD33BDC5C1F097E55BEFEE8B07D /* Pods-FWSegmentedControl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36D532EF5EAB7478B23483D7162DDEB4 /* Build configuration list for PBXNativeTarget "FWSegmentedControl" */;
+			buildConfigurationList = 1D942DF4176711D12575658BCF7D232C /* Build configuration list for PBXNativeTarget "Pods-FWSegmentedControl" */;
 			buildPhases = (
-				E6E1910E6560361AFB52756EFE8405F9 /* Headers */,
-				4B7CAF901A37F0975DE3FA0068E5B977 /* Sources */,
-				DD6C84C5FBDBF3D85598150EBADAC923 /* Frameworks */,
-				1B384935D1BCC4A23425CE501009D8B5 /* Resources */,
+				C02582DAD669BB5798A84C1BCFE199FE /* Headers */,
+				C8AFFA63B56C5A54EAC4894E8B74137C /* Sources */,
+				99071D7A1BB83A678076AB8B10CCD389 /* Frameworks */,
+				3E36114644297B7141EEEFB8C2D588C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				950F90E1E4D542E33DCE601638A52FBD /* PBXTargetDependency */,
+			);
+			name = "Pods-FWSegmentedControl";
+			productName = "Pods-FWSegmentedControl";
+			productReference = 6FD739ABF65FDE0FF3F2C6726569C199 /* Pods_FWSegmentedControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DF54D41E5BC207D72C31C8709675EC0C /* FWSegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8AA857ED20FD64D49E126D88C8C7FFE /* Build configuration list for PBXNativeTarget "FWSegmentedControl" */;
+			buildPhases = (
+				C421E21217F78764AF0DD33C4860F09E /* Headers */,
+				7B7A22EBFB7464A6A6F1803F71310EF7 /* Sources */,
+				FF2BA6B8E39EC4527C7A0C0526E85884 /* Frameworks */,
+				6CE33CE7EB7EF323006C053ED9A2B95F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -199,26 +218,7 @@
 			);
 			name = FWSegmentedControl;
 			productName = FWSegmentedControl;
-			productReference = 5A5404B07DF74790565FD93785A56A81 /* FWSegmentedControl.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A16572A4D306C8D36FFB5DBD0DCDEFF1 /* Pods-FWSegmentedControl */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 00721B0F81508B586D6DDA0F1687D2B2 /* Build configuration list for PBXNativeTarget "Pods-FWSegmentedControl" */;
-			buildPhases = (
-				F3190C7138766D69A5684DFD9C006876 /* Headers */,
-				F9737A86D6688DEDC9C42E4BE613CDA1 /* Sources */,
-				2EE0B9F90B646880A13D1A6E0513221F /* Frameworks */,
-				5B93CAE737E0D46DB3D7BA2EECECE2DD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				71837464A2618A69DEB201D8B3D306E2 /* PBXTargetDependency */,
-			);
-			name = "Pods-FWSegmentedControl";
-			productName = "Pods-FWSegmentedControl";
-			productReference = 9DD1374598A58CE84F5AA6D194A32F45 /* Pods_FWSegmentedControl.framework */;
+			productReference = 58DC069390C76C28EFF15459628DA9A3 /* FWSegmentedControl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -227,12 +227,12 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -242,21 +242,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				39388785341FB29278D03A68CA476474 /* FWSegmentedControl */,
-				A16572A4D306C8D36FFB5DBD0DCDEFF1 /* Pods-FWSegmentedControl */,
+				DF54D41E5BC207D72C31C8709675EC0C /* FWSegmentedControl */,
+				BDCB9CD33BDC5C1F097E55BEFEE8B07D /* Pods-FWSegmentedControl */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1B384935D1BCC4A23425CE501009D8B5 /* Resources */ = {
+		3E36114644297B7141EEEFB8C2D588C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B93CAE737E0D46DB3D7BA2EECECE2DD /* Resources */ = {
+		6CE33CE7EB7EF323006C053ED9A2B95F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,36 +266,100 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4B7CAF901A37F0975DE3FA0068E5B977 /* Sources */ = {
+		7B7A22EBFB7464A6A6F1803F71310EF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F75C799E57E1EF5004D292D4F470345C /* FWSegmentedControl-dummy.m in Sources */,
-				16F2CE9AC360EE89B4748EF70EF7F9C8 /* FWSegmentedControl.swift in Sources */,
+				DB64AAA8331113E2615517ED99754735 /* FWSegmentedControl-dummy.m in Sources */,
+				55095B8174FD6E8C1F3E84EE8D377818 /* FWSegmentedControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F9737A86D6688DEDC9C42E4BE613CDA1 /* Sources */ = {
+		C8AFFA63B56C5A54EAC4894E8B74137C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6EF177A3725863D9B57E6097FAF9D2B /* Pods-FWSegmentedControl-dummy.m in Sources */,
+				936C0D282A7821ED3353185499C82CFC /* Pods-FWSegmentedControl-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		71837464A2618A69DEB201D8B3D306E2 /* PBXTargetDependency */ = {
+		950F90E1E4D542E33DCE601638A52FBD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FWSegmentedControl;
-			target = 39388785341FB29278D03A68CA476474 /* FWSegmentedControl */;
-			targetProxy = C85913EE27B056838EAA3299A8885F42 /* PBXContainerItemProxy */;
+			target = DF54D41E5BC207D72C31C8709675EC0C /* FWSegmentedControl */;
+			targetProxy = AE450FB60199EE2B6471E0F8B3EFAA85 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		05DF210AC65EBB0E593AAF976B2C2177 /* Release */ = {
+		135B04526121470184B1842CBC3D246B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1564AE215446F9A07CEE75F796710A51 /* Pods-FWSegmentedControl.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4822A4344EA5A37DE86B04A8898DBED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D82FA856EADD2D1D5469699ACF65A3CE /* FWSegmentedControl.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FWSegmentedControl/FWSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FWSegmentedControl/FWSegmentedControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FWSegmentedControl/FWSegmentedControl.modulemap";
+				PRODUCT_MODULE_NAME = FWSegmentedControl;
+				PRODUCT_NAME = FWSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -350,16 +414,15 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		0CE66B4CEB05CD76F812BE9365CF5914 /* Release */ = {
+		68DC765A1344D97D58CC27ACFAEB451A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86277D9F07EABFA2D42F671A3FA49A6F /* Pods-FWSegmentedControl.release.xcconfig */;
+			baseConfigurationReference = D82FA856EADD2D1D5469699ACF65A3CE /* FWSegmentedControl.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -369,19 +432,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FWSegmentedControl/FWSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FWSegmentedControl/FWSegmentedControl-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FWSegmentedControl/Pods-FWSegmentedControl.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/FWSegmentedControl/FWSegmentedControl.modulemap";
+				PRODUCT_MODULE_NAME = FWSegmentedControl;
+				PRODUCT_NAME = FWSegmentedControl;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -389,7 +451,7 @@
 			};
 			name = Release;
 		};
-		421ECB1396280A8D83853C3DDBED1700 /* Debug */ = {
+		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -448,46 +510,14 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		66A05894A4841A6DE7A4BFC9568D3865 /* Release */ = {
+		D92C51882A7991CF23A5605AC1DFBB6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CBE54787C10622631C5213347B075F3 /* FWSegmentedControl.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FWSegmentedControl/FWSegmentedControl-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FWSegmentedControl/FWSegmentedControl-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FWSegmentedControl/FWSegmentedControl.modulemap";
-				PRODUCT_MODULE_NAME = FWSegmentedControl;
-				PRODUCT_NAME = FWSegmentedControl;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8FB8B08088DDF3E481CC3EF4E3622B49 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3679D264051394F77E208F2BBC2DAD2D /* Pods-FWSegmentedControl.debug.xcconfig */;
+			baseConfigurationReference = EDA90144FE03BAE10A5B6CDE05A87B55 /* Pods-FWSegmentedControl.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -513,59 +543,20 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		F14FD6D5ABB7C86C102B735C4E242813 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CBE54787C10622631C5213347B075F3 /* FWSegmentedControl.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FWSegmentedControl/FWSegmentedControl-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FWSegmentedControl/FWSegmentedControl-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FWSegmentedControl/FWSegmentedControl.modulemap";
-				PRODUCT_MODULE_NAME = FWSegmentedControl;
-				PRODUCT_NAME = FWSegmentedControl;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00721B0F81508B586D6DDA0F1687D2B2 /* Build configuration list for PBXNativeTarget "Pods-FWSegmentedControl" */ = {
+		1D942DF4176711D12575658BCF7D232C /* Build configuration list for PBXNativeTarget "Pods-FWSegmentedControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8FB8B08088DDF3E481CC3EF4E3622B49 /* Debug */,
-				0CE66B4CEB05CD76F812BE9365CF5914 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		36D532EF5EAB7478B23483D7162DDEB4 /* Build configuration list for PBXNativeTarget "FWSegmentedControl" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F14FD6D5ABB7C86C102B735C4E242813 /* Debug */,
-				66A05894A4841A6DE7A4BFC9568D3865 /* Release */,
+				135B04526121470184B1842CBC3D246B /* Debug */,
+				D92C51882A7991CF23A5605AC1DFBB6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -573,8 +564,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				421ECB1396280A8D83853C3DDBED1700 /* Debug */,
-				05DF210AC65EBB0E593AAF976B2C2177 /* Release */,
+				7EF7227D9B20A1D549000096ACCB23D7 /* Debug */,
+				4BE66A09A74FD25164AAB3C2645B9B93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8AA857ED20FD64D49E126D88C8C7FFE /* Build configuration list for PBXNativeTarget "FWSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4822A4344EA5A37DE86B04A8898DBED2 /* Debug */,
+				68DC765A1344D97D58CC27ACFAEB451A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
