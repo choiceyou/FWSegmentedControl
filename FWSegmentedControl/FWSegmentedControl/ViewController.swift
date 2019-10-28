@@ -75,7 +75,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         segmentedControl.selectionIndicatorHeight = 3
         
         segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: kSegmentTitleFont)]
-        segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.backgroundColor: UIColor.clear, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20)]
+        segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red, NSAttributedStringKey.backgroundColor: UIColor.clear, NSAttributedStringKey.font: UIFont.systemFont(ofSize: kSegmentTitleFont)]
         
         segmentedControl.autoresizingMask = [.flexibleRightMargin, .flexibleLeftMargin]
         
