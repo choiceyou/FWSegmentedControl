@@ -288,6 +288,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.addSubview(self.setupUIView(index: 1))
         self.scrollView.addSubview(self.setupUIView(index: 2))
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.segmentedControl8.setSelectedSegmentIndex(index: 2, animated: true)
+    }
 }
 
 extension ViewController {
