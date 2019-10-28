@@ -28,7 +28,7 @@ class ViewController2: UIViewController, UIScrollViewDelegate {
         
         segmentedControl.scSelectionIndicatorStyle = .fullWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
-        segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(10), 0, CGFloat(10))
+        segmentedControl.segmentEdgeInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 3
@@ -95,7 +95,7 @@ extension ViewController2 {
         
         segmentedControl2.scSelectionIndicatorStyle = .fullWidthStripe
         segmentedControl2.scSelectionIndicatorLocation = .down
-        segmentedControl2.segmentEdgeInset = UIEdgeInsetsMake(0, CGFloat(10), 0, CGFloat(10))
+        segmentedControl2.segmentEdgeInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         
         segmentedControl2.selectionIndicatorColor = UIColor.red
         segmentedControl2.selectionIndicatorHeight = 3
