@@ -194,14 +194,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         let segmentedControl = FWSegmentedControl.segmentedWith(scType: SCType.textImages, scWidthStyle: SCWidthStyle.dynamic, sectionTitleArray: imageTitles5, sectionSelectedImageDict: sectionSelectedImageDict, frame: CGRect(x: 0, y: Int(self.segmentedControl6.frame.maxY) + 10, width: Int(UIScreen.main.bounds.width), height: 40))
         
-        segmentedControl.scSelectionIndicatorStyle = .contentWidthStripe
+        segmentedControl.scSelectionIndicatorStyle = .fixedWidthStripe
         segmentedControl.scSelectionIndicatorLocation = .down
         segmentedControl.scImagePosition = .rightOfText
         segmentedControl.segmentEdgeInset = UIEdgeInsets(top: 0, left: kSegmentLeftEdge, bottom: 0, right: kSegmentLeftEdge)
         
         segmentedControl.selectionIndicatorColor = UIColor.red
         segmentedControl.selectionIndicatorHeight = 3
-        segmentedControl.selectionIndicatorEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         segmentedControl.selectionIndicatorFollowText = true
         
         segmentedControl.textImageSpacing = 4
@@ -267,18 +266,23 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         segmentedControl.autoresizingMask = .flexibleRightMargin
         
+        segmentedControl.indexChangeBlock = { [weak self] index in
+            self?.isClickedSegmented = true
+            self?.scrollView.scrollRectToVisible(CGRect(x: (self?.view.bounds.width)! * CGFloat(index), y: 0, width: (self?.view.bounds.width)!, height: (self?.scrollView.frame.height)!), animated: true)
+        }
+        
         return segmentedControl
     }()
     
     lazy var scrollView: UIScrollView = {
         
-        let scrollView = UIScrollView(frame: CGRect(x: 0, y: self.segmentedControl8.frame.maxY, width: self.view.frame.width, height: self.view.frame.height-self.segmentedControl8.frame.maxY))
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: self.segmentedControl9.frame.maxY, width: self.view.frame.width, height: self.view.frame.height-self.segmentedControl9.frame.maxY))
         scrollView.backgroundColor = UIColor.clear
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.bounces = false
-        scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(imageTitles3.count), height: self.view.bounds.height-self.segmentedControl8.frame.maxY)
+        scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(imageTitles3.count), height: self.view.bounds.height-self.segmentedControl9.frame.maxY)
         scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: self.view.bounds.width, height: scrollView.frame.height), animated: false)
         return scrollView
     }()
@@ -302,11 +306,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.view.addSubview(self.segmentedControl9)
         self.view.addSubview(self.scrollView)
 
-        self.segmentedControl8.indexChangeBlock = { [weak self] index in
-            self?.isClickedSegmented = true
-            self?.scrollView.scrollRectToVisible(CGRect(x: (self?.view.bounds.width)! * CGFloat(index), y: 0, width: (self?.view.bounds.width)!, height: (self?.scrollView.frame.height)!), animated: true)
-        }
-
         self.scrollView.addSubview(self.setupUIView(index: 0))
         self.scrollView.addSubview(self.setupUIView(index: 1))
         self.scrollView.addSubview(self.setupUIView(index: 2))
@@ -315,7 +314,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.segmentedControl8.setSelectedSegmentIndex(index: 2, animated: true)
+        self.segmentedControl9.setSelectedSegmentIndex(index: 2, animated: true)
     }
 }
 
@@ -339,7 +338,7 @@ extension ViewController {
             let tmpPage2 = scrollView.contentOffset.x / pageWidth
             let page = tmpPage2-tmpPage>=0.5 ? tmpPage+1 : tmpPage
             if startPage != Int(page) {
-                self.segmentedControl8.setSelectedSegmentIndex(index: Int(page), animated: true)
+                self.segmentedControl9.setSelectedSegmentIndex(index: Int(page), animated: true)
                 startPage = Int(page)
             }
         }
@@ -349,7 +348,7 @@ extension ViewController {
         let pageWidth = scrollView.frame.width
         let page = scrollView.contentOffset.x / pageWidth
         self.isClickedSegmented = false
-        self.segmentedControl8.setSelectedSegmentIndex(index: Int(page), animated: true)
+        self.segmentedControl9.setSelectedSegmentIndex(index: Int(page), animated: true)
     }
     
     @objc func goNextVC() {
