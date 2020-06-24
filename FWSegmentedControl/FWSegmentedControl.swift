@@ -78,8 +78,9 @@ import UIKit
 /// 选中标识符类型
 ///
 /// - none: 无选中标识符
-/// - contentWidthStripe: 选中标识符为线条类型，并且宽度等于内容的宽度
-/// - fullWidthStripe: 选中标识符为线条类型，并且宽度等于当前控件的宽度
+/// - contentWidthStripe: 选中标识符为横条类型，并且宽度等于内容的宽度
+/// - fullWidthStripe: 选中标识符为横条类型，并且宽度等于当前控件的宽度
+/// - fixedWidthStripe: 选中标识符为横条类型，并且固定宽度（当section宽度小于该值时，以section宽度为准）
 /// - box: 选中标识符带矩形背景
 /// - arrowUp: 选中标识符为箭头，箭头向上
 /// - arrowDown: 选中标识符为箭头，箭头向下
@@ -87,6 +88,7 @@ import UIKit
     case none
     case contentWidthStripe
     case fullWidthStripe
+    case fixedWidthStripe
     case box
     case arrowUp
     case arrowDown
@@ -183,11 +185,11 @@ open class FWSegmentedControl: UIControl {
         }
     }
     
-    /// 选中标识符高度，注意：self.scSelectionIndicatorStyle == .box || self.scSelectionIndicatorStyle == .none 时无效
+    /// 选中标识符高度（self.scSelectionIndicatorStyle == .box || self.scSelectionIndicatorStyle == .none 时无效）
     @objc public var selectionIndicatorHeight: CGFloat = 3.0
     /// 选中标识符圆角半径
     @objc public var selectionIndicatorCornerRadius: CGFloat = 1.5
-    /// 选中标识符，当 SCSelectionIndicatorLocation == up 时，底部edge无效；反之，顶部edge无效；
+    /// 选中标识符（当 SCSelectionIndicatorLocation == up 时，底部edge无效；反之，顶部edge无效；）
     @objc public var selectionIndicatorEdgeInsets = UIEdgeInsets.zero
     /// 选中标识符颜色
     @objc public var selectionIndicatorColor = UIColor(red: 52.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0)
@@ -197,18 +199,26 @@ open class FWSegmentedControl: UIControl {
     @objc public var selectionIndicatorBoxEdgeInset = UIEdgeInsets.zero
     /// 选中滑块偏移量是受到segmentEdgeInset影响
     @objc public var selectionIndicatorBoxFollowEdgeInset: Bool = false
-    
     /// 选中标识符只跟随文字的宽度（当self.scType == .textImages 并且 (self.scImagePosition == .leftOfText 或 .rightOfText)时有效）
     @objc public var selectionIndicatorFollowText: Bool = false
+    /// 选中标识符滑动的时间
+    @objc public var indicatorAnimatedTimes: CFTimeInterval = 0.15
     /// 选中标识符为箭头的宽度
     @objc public var arrowWidth: CGFloat = 6.0
+    /// 选中标识符为横条的固定宽度（当且仅当 self.scSelectionIndicatorStyle == .fixedWidthStripe 时有效）
+    @objc public var selectionStripeIndicatorFixedWidth: CGFloat = 15.0
+    /// 选中标识符为box时的opacity值
+    @objc public var selectionIndicatorBoxOpacity: CGFloat = 0.2 {
+        willSet {
+            selectionIndicatorBoxLayer.opacity = Float(newValue)
+        }
+    }
     
-    /// 滑动或者选中回调
-    @objc public var indexChangeBlock: SCIndexChangeBlock?
-    /// 已经选中了某个index后再次点击的回调
-    @objc public var indexSecondClickedBlock: SCIndexSecondClickedBlock?
-    /// 标题NSAttributedString回调
-    @objc public var titleFormatterBlock: SCTitleFormatterBlock?
+    /// 未选中的标题属性
+    @objc public var titleTextAttributes: [NSAttributedString.Key: Any]?
+    /// 选中的标题属性
+    @objc public var selectedTitleTextAttributes: [NSAttributedString.Key: Any]?
+    
     /// segment的Inset属性
     @objc public var segmentEdgeInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     /// segment背景与真正的内容块的偏移量
@@ -220,31 +230,31 @@ open class FWSegmentedControl: UIControl {
     /// 扩大点击区域（这个一般不用设置）
     @objc public var enlargetouchesEdgeInset = UIEdgeInsets.zero
     
-    /// 未选中的标题属性
-    @objc public var titleTextAttributes: [NSAttributedString.Key: Any]?
-    /// 选中的标题属性
-    @objc public var selectedTitleTextAttributes: [NSAttributedString.Key: Any]?
+    /// self.scType == .textImages 时，文字、图片的间隔
+    @objc public var textImageSpacing: CGFloat = 4.0
+    /// Item的最小宽度
+    @objc public var sectionMinWidth: CGFloat = 0.0
+    /// 选中项的下标
+    @objc public var selectedSegmentIndex: Int = 0
     
     /// 是否可以拖动
     @objc public var userDraggable = true
     /// 是否可以点击
     @objc public var touchEnabled = true
+    /// 选中或者滑动时是否需要动画
+    @objc public var shouldAnimateUserSelection = true
+    
+    /// 滑动或者选中回调
+    @objc public var indexChangeBlock: SCIndexChangeBlock?
+    /// 已经选中了某个index后再次点击的回调
+    @objc public var indexSecondClickedBlock: SCIndexSecondClickedBlock?
+    /// 标题NSAttributedString回调
+    @objc public var titleFormatterBlock: SCTitleFormatterBlock?
     
     /// segment的边框颜色
     @objc public var segmentBorderColor = UIColor.black
     /// segment的边框大小
     @objc public var segmentBorderWidth: CGFloat = 1.0
-    
-    /// 选中或者滑动时是否需要动画
-    @objc public var shouldAnimateUserSelection = true
-    
-    /// 选中表示符为box时的opacity值
-    @objc public var selectionIndicatorBoxOpacity: CGFloat = 0.2 {
-        willSet {
-            selectionIndicatorBoxLayer.opacity = Float(newValue)
-        }
-    }
-    
     /// segment之间的间隔竖线的宽度
     @objc public var verticalDividerWidth: CGFloat = 1.0
     /// 是否需要segment之间的间隔竖线
@@ -253,15 +263,6 @@ open class FWSegmentedControl: UIControl {
     @objc public var verticalDividerColor = UIColor.black
     /// segment之间的间隔竖线的偏移量
     @objc public var verticalDividerEdgeInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
-    
-    /// 选中标识符滑动的时间
-    @objc public var indicatorAnimatedTimes: CFTimeInterval = 0.15
-    
-    /// self.scType == .textImages 时，文字、图片的间隔
-    @objc public var textImageSpacing: CGFloat = 4.0
-    
-    /// 选中项的下标
-    @objc public var selectedSegmentIndex: Int = 0
     
     
     /// 选中标识符 横线
@@ -817,7 +818,7 @@ extension FWSegmentedControl {
                         self.setSelectedSegmentIndex(index: index, animated: false, notify: true)
                         return
                     }
-                }  else {
+                } else {
                     if self.selectionIndicatorStripLayer.superlayer == nil {
                         self.scrollView.layer.addSublayer(self.selectionIndicatorStripLayer)
                         self.setSelectedSegmentIndex(index: index, animated: false, notify: true)
@@ -1025,7 +1026,6 @@ extension FWSegmentedControl {
                 return CGRect(x: x - (self.selectionIndicatorHeight / 2), y: indicatorYOffset, width: self.selectionIndicatorHeight * 2, height: self.selectionIndicatorHeight)
             } else {
                 var selectedSegmentOffset: CGFloat = 0.0
-                
                 var tmpIndex = 0
                 for width in self.segmentWidthsArray {
                     if self.selectedSegmentIndex == tmpIndex {
@@ -1041,7 +1041,7 @@ extension FWSegmentedControl {
                 return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left + (CGFloat(currentSegmentWidth) - tmpArrowWidth) / 2, y: indicatorYOffset, width:tmpArrowWidth - self.selectionIndicatorEdgeInsets.left - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
             }
         } else {
-            if self.scSelectionIndicatorStyle == .contentWidthStripe && sectionWidth <= self.segmentWidth && self.scWidthStyle == .fixed {
+            if self.scWidthStyle == .fixed && self.scSelectionIndicatorStyle == .contentWidthStripe && sectionWidth <= self.segmentWidth {
                 let widthToEndOfSelectedSegment = (self.segmentWidth * CGFloat(self.selectedSegmentIndex)) + self.segmentWidth
                 let widthToStartOfSelectedIndex = self.segmentWidth * CGFloat(self.selectedSegmentIndex)
                 let x = ((widthToEndOfSelectedSegment - widthToStartOfSelectedIndex) / 2) + (widthToStartOfSelectedIndex - sectionWidth / 2)
@@ -1049,7 +1049,6 @@ extension FWSegmentedControl {
             } else {
                 if self.scWidthStyle == .dynamic || self.scWidthStyle == .dynamicFixedSuper {
                     var selectedSegmentOffset: CGFloat = 0.0
-                    
                     var tmpIndex = 0
                     for width in self.segmentWidthsArray {
                         if self.selectedSegmentIndex == tmpIndex {
@@ -1059,9 +1058,8 @@ extension FWSegmentedControl {
                         tmpIndex += 1
                     }
                     
-                    if self.scSelectionIndicatorStyle == .contentWidthStripe {
+                    if self.scSelectionIndicatorStyle == .contentWidthStripe || self.scSelectionIndicatorStyle == .fixedWidthStripe {
                         let currentSegmentWidth = self.segmentWidthsArray[self.selectedSegmentIndex].floatValue
-                        
                         var contentWidth: CGFloat = 0.0
                         var tmpContentWidth: CGFloat = 0.0
                         if self.scType == .text {
@@ -1080,13 +1078,16 @@ extension FWSegmentedControl {
                             contentWidth = self.configSegmentsWidth(index: self.selectedSegmentIndex, object: icon as AnyObject, isNeedEdgeInset: false, isOnlyTextWidth: self.selectionIndicatorFollowText)
                             tmpContentWidth = self.configSegmentsWidth(index: self.selectedSegmentIndex, object: icon as AnyObject, isNeedEdgeInset: false, isOnlyTextWidth: false)
                         }
-                        var tmpWidth: CGFloat = (CGFloat(currentSegmentWidth) - contentWidth) / 2
-                        if self.scType == .textImages && self.selectionIndicatorFollowText {
-                            tmpWidth = (CGFloat(currentSegmentWidth) - tmpContentWidth) / 2
+                        if self.scSelectionIndicatorStyle == .fixedWidthStripe {
+                            contentWidth = min(contentWidth, self.selectionStripeIndicatorFixedWidth)
                         }
-                        return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left + tmpWidth, y: indicatorYOffset, width: contentWidth - self.selectionIndicatorEdgeInsets.left - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
-                    }
-                    else if self.scSelectionIndicatorStyle == .fullWidthStripe || self.scSelectionIndicatorStyle == .box {
+                        
+                        var tmpX: CGFloat = (CGFloat(currentSegmentWidth) - contentWidth) / 2
+                        if self.scType == .textImages && self.selectionIndicatorFollowText {
+                            tmpX = (CGFloat(currentSegmentWidth) - tmpContentWidth) / 2
+                        }
+                        return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left + tmpX, y: indicatorYOffset, width: contentWidth - self.selectionIndicatorEdgeInsets.left - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
+                    } else if self.scSelectionIndicatorStyle == .fullWidthStripe || self.scSelectionIndicatorStyle == .box {
                         return CGRect(x: selectedSegmentOffset + self.selectionIndicatorEdgeInsets.left, y: indicatorYOffset, width: CGFloat(self.segmentWidthsArray[self.selectedSegmentIndex].floatValue) - self.selectionIndicatorEdgeInsets.left - self.selectionIndicatorEdgeInsets.right, height: self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom)
                     }
                 }
@@ -1128,7 +1129,7 @@ extension FWSegmentedControl {
     }
 }
 
-// MARK: - 配置
+// MARK: - 计算
 extension FWSegmentedControl {
     
     /// segment的Size
@@ -1151,7 +1152,7 @@ extension FWSegmentedControl {
             size = self.titleFormatterBlock!(self, title, index, selected).size()
         }
         
-        return (CGRect(x: 0, y: 0, width: size.width, height: size.height).integral).size
+        return CGSize(width: ceil(max(size.width, self.sectionMinWidth)), height: ceil(size.height))
     }
     
     /// 计算所有segment的总宽度
@@ -1266,4 +1267,5 @@ open class FWSectionImageItem: NSObject {
         super.init()
     }
 }
+
 
