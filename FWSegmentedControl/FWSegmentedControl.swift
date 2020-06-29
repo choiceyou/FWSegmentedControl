@@ -123,10 +123,10 @@ public struct SCBorderType : OptionSet {
     static var right = SCBorderType(rawValue: 1 << 4)
 }
 
-/// 滑动或者选中回调
+/// 选中下标改变时的回调
 public typealias SCIndexChangeBlock = (_ index: Int) -> Void
-/// 已经选中了某个index后再次点击的回调
-public typealias SCIndexSecondClickedBlock = (_ index: Int) -> Void
+/// 点击某Item的回调
+public typealias SCIndexClickedBlock = (_ index: Int) -> Void
 /// 标题NSAttributedString回调
 public typealias SCTitleFormatterBlock = (_ segmentedControl: FWSegmentedControl, _ title: String, _ index: Int, _ selected: Bool) -> NSAttributedString
 
@@ -250,8 +250,8 @@ open class FWSegmentedControl: UIControl {
     
     /// 滑动或者选中回调
     @objc public var indexChangeBlock: SCIndexChangeBlock?
-    /// 已经选中了某个index后再次点击的回调
-    @objc public var indexSecondClickedBlock: SCIndexSecondClickedBlock?
+    /// 已经选中了某个Item后，再次点击该Item的回调
+    @objc public var indexSecondClickedBlock: SCIndexClickedBlock?
     /// 标题NSAttributedString回调
     @objc public var titleFormatterBlock: SCTitleFormatterBlock?
     
@@ -677,7 +677,7 @@ extension FWSegmentedControl {
     /// - Parameter index: 对应下标
     /// - Parameter animated: 是否需要动画
     @objc open func setSelectedSegmentIndex(index: Int, animated: Bool) {
-        self.setSelectedSegmentIndex(index: index, animated: animated, notify: true)
+        self.setSelectedSegmentIndex(index: index, animated: animated, notify: false)
     }
     
     fileprivate func setSelectedSegmentIndex(index: Int, animated: Bool, notify: Bool) {
