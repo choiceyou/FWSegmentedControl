@@ -887,8 +887,6 @@ extension FWSegmentedControl {
         }
         self.segmentWidthsArray = tmpWidthsArray
         self.totoalSectionWidth = tmpTotoalSectionWidth
-        
-        print("======:\(self.segmentWidthsArray)")
     }
     
     /// 计算Item的宽度（包括Inset）
