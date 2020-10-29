@@ -1072,6 +1072,11 @@ extension FWSegmentedControl {
     /// 计算横条类型的滑动标识符的Frame
     /// - Returns: Frame
     fileprivate func frameForStripIndicator() -> CGRect {
+        
+        if self.selectedSegmentIndex < 0 {
+            return CGRect.zero
+        }
+        
         var indicatorYOffset: CGFloat = 0.0
         if self.scSelectionIndicatorLocation == .down {
             indicatorYOffset = self.bounds.height - self.selectionIndicatorHeight + self.selectionIndicatorEdgeInsets.bottom
